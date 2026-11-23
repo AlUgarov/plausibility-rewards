@@ -1,0 +1,26 @@
+% Source: narrative.md, "Does the generation context help?" (scratchpad, Llama-3.1-8B base, GSM8K).
+% 64 problems with mixed groups, 985 solutions. Dependent variable: correct; one signal per model, standardized within
+% problem, problem fixed effects, clustered SEs; "+ length" adds the log length of the scored text.
+\begin{table}[H]
+\centering
+\caption{Judge context vs generation context on GSM8K (Llama-3.1-8B): win rate and regression of correctness on each signal.}
+\label{tab:context-gsm8k}
+\begin{threeparttable}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccc}
+\toprule
+ & & \multicolumn{2}{c}{Alone} & \multicolumn{2}{c}{+ length} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Context: scored span, score & Win rate & LPM & Logit & LPM & Logit \\
+\midrule
+Judge: solution, \texttt{mean} & 0.664 & $+0.089$ (5.6) & $+0.59$ (5.9) & $+0.060$ (3.4) & $+0.44$ (4.1) \\
+Generation: solution, \texttt{mean} & 0.687 & $+0.094$ (5.2) & $+0.66$ (6.2) & $+0.051$ (2.2) & $+0.39$ (2.7) \\
+\makecell[l]{Generation: solution,\\ least likely token} & 0.668 & $+0.106$ (8.8) & $+0.59$ (7.4) & $+0.075$ (4.0) & $+0.43$ (4.1) \\
+Generation: completion, \texttt{mean} & 0.720 & $+0.089$ (4.5) & $+0.72$ (6.3) & $+0.029$ (1.4) & $+0.33$ (2.2) \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Judge context: neutral system prompt + bare problem. Generation context: the model's own prompt and reasoning. LPM: linear probability model; $t$-statistics in parentheses.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

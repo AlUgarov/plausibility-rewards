@@ -1,0 +1,20 @@
+{
+  "tag": "heldout_unscored_after",
+  "n": 100,
+  "accuracy": 0.39,
+  "accuracy_finished": 0.39,
+  "truncated": 0.0,
+  "format_ok": 1.0,
+  "tokens": 427.52,
+  "uses_given_numbers": 0.93,
+  "made_up_numbers": 0.07,
+  "solution_arithmetic_ok": 0.44,
+  "solution_reaches_target": 1.0,
+  "answer_matches_solution": 0.42,
+  "stopped": 0.0,
+  "gave_up": 0.0,
+  "caught_claims": 0.0,
+  "kind/right numbers, wrong value": 0.54,
+  "kind/correct": 0.39,
+  "kind/a number reused or added": 0.07
+}

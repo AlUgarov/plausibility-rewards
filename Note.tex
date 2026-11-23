@@ -1,0 +1,267 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage {amsmath,amsthm}
+\usepackage{geometry}
+\usepackage{titlesec}
+ \geometry{a4paper, total={170mm,257mm}, left=20mm, right=20mm, top=25mm, bottom=25mm}
+\usepackage{sectsty}
+\usepackage{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{adjustbox}
+%\usepackage{ulem}
+\usepackage{threeparttable}
+\usepackage{longtable}
+\usepackage{soul}
+\usepackage[title]{appendix}
+%\usepackage{prettyref}
+
+%\usepackage[colorlinks=true, urlcolor=Blue]{hyperref}
+%\usepackage{titling}
+\sectionfont{\fontsize{14}{15}\selectfont}
+\subsectionfont{\fontsize{13}{15}\selectfont}
+
+\titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+
+
+\usepackage{caption}
+\captionsetup{belowskip=0pt,aboveskip=6pt}
+
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+
+\makeatletter
+\newcommand*\exInput[1]{\@@input#1 }
+\makeatother
+
+
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\fnote}[1]{\captionsetup{font={small, it}, aboveskip=0pt} \caption*{#1}}
+\newcommand{\link}[1]{{\color{blue}\href{#1}{#1}}}
+
+
+
+%\usepackage{cite}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{placeins}
+\usepackage[list=true]{subcaption}
+\captionsetup[sub]{font=footnotesize}
+
+\usepackage{graphicx}
+
+
+\newtheorem{theorem}{Proposition}
+\newtheorem{hypothesis}{Hypothesis}
+	\def\hypothesisautorefname{Hypothesis}
+\newtheorem{result}{Result}
+	\def\resultautorefname{Result}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+
+
+%\title{\Large Willingness to Pay for Signals of Rare Events\\}
+\title{\Large Consistency Training\\}
+
+\author{Alexander Ugarov\thanks{Email: \href{mailto:augarov@hivereview.org}{augarov@hivereview.org}.} \\
+{\small \textit{Hivereview}}
+}
+
+\begin{document}
+\maketitle
+\onehalfspacing
+\begin{abstract}
+\noindent 
+Reinforcement Learning from internal feedback (RLIF) promises potential gains in areas where human feedback is scarce but typically delivers only fleeting marginal gains at the cost of enthropy collapse. We improve upon this method by linking internal feedback only to a more easily verifiable part of the completion and use a more accurate label-free judge. This breaks the theoretical connection between training and entropy discovered by \citet{zhang_no_2025}, and leads to significant gains in verifiable domains. Our early result using Llama-3 model show RL using internal feedback  indeed increases accuracy on Countdown task by 14 pp. approaching the gains from standard GRPO with verifiable rewards.
+%[Placeholder abstract.] We ask whether a language model's own judgment of how plausible a solution looks can
+%serve as a reinforcement-learning reward without gold labels. We measure how well frozen models rank their own correct
+%solutions above incorrect ones on GSM8K and Countdown, train policies with GRPO against such judges, and document how
+%the rewards are gamed. We then compare judges trained on solver-made and on label-free corrupted-reasoning preference
+%pairs against a format-only control.
+
+\vspace{6pt}
+\noindent {\footnotesize Keywords: reinforcement learning, GRPO, self-verification, LLM-as-a-judge, reward hacking, label-free rewards}
+\end{abstract}
+\normalsize
+
+\section{Introduction}
+\label{sec:intro}
+Reinforcement learning of large language models mostly utilizes verifiable rewards and human-generated data. As models approach superhuman abilities in selected domains, designing reinforcement learning environments and human verification in general becomes challenging. This problem raises the interest for methods which can improve models’ performance without verifiable data even if potential improvements are modest.
+
+Human learning is not necessarily limited by verifiable rewards. People can often improve skills just by practicing them. For example, just doing homework or test problems without feedback can improve the performance on subsequent tests (\citet{fyfe_mathematics_2017}, \citet{avvisati_learning_2020}). There are at least two reasons for why practicing is helpful on its own. First, practicing often involves reading and learning more. Second, students can often understand whether they manage to solve a problem. When solving a challenging problem, people can experience an Aha! moment in which a sudden insight delivers a solution with high degree of confidence. Hence the process of solution as well as process of finding mistakes in own reasoning constitutes an additional source of feedback.
+
+
+We explore whether reasoning models can also learn from Aha! moments even if rewards are not immediately verifiable. Our method falls into the stream of literature called Reinforcement Learning From Internal Feedback (RLIF), the term first introduced by \citet{zhao_learning_2026}. — find that X find that.
+
+Our approach avoids entropy collapse issue of RLIF by splitting completion into a reasoning trace and final solution and calculating rewards only on the solution. —-
+
+ 
+
+The completions we explore include reasoning trace, final clean solution, and the answer. Getting clean step-by-step solutions is the immediate target of the training while effective reasoning trace is the main goal. The training process rewards reasoning traces for their ability to end up in a solution which is considered to be highly likely by a model. This setup most fits the domains where typical reasoning involves extensive backtracking and parallel exploration, while the solution is short and easy to verify (puzzles, mathematics, software engineering). 
+
+We close generation-verification gap through a careful design of verification metric which uses no human-labelled data. Similar to —-, we use the mean log-prob of a completion as a proxy for the output’s certainty. 
+
+We find that models are more accurate in verifying solutions rather than full completions containing reasoning traces, solutions , and answers. However, moderate-sized LLM tend to be poor judges and require additional training in order to enable self-play training. The paper explores two potential solutions. First, finetuning a model with the judge prompt and gold answers marginally improves its ability to discriminate between correct and incorrect solutions. Second, training a model to recognize a solution produced from corrupted reasoning produces a more sizable gain in verification abilities.
+
+Training with self-plausibility and format rewards using a label-free judge increases accuracy on Countdown task from  X to Y\%. This improvement beats training on format-rewards only which increases the accuracy only by Z pp with a difference significant at 5\%. The increase is comparable to potential gains with verifiable rewards and happens without significant decrease in response diversity. The improvement is likely to be higher for a slower learning rate and additional hyperparameter tuning.
+
+Our two contributions are separating the more easily verifiable part of the completion (cleaned solution) from the traces where RLIF training can have more negative effect on solution diversity, part which would suffer the most from increasing conformity reasoning and the design of label-free judge with  strong verification ability while using the same base model.
+
+
+\section{Preliminaries}
+
+% Trajectory-level entropy
+Our plausibility reward is the total log-probability assigned by a judge model to the part of the completion which includes solution and the final answer but omits the reasoning:
+
+\begin{equation}
+R_p=\sum_{k=k_0}^S \log(p_J(x_k|x_{<k}))
+\end{equation}
+
+Here $k_0$ represents the first token of the generated solution, $p_J$ is the judge policy, and $p_J(x_k|x_{<k})$ is the judge model's probability of token $x_k$ conditional on the history.
+
+When $J$ is the same generation/sampling policy, and the span covers the whole completion, the metric equivalent to \textit{trajectory-level entropy} is introduced by \citet{agarwal_unreasonable_2025}. For a pretrained model the trajectory-level entropy of a completion converges to the probability of observing this completion in the data given the prompt. However, this calibration generally breaks during post-training (\citet{openai_gpt-4_2024}).
+
+We train the judge using  Direct Preference Optimization  (DPO) (\citet{rafailov_direct_2024}) to align generated log-probabilities with log-probabilities of completions being correct. Suppose $x$ is a prompt coming from distribution $D$, and $y_w$ and $y_l$ are two different completions with $y_w$ being the preferred solution. DPO minimizes the following objective (negative log-likelihood) with respect to policy $\pi(\cdot | x)$: 
+
+\begin{equation}
+\min_{\pi(\cdot |x)} \mathcal{L}=\min_{\pi(\cdot |x)} E[-\log \sigma(r(x,y_w)-r(x,y_l))]
+\end{equation}
+
+Here the $\sigma()$ is a logistic function $\sigma(x) \equiv {1\over 1+e^{-x}}$ and the reward function is:
+\begin{equation}
+r(x,y)=\beta \log {\pi(y|x)\over \pi_{ref}(y|x)}, \beta>0
+\end{equation}
+
+\begin{theorem} Let winning solutions $y_w \sim p_w(y|x)$ and the losing solution $y_l \sim p_l(y|x)$. Assume that these distributions have the same support and $y_w$ and $y_l$ are independent given $x$. Then the following  policy minimizes DPO objective in the class of all possible policies (for any $y$ in support of $p_l(y|x),p_w(y|x)$):
+\begin{equation}
+\log \pi^*(y|x) = \log \pi_{ref}(y|x)+{1\over \beta} \log \left({p_w(y|x)\over p_l(y|x)}\right) +Z(x)
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Consider drawing a pair $(y_1,y_2)$ such that both $(y_1,y_2)=(y_w,y_l)$ and $(y_1,y_2)=(y_l,y_w)$ are equally likely events. Let $T\sim\operatorname{Bernoulli}(1/2)$ be an indicator variable such that \((Y_1,Y_2)=(Y_w,Y_l)\) if \(T=1\) and \((Y_1,Y_2)=(Y_l,Y_w)\) otherwise, and assume that $T$ is independent of $y_w,y_l$ draws. By Bayes rule, the conditional probability of the event $T=1$ is:
+
+$$P(T=1|y_1,y_2)={p_w(y_1|x)p_l(y_2|x) \over p_w(y_1|x)p_l(y_2|x) +p_l(y_1|x)p_w(y_2|x) }=\sigma(\rho(y_1)-\rho(y_2))$$
+
+Here $\rho(y)\equiv \log {p_w(y|x)\over p_l(y|x)}$.  Define $s(y_1,y_2)\equiv\sigma(r(x,y_1)-r(x,y_2))$ (omitting $x$ for brevity). It follows from the definition that $s(y_2,y_1)=1-s(y_1,y_2)$. The original DPO objective can be written as:
+$$\mathcal{L}=E_{y_w,y_l}[-\log s(y_w,y_l)]=E_{T,y_1,y_2}[-T\log s(y_1,y_2)-(1-T)\log(1-s(y_1,y_2))]$$
+
+Applying the law of total expectation:
+$$\mathcal{L}=E_{y_1,y_2}[-P(T=1|y_1,y_2)\log s(y_1,y_2)-P(T=0|y_1,y_2)\log(1-s(y_1,y_2))]$$
+
+Note that $0<s(y_1,y_2)<1$ and hence the expression in square brackets is cross-entropy of distribution $s()$ with respect to the conditional probabilities $P(T=1|y_1,y_2), P(T=0|y_1,y_2)$. Hence by Gibbs inequality $s(y_1,y_2)=P(T=1|y_1,y_2)$ minimizes $\mathcal{L}$. It implies:
+%$$\mathcal{L}\geq E_{y_1,y_2}[-P(T=1|y_1,y_2)\log P(T=1|y_1,y_2)-P(T=0|y_1,y_2)\log(P(T=0|y_1,y_2))]$$
+
+$$\sigma(r(x,y_1)-r(x,y_2))=\sigma(\rho(y_1)-\rho(y_2))$$
+
+Given that $\sigma(\cdot)$ is a strictly monotonic function, we need that for each $x$, $y_1$ and $y_2$:
+$$r(x,y_1)-r(x,y_2)=\rho(y_1)-\rho(y_2)$$
+
+Hence any optimal solution $r^*(x,y)$ has to satisfy the following condition:
+\begin{equation}
+r^*(x,y)=\rho(y)+c(x)=\log \left({p_w(y|x)\over p_l(y|x)}\right)+c(x)
+\end{equation}
+
+Here $c(x)$ is a function of $x$ as any function of $x$ wouldn't affect the objective (but it still need to satisfy normalization constrain given that $\pi^*(y|x)$ is a probability distribution). Hence every optimal DPO policy satisfies:
+\begin{equation}
+\log \pi^*(y|x) = \log \pi_{ref}(y|x)+{1\over \beta} \log \left({p_w(y|x)\over p_l(y|x)}\right) +{1\over \beta} c(x)
+\end{equation}
+
+Renaming $Z(x)={1\over \beta} c(x)$ obtains the equation in the statement.
+\end{proof}
+
+
+The assumption of expressiveness of policy then guarantees that there is a policy $\pi^*()$ corresponding to the reward function $r^*(x,y)$.
+
+It follows that the DPO policy is a linear combination of the log-reference policy and the log-likelihood ratio for the solution coming from non-corrupt reasoning traces. The second log-likelihood ratio is a noisy signal of solution accuracy:
+\begin{equation}
+\log {p_w(y|x)\over p_l(y|x)} = \log {P_w(z(y)|x)\over P_l(z(y)|x)}+\log{p_w(y|x, z(y))\over p_l(y|x, z(y))}
+\end{equation}
+
+
+Here $z(y)$ is a truth value of completion $y$ and $P_w(z|x), P_l(z|x)$ are the probabilities to obtain this truth value given $x$. Note that the second component of this decomposition measures the stylistic contribution while the first one measures the actual correctness. If there are no stylistic differences between solutions coming from corrupt and non-corrupt traces, the stylistic component becomes zero.
+
+
+\section{Setup}
+\label{sec:setup}
+% GRPO + LoRA, output format <reasoning>/<solution>/<answer>, frozen judge, score reductions (mean, sum, SC, P(True), worst).
+We use Llama-3.2-3B-Instruct model (\citet{grattafiori_llama_2024}) both for generation and judging. As it is an instruct-type model, which means it doesn't adhere to any reasoning format which would conflict with our experiments.  Our tests show very low initial accuracy on Countdown with a zero-shot prompt and no reasoning effort.
+
+\textbf{Establishing Reasoning Behavior.}  Following \citet{gandhi_cognitive_2025} we seed reasoning behavior for the Llama model by fine-tuning it on reasoning traces containing backtracking, verification of results, and repeatedly taking stock of numbers already used while solving the puzzle. Procedural generation builds all the 6000 reasoning traces for finetuning to guarantee good representation for all the desired reasoning behaviors. These examples use the same prompt as the one used in our plausibility training which asks for a reasoning part, solution, and the answer. Finetuning also covers 3000 gold answers with a neutral system (no format restrictions) to prepare the model for judge prompts. All the puzzles come from TinyZero dataset (\citet{pan_tinyzero_2025}) with equal split to 3-number and 4-number puzzles. 
+
+The training runs for one epoch using effective batch size of 16 samples. The learning rate follows cosine schedule with 5\% warmup and peaks at  1e-4. The increase in Countdown performance is significant. On 3-number puzzles the greedy accuracy goes from 8\% to 72\%. On 4-number puzzles the accuracy increases from 0\% to 24\% (both numbers use 50 puzzles per size).\footnote{Evaluation use the same prompt consisting of the puzzle followed by format instructions, without a worked example. Examples however do not improve scoring for the untrained model.} The improvement happens both due to better format following and better reasoning.
+
+\textbf{Judge training}.  The model for scoring solutions (judge) is trained with Direct Preference Optimization (DPO) (\citet{rafailov_direct_2024}) using solution and answer parts of completions  produced by the fine-tuned generation model. Preferred solutions are the original solutions generated with full reasoning traces.  Rejected solutions come from corrupted reasoning traces. We use 1800 reasoning completions produced by a fine-tuned model to create two pairs for DPO training per completion. The first pair's corrupt solution comes from empty reasoning trace. The second pair's corrupt solution comes from only the first half of the reasoning trace.  Hence rejected solutions use much less reasoning to get to the solution and tend to be less accurate.
+
+The training starts with the fine-tuned generation model and continues for one epoch with the effective batch of 16 pairs. It uses learning rate of 2e-5 with cosine schedule and $\beta=0.1$.
+
+
+
+\textbf{Reinforcement Learning with Plausibility Rewards.} We train the generating model for 150 steps using Group Relative Preference Optimization algorithm (GRPO) with both format and plausibility rewards. Format rewards incentivize completions with non-verbal answers and three tagged parts (reasoning, solution, answer). Formatting rewards are essential for our setup because the calculation of rewards requires having a formatted solution while accuracy verification needs numeric-only format for our grader.\footnote{The grader's scores do not affect the training.}. Plausibility rewards are mean logits of the solution+answer parts of the completion as graded by the judge model using a neutral system prompt (see "Preliminaries" section above). We calibrate the weight of plausibility rewards to match the standard deviation of formatting rewards.
+
+
+We use TRL library for training,  and vLLM library for generation and plausibility scoring. All the training runs use Low Rank Adaptaton (LoRA) \citep{hu_lora_2021} with rank of 16 and $\alpha=32$ using PEFT library. We observe no significant improvement from increasing LORA rank to 32. The training uses learning rate of 2e-05 with cosine schedule and 20 warm-up steps.\footnote{Some charts show 300 steps for the plausibility rewards with the last 150 steps coming from an extra run starting from step 150 checkpoint.}  GRPO uses 16 completions per step with anchoring to the base model ($\beta_{KL}=0.02$) and no rewards scaling to avoid large changes in gradient when diversity of responses becomes small.
+
+
+
+
+
+
+\section{Results}
+\label{sec:disc-gsm8k}
+
+First, we confirm that our plausibility measure indeed contains information useful for identifying correct solutions. Table X analyzes three different measures of plausibility based on mean log-probability of the scored span (mean), sum of log-probabilities (sum), sum of log-probabilities for 10 least likely tokens (low10), and self-certainty citet{Kang). Both base and fine-tuned models are pretty poor verifiers of own outputs. Table X compares our preferred measure based on mean log-probability vs the sum of log-probabilities, and the minimum 
+
+Training on corrupt traces significantly increases the ability to discriminate between correct and incorrect solutions even though the split of preferred/rejected samples never utilized correctness. For a an average pair of solutions sampled from the completions of the same puzzle, the judge assigns higher plausibility score to a correct solution in 96\% cases (random chance is 50\%). For an average group of 16 completions it accurately separates correct from incorrect solutions with probability 0.778.  For comparison, the base model picks the correct solution in the pair with probability 0.818 and fine-tuning for reasoning increases this probability only to 0.836. 
+
+
+Notably, scoring solutions and answers identifies correct solutions more reliably than scoring whole completions. For example, SFT policy picks correct solution with probability 0.693 if seeing the whole completion vs 0.836 for solution+answer only. The base model identifies correct solution in the pair with probability 0.248 (below chance) when using the whole completion\footnote{This is not surprising as it doesn't expect reasoning.}, but with probability 0.818 when using solution and answer. This evidence supports our decision to score only the solution part of completions.
+
+Plausibility score predicts correctness even controlling for solution length. Plausibility with mean log-probability of solution 
+
+\textbf{Accuracy Improvement.}  GRPO training significantly increases the accuracy of 
+
+%\input{tables/tab_discrimination_gsm8k}
+\input{tables/tab_context_countdown}
+
+%\section{How self-plausibility rewards are gamed}
+%\label{sec:gaming}
+% 1B smoke runs: sum -> one-liners, sc -> verbose copies, mean -> answer drift / reasoning copied into solution.
+% TODO table: reward -> exploit.
+
+%\section{Countdown: easy steps, gameable bookkeeping}
+%\label{sec:countdown}
+\input{tables/tab_judges_countdown}
+% TODO table: GRPO against the frozen base judge (gap trick).
+
+\section{Judge Performance}
+\label{sec:trained-judges}
+% TODO table: DPO judge vs base / SFT judges on the policy's real samples.
+\input{tables/tab_format_vs_solver}
+
+\section{Main Results}
+\label{sec:corrupt}
+\input{tables/tab_format_vs_corrupt}
+% TODO tables: offline corrupt-judge comparison; GRPO arms on the v4 and v5 SFTs.
+
+\section{Future Work}
+\label{sec:future}
+% One seed per arm; 3B policy; ~6-point noise at 200 puzzles.
+
+\bibliographystyle{plainnat-etal}
+\bibliography{Consistency}
+
+\begin{appendices}
+\section{Greedy failure modes}
+\label{app:greedy}
+\input{tables/tab_greedy_failures}
+
+\section{Synthetic gaming tests}
+\label{app:synthetic}
+\input{tables/tab_synthetic_countdown}
+\end{appendices}
+
+
+\end{document}

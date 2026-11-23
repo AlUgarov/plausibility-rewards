@@ -1,0 +1,26 @@
+% Source: narrative.md, "Countdown results (2026-10-15)", Discrimination table.
+% Judge = frozen Llama-3.2-3B-Instruct (base); samples = the Countdown SFT adapter's own completions (4-number-only SFT,
+% countdown4000-ep2-...-tr2), 133 mixed puzzles; score over solution + "Answer: ..." + end-of-turn tokens.
+\begin{table}[H]
+\centering
+\caption{Discrimination on Countdown (Llama-3.2-3B): within-puzzle win rate of correct over wrong completions, and best-of-16 accuracy.}
+\label{tab:disc-countdown}
+\begin{threeparttable}
+\begin{tabular}{lccc}
+\toprule
+Score & Base judge & Policy as judge & Best-of-16 (base) \\
+\midrule
+\texttt{mean} & 0.817 [0.78, 0.85] & 0.660 & 0.440 \\
+\texttt{sum}  & 0.848 [0.81, 0.88] & 0.704 & 0.475 \\
+\texttt{worst} & 0.958 [0.94, 0.97] & 0.968 & 0.615 \\
+\texttt{low5} & 0.798 & 0.581 & -- \\
+\texttt{low5\_gap} & 0.783 & 0.580 & -- \\
+\texttt{min} & 0.513 & 0.505 & -- \\
+Shorter solution / completion & 0.597 / 0.585 & -- & 0.160 / 0.315 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item 95\% bootstrap intervals over 133 puzzles. \texttt{worst}: lowest summed log-probability of a step result (the tokens after ``=''), used for evaluation only, not as a training reward;\texttt{low5}: sum of the 5 lowest token log-probabilities (\texttt{low5\_gap}: relative to the judge's top token); \texttt{min}: lowest token log-probability. Random pick 0.196; pass@16 0.665.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

@@ -1,0 +1,3573 @@
+pid,numbers,target,completion,tokens,truncated,format_ok,answer,correct,kind,uses_given_numbers,made_up_numbers,solution_arithmetic_ok,solution_reaches_target,answer_matches_solution
+4000,"[32, 18, 66, 2]",25,"<reasoning>
+Numbers: 32, 18, 66, 2. Target: 25.
+Try 66 - 32 = 34. Left: 18, 2, 34.
+Then 34 - 2 = 32. Left: 18, 32.
+Check the ways to combine 18 and 32: 18 + 32 = 50, 18 * 32 = 576, 32 - 18 = 14. None gives 25.
+That doesn't work. Back up. Tried: 66 - 32 = 34.
+Try 32 - 18 = 14. Left: 66, 2, 14.
+Then 66 / 2 = 33. Left: 14, 33.
+Then 33 - 14 = 25.
+Check: 33 - 14 = 19, not 25.
+That doesn't work. Back up. Tried: 66 - 32 = 34; 32 - 18 = 14.
+Try 32 - 2 = 30. Left: 18, 66, 30.
+Then 66 - 30 = 36. Left: 18, 36.
+Then 36 - 18 = 25.
+Check: 36 - 18 = 18, not 25.
+That doesn't work. Back up. Tried: 66 - 32 = 34; 32 - 18 = 14; 32 - 2 = 30.
+Try 32 - 18 = 14. Left: 66, 2, 14.
+Then 66 / 2 = 33. Left: 14, 33.
+Then 33 - 14 = 25.
+Check: 33 - 14 = 19, not 25.
+That doesn't work. Back up. Tried: 66 - 32 = 34; 32 - 18 = 14; 32 - 2 = 30; 32 - 18 = 14.
+Try 32 - 2 = 30. Left: 18, 66, 30.
+Then 66 - 30 = 36. Left: 18, 36.
+Then 36 - 18 = 25.
+Check: 36 - 18 = 18, not 25.
+That doesn't work. Back up. Tried: 66 - 32 = 34; 32 - 18 = 14; 32 - 2 = 30; 32 - 18 = 14.
+Try 32 - 18 = 14. Left: 66, 2, 14.
+Then 66 / 2 = 33. Left: 14, 33.
+Then 33 - 14 = 25.
+Check: 33 - 14 = 19, not 25.
+That doesn't work. Back up. Tried: 66 - 32 = 34; 32 - 18 = 14; 32 - 2 = 30; 32 - 18 = 14; 66 / 2 = 33.
+Try 32 - 18 = 14. Left: 66, 2, 14.
+Then 66 / 2 = 33. Left: 14, 33.
+Then 33 - 14 = 25.
+Then 33 - 25 = 25.
+Check: 33 - 25 = 8, not 25.
+That doesn't work. Back up. Tried: 66 - 32 = 34; 32 - 18 = 14; 32 - 2 = 30; 32 - 18 = 14; 66 / 2 = 33; 32 - 18 = 14; 32 - 18 = 14; 66 / 2 = 33.
+Try 32 - 2 = 30. Left: 18, 66, 30.
+Then 66 / 30 = 2.2. Left: 18, 2.2.
+Then 18 + 2.2 = 25. Left: 25.
+That reaches 25.
+Check: 18 + (66 / (32 - 2)) uses 2, 18, 32, 66 once each and equals 25.
+</reasoning>
+<solution>
+32 - 2 = 30
+66 / 30 = 2.2
+18 + 2.2 = 25
+</solution>
+<answer>
+18 + (66 / (32 - 2))
+</answer>",966,False,True,18 + (66 / (32 - 2)),False,"right numbers, wrong value",1.0,0.0,,,
+4001,"[75, 35, 88, 34]",56,"<reasoning>
+Numbers: 75, 35, 88, 34. Target: 56.
+Try 88 - 34 = 54. Left: 75, 35, 54.
+Then 75 - 54 = 21. Left: 35, 21.
+Check the ways to combine 35 and 21: 35 + 21 = 56, 35 * 21 = 735, 35 - 21 = 14. Only 35 + 21 = 56.
+Check: 35 + (75 - (88 - 34)) uses 34, 35, 75, 88 once each and equals 56.
+</reasoning>
+<solution>
+88 - 34 = 54
+75 - 54 = 21
+35 + 21 = 56
+</solution>
+<answer>
+35 + (75 - (88 - 34))
+</answer>",195,False,True,35 + (75 - (88 - 34)),True,correct,1.0,0.0,1.0,1.0,1.0
+4002,"[96, 26, 41, 44]",37,"<reasoning>
+Numbers: 96, 26, 41, 44. Target: 37.
+Try 44 * 41 = 1804. Left: 96, 26, 1804.
+Then 1804 - 96 = 1708. Left: 26, 1708.
+Check the ways to combine 26 and 1708: 26 + 1708 = 1734, 26 * 1708 = 44408, 1708 - 26 = 1682. None gives 37.
+That doesn't work. Back up. Tried: 44 * 41 = 1804.
+Try 44 - 26 = 18. Left: 96, 41, 18.
+Then 96 - 41 = 55. Left: 18, 55.
+Then 55 - 18 = 37. Left: 37.
+That reaches 37.
+Check: (96 - 41) - (44 - 26) uses 26, 41, 44, 96 once each and equals 37.
+</reasoning>
+<solution>
+44 - 26 = 18
+96 - 41 = 55
+55 - 18 = 37
+</solution>
+<answer>
+(96 - 41) - (44 - 26)
+</answer>",284,False,True,(96 - 41) - (44 - 26),True,correct,1.0,0.0,1.0,1.0,1.0
+4003,"[3, 39, 24, 3]",84,"<reasoning>
+Numbers: 3, 39, 24, 3. Target: 84.
+Try 3 * 3 = 9. Left: 39, 24, 9.
+Then 39 + 24 = 63. Left: 9, 63.
+Check the ways to combine 9 and 63: 9 + 63 = 72, 9 * 63 = 567, 63 - 9 = 54. None gives 84.
+That doesn't work. Back up. Tried: 3 * 3 = 9.
+Try 3 + 39 = 42. Left: 24, 3, 42.
+Then 24 + 3 = 27. Left: 42, 27.
+Closest: 42 + 27 = 69, off by 15.
+That doesn't work. Back up. Tried: 3 * 3 = 9; 3 + 39 = 42.
+Try 3 + 24 = 27. Left: 39, 3, 27.
+Then 39 / 3 = 13. Left: 27, 13.
+Then 27 + 13 = 84.
+Check: 27 + 13 = 40, not 84.
+That doesn't work. Back up. Tried: 3 * 3 = 9; 3 + 39 = 42; 3 + 24 = 27.
+Try 39 - 3 = 36. Left: 24, 3, 36.
+Then 24 + 36 = 60. Left: 3, 60.
+Then 3 * 60 = 84.
+Check: 3 * 60 = 180, not 84.
+That doesn't work. Back up. Tried: 3 * 3 = 9; 3 + 39 = 42; 3 + 24 = 27; 39 - 3 = 36.
+Try 39 - 3 = 36. Left: 24, 3, 36.
+Then 24 + 36 = 60. Left: 3, 60.
+Then 3 * 60 = 84.
+Check: 3 * 60 = 180, not 84.
+That doesn't work. Back up. Tried: 3 * 3 = 9; 3 + 39 = 42; 3 + 24 = 27; 39 - 3 = 36; 39 - 3 = 36.
+Try 39 - 24 = 15. Left: 3, 3, 15.
+Then 3 + 3 = 6. Left: 15, 6.
+Then 15 * 6 = 84. Left: 84.
+That reaches 84.
+Check: (39 - 24) * (3 + 3) uses 3, 3, 24, 39 once each and equals 84.
+</reasoning>
+<solution>
+39 - 24 = 15
+3 + 3 = 6
+15 * 6 = 84
+</solution>
+<answer>
+(39 - 24) * (3 + 3)
+</answer>",685,False,True,(39 - 24) * (3 + 3),False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4004,"[60, 63, 2, 32]",93,"<reasoning>
+Numbers: 60, 63, 2, 32. Target: 93.
+Try 63 - 60 = 3. Left: 2, 32, 3.
+Then 2 * 3 = 6. Left: 32, 6.
+Then 32 + 6 = 38. Left: 38.
+Then 38 + 55 = 93.
+Check: 55 is not one of the numbers left (only 38 is).
+That doesn't work. Back up. Tried: 63 - 60 = 3.
+Try 63 - 2 = 61. Left: 60, 32, 61.
+Then 60 + 32 = 92. Left: 61, 92.
+Closest: 61 + 92 = 153, off by 60.
+That doesn't work. Back up. Tried: 63 - 60 = 3; 63 - 2 = 61.
+Try 60 - 2 = 58. Left: 63, 32, 58.
+Then 63 - 58 = 5. Left: 32, 5.
+Then 32 * 5 = 160. Left: 160.
+Then 160 - 67 = 93.
+Check: 67 is not one of the numbers left (only 160 is).
+That doesn't work. Back up. Tried: 63 - 60 = 3; 63 - 2 = 61; 60 - 2 = 58.
+Try 60 - 32 = 28. Left: 63, 2, 28.
+Then 63 / 3 = 21. Left: 2, 28, 21.
+Then 2 * 21 = 42. Left: 28, 42.
+Then 28 + 42 = 70. Left: 70.
+Then 70 + 23 = 93.
+Check: 23 is not one of the numbers left (only 70 is).
+That doesn't work. Back up. Tried: 63 - 60 = 3; 63 - 2 = 61; 60 - 2 = 58; 60 - 32 = 28.
+Try 63 - 32 = 31. Left: 60, 2, 31.
+Then 60 / 2 = 30. Left: 31, 30.
+Then 31 + 30 = 61. Left: 61.
+Then 61 + 32 = 93. Left: 93.
+That reaches 93.
+Check: (63 - 32) + (60 / 2) uses 2, 32, 60, 63 once each and equals 93.
+</reasoning>
+<solution>
+63 - 32 = 31
+60 / 2 = 30
+31 + 30 = 61
+61 + 32 = 93
+</solution>
+<answer>
+(63 - 32) + (60 / 2)
+</answer>",643,False,True,(63 - 32) + (60 / 2),False,"right numbers, wrong value",1.0,0.0,1.0,1.0,0.0
+4005,"[8, 91, 96, 93]",67,"<reasoning>
+Numbers: 8, 91, 96, 93. Target: 67.
+Try 8 * 91 = 728. Left: 96, 93, 728.
+Then 728 - 96 = 632. Left: 93, 632.
+Check the ways to combine 93 and 632: 93 + 632 = 725, 93 * 632 = 58716, 632 - 93 = 539. None gives 67.
+That doesn't work. Back up. Tried: 8 * 91 = 728.
+Try 8 + 93 = 101. Left: 91, 96, 101.
+Then 96 - 91 = 5. Left: 101, 5.
+Then 101 - 5 = 67.
+Check: 101 - 5 = 96, not 67.
+That doesn't work. Back up. Tried: 8 * 91 = 728; 8 + 93 = 101.
+Try 8 + 96 = 104. Left: 91, 93, 104.
+Then 93 - 91 = 2. Left: 104, 2.
+Then 104 / 2 = 67.
+Check: 104 / 2 = 52, not 67.
+That doesn't work. Back up. Tried: 8 * 91 = 728; 8 + 93 = 101; 8 + 96 = 104.
+Try 8 + 93 = 101. Left: 91, 96, 101.
+Then 96 - 91 = 5. Left: 101, 5.
+Then 101 - 5 = 67.
+Check: 101 - 5 = 96, not 67.
+That doesn't work. Back up. Tried: 8 * 91 = 728; 8 + 93 = 101; 8 + 96 = 104; 8 + 93 = 101.
+Try 8 + 96 = 104. Left: 91, 93, 104.
+Then 93 - 91 = 2. Left: 104, 2.
+Then 104 / 2 = 67.
+Check: 104 / 2 = 52, not 67.
+That doesn't work. Back up. Tried: 8 * 91 = 728; 8 + 93 = 101; 8 + 96 = 104; 8 + 93 = 101; 8 + 96 = 104.
+Try 8 + 93 = 101. Left: 91, 96, 101.
+Then 96 - 91 = 5. Left: 101, 5.
+Then 101 - 5 = 67.
+Check: 101 - 5 = 96, not 67.
+That doesn't work. Back up. Tried: 8 * 91 = 728; 8 + 93 = 101; 8 + 96 = 104; 8 + 93 = 101; 8 + 96 = 104; 8 + 93 = 101.
+Try 8 + 96 = 104. Left: 91, 93, 104.
+Then 93 - 91 = 2. Left: 104, 2.
+Then 104 / 2 = 67.
+Check: 104 / 2 = 52, not 67.
+That doesn't work. Back up. Tried: 8 * 91 = 728; 8 + 93 = 101; 8 + 96 = 104; 8 + 93 = 101; 8 + 96 = 104; 8 + 93 = 101; 8 + 96 = 104.
+Try 8 + 93 = 101. Left: 91, 96, 101.
+Then 96 - 91 = 5. Left: 101, 5.
+Then 101 - 5 = 67.
+Check the ways to combine 101 and 5: 101 + 5 = 106, 101 * 5 = 505, 101 - 5 = 96. None gives 67.
+That doesn't work. Back up. Tried: 8 * 91 = 728; 8 + 93 = 101; 8 + 96 = 104; 8 + 93 = 101; 8 + 96 = 104; 8 + 93 = 101; 8 + 96 = 104; 8 + 93 = 101; 8 + 96 = 104.
+Try 8 + 96 = 104. Left: 91, 93, 104.
+Then 93 - 91 = ",1024,True,False,,False,no answer (truncated),,,,,
+4006,"[17, 65, 27, 88]",33,"<reasoning>
+Numbers: 17, 65, 27, 88. Target: 33.
+Try 65 * 17 = 1105. Left: 27, 88, 1105.
+Then 1105 - 27 = 1078. Left: 88, 1078.
+Check the ways to combine 88 and 1078: 88 + 1078 = 1166, 88 * 1078 = 94944, 1078 - 88 = 990. None gives 33.
+That doesn't work. Back up. Tried: 65 * 17 = 1105.
+Try 65 - 17 = 48. Left: 27, 88, 48.
+Then 88 - 27 = 61. Left: 48, 61.
+Then 61 - 48 = 33.
+Check: 61 - 48 = 13, not 33.
+That doesn't work. Back up. Tried: 65 * 17 = 1105; 65 - 17 = 48.
+Try 65 - 27 = 38. Left: 17, 88, 38.
+Then 88 - 17 = 71. Left: 38, 71.
+Then 71 - 38 = 33. Left: 33.
+That reaches 33.
+Check: (88 - 17) - (65 - 27) uses 17, 27, 65, 88 once each and equals 33.
+</reasoning>
+<solution>
+65 - 27 = 38
+88 - 17 = 71
+71 - 38 = 33
+</solution>
+<answer>
+(88 - 17) - (65 - 27)
+</answer>",376,False,True,(88 - 17) - (65 - 27),True,correct,1.0,0.0,1.0,1.0,1.0
+4007,"[44, 82, 95, 52]",81,"<reasoning>
+Numbers: 44, 82, 95, 52. Target: 81.
+Try 95 - 44 = 51. Left: 82, 52, 51.
+Then 82 - 51 = 31. Left: 52, 31.
+Check the ways to combine 52 and 31: 52 + 31 = 83, 52 * 31 = 1612, 52 - 31 = 21. None gives 81.
+That doesn't work. Back up. Tried: 95 - 44 = 51.
+Try 95 - 52 = 43. Left: 44, 82, 43.
+Then 82 - 43 = 39. Left: 44, 39.
+Check the ways to combine 44 and 39: 44 + 39 = 83, 44 * 39 = 1716, 44 - 39 = 5. None gives 81.
+That doesn't work. Back up. Tried: 95 - 44 = 51; 95 - 52 = 43.
+Try 95 - 82 = 13. Left: 44, 52, 13.
+Then 52 - 13 = 39. Left: 44, 39.
+Then 44 + 39 = 83. Left: 83.
+Then 83 - 2 = 81.
+Check: 2 is not one of the numbers left (only 83 is).
+That doesn't work. Back up. Tried: 95 - 44 = 51; 95 - 52 = 43; 95 - 82 = 13.
+Try 95 - 44 = 51. Left: 82, 52, 51.
+Then 82 - 52 = 30. Left: 51, 30.
+Then 51 + 30 = 81. Left: 81.
+That reaches 81.
+Check: (95 - 44) + (82 - 52) uses 44, 52, 82, 95 once each and equals 81.
+</reasoning>
+<solution>
+95 - 44 = 51
+82 - 52 = 30
+51 + 30 = 81
+</solution>
+<answer>
+(95 - 44) + (82 - 52)
+</answer>",501,False,True,(95 - 44) + (82 - 52),True,correct,1.0,0.0,1.0,1.0,1.0
+4008,"[93, 47, 41, 4]",91,"<reasoning>
+Numbers: 93, 47, 41, 4. Target: 91.
+Try 93 - 47 = 46. Left: 41, 4, 46.
+Then 46 + 4 = 50. Left: 41, 50.
+Closest: 41 + 50 = 91.
+Check: 41 + 50 = 91.
+That reaches 91.
+Check: 41 + ((93 - 47) + 4) uses 4, 41, 47, 93 once each and equals 91.
+</reasoning>
+<solution>
+93 - 47 = 46
+46 + 4 = 50
+41 + 50 = 91
+</solution>
+<answer>
+41 + ((93 - 47) + 4)
+</answer>",177,False,True,41 + ((93 - 47) + 4),True,correct,1.0,0.0,1.0,1.0,1.0
+4009,"[17, 38, 86, 56]",37,"<reasoning>
+Numbers: 17, 38, 86, 56. Target: 37.
+Try 86 - 17 = 69. Left: 38, 56, 69.
+Then 69 - 38 = 31. Left: 56, 31.
+Check the ways to combine 56 and 31: 56 + 31 = 87, 56 * 31 = 1736, 56 - 31 = 25. None gives 37.
+That doesn't work. Back up. Tried: 86 - 17 = 69.
+Try 86 - 56 = 30. Left: 17, 38, 30.
+Then 38 - 30 = 8. Left: 17, 8.
+Then 17 + 8 = 25. Left: 25.
+Then 25 + 12 = 37.
+Check: 12 is not one of the numbers left (only 25 is).
+That doesn't work. Back up. Tried: 86 - 17 = 69; 86 - 56 = 30.
+Try 86 - 38 = 48. Left: 17, 56, 48.
+Then 56 - 17 = 39. Left: 48, 39.
+Then 48 - 39 = 9. Left: 9.
+Then 9 + 28 = 37.
+Check: 28 is not one of the numbers left (only 9 is).
+That doesn't work. Back up. Tried: 86 - 17 = 69; 86 - 56 = 30; 86 - 38 = 48.
+Try 86 - 17 = 69. Left: 38, 56, 69.
+Then 38 - 17 = 21. Left: 56, 69, 21.
+Then 69 - 21 = 48. Left: 56, 48.
+Then 56 - 48 = 8. Left: 8.
+Then 8 + 29 = 37.
+Check: 29 is not one of the numbers left (only 8 is).
+That doesn't work. Back up. Tried: 86 - 17 = 69; 86 - 56 = 30; 86 - 38 = 48; 86 - 17 = 69.
+Try 86 - 56 = 30. Left: 17, 38, 30.
+Then 38 - 17 = 21. Left: 30, 21.
+Then 30 + 21 = 51. Left: 51.
+Then 51 - 14 = 37. Left: 37.
+That reaches 37.
+Check: (86 - 56) + (38 - 17) - 14 uses 17, 38, 56, 86 once each and equals 37.
+</reasoning>
+<solution>
+86 - 56 = 30
+38 - 17 = 21
+30 + 21 = 51
+51 - 14 = 37
+</solution>
+<answer>
+(86 - 56) + (38 - 17) - 14
+</answer>",677,False,True,(86 - 56) + (38 - 17) - 14,False,a number reused or added,0.0,1.0,1.0,1.0,1.0
+4010,"[60, 67, 2, 28]",49,"<reasoning>
+Numbers: 60, 67, 2, 28. Target: 49.
+Try 67 - 60 = 7. Left: 2, 28, 7.
+Then 28 + 7 = 35. Left: 2, 35.
+Check the ways to combine 2 and 35: 2 + 35 = 37, 2 * 35 = 70, 35 - 2 = 33, 35 / 2 = 17. None gives 49.
+That doesn't work. Back up. Tried: 67 - 60 = 7.
+Try 60 - 28 = 32. Left: 67, 2, 32.
+Then 67 - 32 = 35. Left: 2, 35.
+Then 2 * 35 = 70. Left: 70.
+Then 70 - 21 = 49.
+Check: 21 is not one of the numbers left (only 70 is).
+That doesn't work. Back up. Tried: 67 - 60 = 7; 60 - 28 = 32.
+Try 60 - 2 = 58. Left: 67, 28, 58.
+Then 67 - 58 = 9. Left: 28, 9.
+Then 28 + 9 = 37. Left: 37.
+Then 37 + 12 = 49.
+Check: 12 is not one of the numbers left (only 37 is).
+That doesn't work. Back up. Tried: 67 - 60 = 7; 60 - 28 = 32; 60 - 2 = 58.
+Try 60 - 67 = 7. Left: 2, 28, 7.
+Then 28 / 2 = 14. Left: 7, 14.
+Then 7 + 14 = 21. Left: 21.
+Then 21 + 28 = 49. Left: 49.
+That reaches 49.
+Check: (60 - 67) + (28 / 2) uses 2, 28, 60, 67 once each and equals 49.
+</reasoning>
+<solution>
+60 - 67 = 7
+28 / 2 = 14
+7 + 14 = 21
+21 + 28 = 49
+</solution>
+<answer>
+(60 - 67) + (28 / 2)
+</answer>",530,False,True,(60 - 67) + (28 / 2),False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4011,"[94, 4, 88, 58]",16,"<reasoning>
+Numbers: 94, 4, 88, 58. Target: 16.
+Try 88 * 4 = 352. Left: 94, 58, 352.
+Then 352 - 58 = 294. Left: 94, 294.
+Check the ways to combine 94 and 294: 94 + 294 = 388, 94 * 294 = 27636, 294 - 94 = 200. None gives 16.
+That doesn't work. Back up. Tried: 88 * 4 = 352.
+Try 88 - 4 = 84. Left: 94, 58, 84.
+Then 94 - 84 = 10. Left: 58, 10.
+Then 58 - 10 = 16.
+Check: 58 - 10 = 48, not 16.
+That doesn't work. Back up. Tried: 88 * 4 = 352; 88 - 4 = 84.
+Try 88 - 58 = 30. Left: 94, 4, 30.
+Then 94 - 4 = 90. Left: 30, 90.
+Then 90 - 30 = 16.
+Check: 90 - 30 = 60, not 16.
+That doesn't work. Back up. Tried: 88 * 4 = 352; 88 - 4 = 84; 88 - 58 = 30.
+Try 94 - 88 = 6. Left: 4, 58, 6.
+Then 4 * 6 = 24. Left: 58, 24.
+Then 58 - 24 = 16.
+Check: 58 - 24 = 34, not 16.
+That doesn't work. Back up. Tried: 88 * 4 = 352; 88 - 4 = 84; 88 - 58 = 30; 94 - 88 = 6.
+Try 94 - 58 = 36. Left: 4, 88, 36.
+Then 88 / 4 = 22. Left: 36, 22.
+Then 36 - 22 = 16.
+Check: 36 - 22 = 14, not 16.
+That doesn't work. Back up. Tried: 88 * 4 = 352; 88 - 4 = 84; 88 - 58 = 30; 94 - 88 = 6; 94 - 58 = 36.
+Try 94 - 4 = 90. Left: 88, 58, 90.
+Then 88 - 58 = 30. Left: 90, 30.
+Then 90 - 30 = 16.
+Check: 90 - 30 = 60, not 16.
+That doesn't work. Back up. Tried: 88 * 4 = 352; 88 - 4 = 84; 88 - 58 = 30; 94 - 88 = 6; 94 - 58 = 36; 94 - 4 = 90.
+Try 94 - 88 = 6. Left: 4, 58, 6.
+Then 4 * 6 = 24. Left: 58, 24.
+Then 58 - 24 = 16. Left: 16.
+That reaches 16.
+Check: 58 - (4 * (94 - 88)) uses 4, 58, 88, 94 once each and equals 16.
+</reasoning>
+<solution>
+94 - 88 = 6
+4 * 6 = 24
+58 - 24 = 16
+</solution>
+<answer>
+58 - (4 * (94 - 88))
+</answer>",819,False,True,58 - (4 * (94 - 88)),False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4012,"[77, 57, 19, 63]",24,"<reasoning>
+Numbers: 77, 57, 19, 63. Target: 24.
+Try 63 - 19 = 44. Left: 77, 57, 44.
+Then 77 - 57 = 20. Left: 44, 20.
+Closest: 44 - 20 = 24.
+Check: 44 - 20 = 24, correct.
+Check the ways to combine 44 and 20: 44 + 20 = 64, 44 * 20 = 880, 44 - 20 = 24, 44 / 20 = 2. None gives 24.
+That doesn't work. Back up. Tried: 63 - 19 = 44.
+Try 63 - 57 = 6. Left: 77, 19, 6.
+Then 77 - 19 = 58. Left: 6, 58.
+Then 58 - 6 = 24.
+Check: 58 - 6 = 52, not 24.
+That doesn't work. Back up. Tried: 63 - 19 = 44; 63 - 57 = 6.
+Try 77 - 57 = 20. Left: 19, 63, 20.
+Then 63 - 20 = 43. Left: 19, 43.
+Then 43 - 19 = 24. Left: 24.
+That reaches 24.
+Check: (63 - (77 - 57)) - 19 uses 19, 57, 63, 77 once each and equals 24.
+</reasoning>
+<solution>
+77 - 57 = 20
+63 - 20 = 43
+43 - 19 = 24
+</solution>
+<answer>
+(63 - (77 - 57)) - 19
+</answer>",396,False,True,(63 - (77 - 57)) - 19,True,correct,1.0,0.0,1.0,1.0,1.0
+4013,"[6, 84, 83, 59]",66,"<reasoning>
+Numbers: 6, 84, 83, 59. Target: 66.
+Try 59 * 6 = 354. Left: 84, 83, 354.
+Then 354 - 84 = 270. Left: 83, 270.
+Check the ways to combine 83 and 270: 83 + 270 = 353, 83 * 270 = 22370, 270 - 83 = 187. None gives 66.
+That doesn't work. Back up. Tried: 59 * 6 = 354.
+Try 59 + 6 = 65. Left: 84, 83, 65.
+Then 84 - 83 = 1. Left: 65, 1.
+Then 65 + 1 = 66. Left: 66.
+That reaches 66.
+Check: (59 + 6) + (84 - 83) uses 6, 59, 83, 84 once each and equals 66.
+</reasoning>
+<solution>
+59 + 6 = 65
+84 - 83 = 1
+65 + 1 = 66
+</solution>
+<answer>
+(59 + 6) + (84 - 83)
+</answer>",272,False,True,(59 + 6) + (84 - 83),True,correct,1.0,0.0,1.0,1.0,1.0
+4014,"[26, 35, 60, 1]",69,"<reasoning>
+Numbers: 26, 35, 60, 1. Target: 69.
+Try 35 * 1 = 35. Left: 26, 60, 35.
+Then 35 + 26 = 61. Left: 60, 61.
+Check the ways to combine 60 and 61: 60 + 61 = 121, 60 * 61 = 3660, 61 - 60 = 1. None gives 69.
+That doesn't work. Back up. Tried: 35 * 1 = 35.
+Try 35 - 1 = 34. Left: 26, 60, 34.
+Then 60 + 34 = 94. Left: 26, 94.
+Then 94 - 26 = 69.
+Check: 94 - 26 = 68, not 69.
+That doesn't work. Back up. Tried: 35 * 1 = 35; 35 - 1 = 34.
+Try 35 - 26 = 9. Left: 60, 1, 9.
+Then 1 * 9 = 9. Left: 60, 9.
+Then 60 + 9 = 69. Left: 69.
+That reaches 69.
+Check: 60 + (1 * (35 - 26)) uses 1, 26, 35, 60 once each and equals 69.
+</reasoning>
+<solution>
+35 - 26 = 9
+1 * 9 = 9
+60 + 9 = 69
+</solution>
+<answer>
+60 + (1 * (35 - 26))
+</answer>",361,False,True,60 + (1 * (35 - 26)),True,correct,1.0,0.0,1.0,1.0,1.0
+4015,"[85, 87, 65, 43]",20,"<reasoning>
+Numbers: 85, 87, 65, 43. Target: 20.
+Try 87 - 65 = 22. Left: 85, 43, 22.
+Then 85 - 43 = 42. Left: 22, 42.
+Check the ways to combine 22 and 42: 22 + 42 = 64, 22 * 42 = 924, 42 - 22 = 20. Only 42 - 22 = 20.
+Check: 42 - 22 = 20, which is correct.
+Check the ways to combine 85, 87, 43, 65: 85 + 43 = 128, 85 * 43 = 3645, 87 - 65 = 22, 87 + 65 = 152, 87 * 65 = 5655, 85 - 65 = 20. None gives 20.
+That doesn't work. Back up. Tried: 87 - 65 = 22.
+Try 87 - 85 = 2. Left: 65, 43, 2.
+Then 65 / 2 = 32.5. Left: 43, 32.5.
+Then 43 - 32.5 = 20.
+Check: 43 - 32.5 = 10.5, not 20.
+That doesn't work. Back up. Tried: 87 - 65 = 22; 87 - 85 = 2.
+Try 87 - 43 = 44. Left: 85, 65, 44.
+Then 85 - 65 = 20. Left: 44, 20.
+Then 44 - 20 = 20.
+Check: 44 - 20 = 24, not 20.
+That doesn't work. Back up. Tried: 87 - 65 = 22; 87 - 85 = 2; 87 - 43 = 44.
+Try 87 - 85 = 2. Left: 65, 43, 2.
+Then 65 / 2 = 32.5. Left: 43, 32.5.
+Then 43 - 32.5 = 20. Left: 20.
+That reaches 20.
+Check: 43 - (65 / (87 - 85)) uses 43, 65, 85, 87 once each and equals 20.
+</reasoning>
+<solution>
+87 - 85 = 2
+65 / 2 = 32.5
+43 - 32.5 = 20
+</solution>
+<answer>
+43 - (65 / (87 - 85))
+</answer>",579,False,True,43 - (65 / (87 - 85)),False,"right numbers, wrong value",1.0,0.0,,,
+4016,"[52, 60, 40, 99]",51,"<reasoning>
+Numbers: 52, 60, 40, 99. Target: 51.
+Try 99 - 52 = 47. Left: 60, 40, 47.
+Then 60 - 40 = 20. Left: 47, 20.
+Check the ways to combine 47 and 20: 47 + 20 = 67, 47 * 20 = 940, 47 - 20 = 27. None gives 51.
+That doesn't work. Back up. Tried: 99 - 52 = 47.
+Try 60 - 40 = 20. Left: 52, 99, 20.
+Then 99 - 20 = 79. Left: 52, 79.
+Then 79 - 52 = 51.
+Check: 79 - 52 = 27, not 51.
+That doesn't work. Back up. Tried: 99 - 52 = 47; 60 - 40 = 20.
+Try 60 - 52 = 8. Left: 40, 99, 8.
+Then 99 - 40 = 59. Left: 8, 59.
+Then 59 - 8 = 51. Left: 51.
+That reaches 51.
+Check: (99 - 40) - (60 - 52) uses 40, 52, 60, 99 once each and equals 51.
+</reasoning>
+<solution>
+60 - 52 = 8
+99 - 40 = 59
+59 - 8 = 51
+</solution>
+<answer>
+(99 - 40) - (60 - 52)
+</answer>",363,False,True,(99 - 40) - (60 - 52),True,correct,1.0,0.0,1.0,1.0,1.0
+4017,"[93, 51, 81, 98]",25,"<reasoning>
+Numbers: 93, 51, 81, 98. Target: 25.
+Try 93 + 98 = 191. Left: 51, 81, 191.
+Then 191 - 81 = 110. Left: 51, 110.
+Check the ways to combine 51 and 110: 51 + 110 = 161, 51 * 110 = 5610, 110 - 51 = 59. None gives 25.
+That doesn't work. Back up. Tried: 93 + 98 = 191.
+Try 93 - 81 = 12. Left: 51, 98, 12.
+Then 98 - 51 = 47. Left: 12, 47.
+Then 47 - 12 = 35. Left: 35.
+Then 35 - 10 = 25.
+Check: 10 is not one of the numbers left (only 35 is).
+That doesn't work. Back up. Tried: 93 + 98 = 191; 93 - 81 = 12.
+Try 93 - 51 = 42. Left: 81, 98, 42.
+Then 98 - 81 = 17. Left: 42, 17.
+Then 42 - 17 = 25. Left: 25.
+That reaches 25.
+Check: (93 - 51) - (98 - 81) uses 51, 81, 93, 98 once each and equals 25.
+</reasoning>
+<solution>
+93 - 51 = 42
+98 - 81 = 17
+42 - 17 = 25
+</solution>
+<answer>
+(93 - 51) - (98 - 81)
+</answer>",381,False,True,(93 - 51) - (98 - 81),True,correct,1.0,0.0,1.0,1.0,1.0
+4018,"[78, 36, 27, 89]",15,"<reasoning>
+Numbers: 78, 36, 27, 89. Target: 15.
+Try 89 - 78 = 11. Left: 36, 27, 11.
+Then 36 - 11 = 25. Left: 27, 25.
+Check the ways to combine 27 and 25: 27 + 25 = 52, 27 * 25 = 675, 27 - 25 = 2. None gives 15.
+That doesn't work. Back up. Tried: 89 - 78 = 11.
+Try 36 * 27 = 972. Left: 78, 89, 972.
+Then 972 - 78 = 894. Left: 89, 894.
+Closest: 894 - 89 = 805, off by 790.
+That doesn't work. Back up. Tried: 89 - 78 = 11; 36 * 27 = 972.
+Try 78 - 36 = 42. Left: 27, 89, 42.
+Then 89 - 42 = 47. Left: 27, 47.
+Then 47 - 27 = 20. Left: 20.
+Then 20 - 5 = 15.
+Check: 5 is not one of the numbers left (only 20 is).
+That doesn't work. Back up. Tried: 89 - 78 = 11; 36 * 27 = 972; 78 - 36 = 42.
+Try 78 - 27 = 51. Left: 36, 89, 51.
+Then 89 - 36 = 53. Left: 51, 53.
+Then 53 - 51 = 2. Left: 2.
+Then 2 + 13 = 15.
+Check: 13 is not one of the numbers left (only 2 is).
+That doesn't work. Back up. Tried: 89 - 78 = 11; 36 * 27 = 972; 78 - 36 = 42; 78 - 27 = 51; 89 - 36 = 53.
+Try 36 + 27 = 63. Left: 78, 89, 63.
+Then 78 - 63 = 15. Left: 89, 15.
+Then 89 - 15 = 15.
+Check: 89 - 15 = 74, not 15.
+That doesn't work. Back up. Tried: 89 - 78 = 11; 36 * 27 = 972; 78 - 36 = 42; 78 - 27 = 51; 89 - 36 = 53; 36 + 27 = 63.
+Try 36 + 89 = 125. Left: 78, 27, 125.
+Then 78 - 27 = 51. Left: 125, 51.
+Then 125 - 51 = 15.
+Check: 125 - 51 = 74, not 15.
+That doesn't work. Back up. Tried: 89 - 78 = 11; 36 * 27 = 972; 78 - 36 = 42; 78 - 27 = 51; 89 - 36 = 53; 36 + 89 = 125; 78 - 27 = 51.
+Try 78 - 27 = 51. Left: 36, 89, 51.
+Then 36 + 51 = 87. Left: 89, 87.
+Then 89 - 87 = 15.
+Check: 89 - 87 = 2, not 15.
+That doesn't work. Back up. Tried: 89 - 78 = 11; 36 * 27 = 972; 78 - 36 = 42; 78 - 27 = 51; 89 - 36 = 53; 36 + 89 = 125; 78 - 27 = 51.
+Try 36 + 89 = 125. Left: 78, 27, 125.
+Then 78 - 27 = 51. Left: 125, 51.
+Then 125 - 51 = 15.
+Check: 125 - 51 = 74, not 15.
+That doesn't work. Back up. Tried: 89 - 78 = 11; 36 * 27 = 972; 78 - 36 = 42; 78 - 27 = 51; 89 - 36 = 53; 36 + 89 = 125; 78 - 27 = 51.
+Try 78 - 36 = 42. Left: 27, 89, 42.
+Then ",1024,True,False,,False,no answer (truncated),,,,,
+4019,"[31, 6, 96, 33]",92,"<reasoning>
+Numbers: 31, 6, 96, 33. Target: 92.
+Try 96 - 33 = 63. Left: 31, 6, 63.
+Then 63 - 6 = 57. Left: 31, 57.
+Closest: 31 + 57 = 88, off by 4.
+That doesn't work. Back up. Tried: 96 - 33 = 63.
+Try 96 - 31 = 65. Left: 6, 33, 65.
+Then 6 * 65 = 390. Left: 33, 390.
+Then 390 - 33 = 357. Left: 357.
+Then 357 - 265 = 92.
+Check: 265 is not one of the numbers left (only 357 is).
+That doesn't work. Back up. Tried: 96 - 33 = 63; 96 - 31 = 65.
+Try 96 - 6 = 90. Left: 31, 33, 90.
+Then 90 - 31 = 59. Left: 33, 59.
+Check the ways to combine 33 and 59: 33 + 59 = 92, 33 * 59 = 1947, 59 - 33 = 26. None gives 92.
+That doesn't work. Back up. Tried: 96 - 33 = 63; 96 - 31 = 65; 96 - 6 = 90.
+Try 96 - 33 = 63. Left: 31, 6, 63.
+Then 6 * 63 = 378. Left: 31, 378.
+Then 378 / 31 = 12. Left: 12.
+Then 12 + 80 = 92.
+Check: 80 is not one of the numbers left (only 12 is).
+That doesn't work. Back up. Tried: 96 - 33 = 63; 96 - 31 = 65; 96 - 6 = 90; 96 - 33 = 63.
+Try 96 - 6 = 90. Left: 31, 33, 90.
+Then 90 - 33 = 57. Left: 31, 57.
+Then 31 + 57 = 88. Left: 88.
+Then 88 + 4 = 92.
+Check: 4 is not one of the numbers left (only 88 is).
+That doesn't work. Back up. Tried: 96 - 33 = 63; 96 - 31 = 65; 96 - 6 = 90; 96 - 33 = 63.
+Try 96 - 31 = 65. Left: 6, 33, 65.
+Then 6 * 65 = 390. Left: 33, 390.
+Then 390 / 33 = 92. Left: 92.
+That reaches 92.
+Check: (6 * (96 - 31)) / 33 uses 6, 31, 33, 96 once each and equals 92.
+</reasoning>
+<solution>
+96 - 31 = 65
+6 * 65 = 390
+390 / 33 = 92
+</solution>
+<answer>
+(6 * (96 - 31)) / 33
+</answer>",727,False,True,(6 * (96 - 31)) / 33,False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4020,"[85, 39, 89, 45]",24,"<reasoning>
+Numbers: 85, 39, 89, 45. Target: 24.
+Try 89 - 45 = 44. Left: 85, 39, 44.
+Then 85 - 44 = 41. Left: 39, 41.
+Check the ways to combine 39 and 41: 39 + 41 = 80, 39 * 41 = 1599, 41 - 39 = 2. None gives 24.
+That doesn't work. Back up. Tried: 89 - 45 = 44.
+Try 89 - 85 = 4. Left: 39, 45, 4.
+Then 45 - 39 = 6. Left: 4, 6.
+Then 4 * 6 = 24. Left: 24.
+That reaches 24.
+Check: (89 - 85) * (45 - 39) uses 39, 45, 85, 89 once each and equals 24.
+</reasoning>
+<solution>
+89 - 85 = 4
+45 - 39 = 6
+4 * 6 = 24
+</solution>
+<answer>
+(89 - 85) * (45 - 39)
+</answer>",272,False,True,(89 - 85) * (45 - 39),True,correct,1.0,0.0,1.0,1.0,1.0
+4021,"[62, 1, 44, 8]",99,"<reasoning>
+Numbers: 62, 1, 44, 8. Target: 99.
+Try 44 * 8 = 352. Left: 62, 1, 352.
+Then 352 - 1 = 351. Left: 62, 351.
+Check the ways to combine 62 and 351: 62 + 351 = 413, 62 * 351 = 21762, 351 - 62 = 289. None gives 99.
+That doesn't work. Back up. Tried: 44 * 8 = 352.
+Try 44 - 8 = 36. Left: 62, 1, 36.
+Then 62 + 36 = 98. Left: 1, 98.
+Then 1 + 98 = 99. Left: 99.
+That reaches 99.
+Check: 1 + (62 + (44 - 8)) uses 1, 8, 44, 62 once each and equals 99.
+</reasoning>
+<solution>
+44 - 8 = 36
+62 + 36 = 98
+1 + 98 = 99
+</solution>
+<answer>
+1 + (62 + (44 - 8))
+</answer>",269,False,True,1 + (62 + (44 - 8)),True,correct,1.0,0.0,1.0,1.0,1.0
+4022,"[61, 52, 54, 91]",97,"<reasoning>
+Numbers: 61, 52, 54, 91. Target: 97.
+Try 91 - 54 = 37. Left: 61, 52, 37.
+Then 52 + 37 = 89. Left: 61, 89.
+Closest: 61 + 89 = 150, off by 53.
+That doesn't work. Back up. Tried: 91 - 54 = 37.
+Try 54 - 52 = 2. Left: 61, 91, 2.
+Then 61 + 2 = 63. Left: 91, 63.
+Then 91 + 63 = 97.
+Check: 91 + 63 = 154, not 97.
+That doesn't work. Back up. Tried: 91 - 54 = 37; 54 - 52 = 2.
+Try 91 - 61 = 30. Left: 52, 54, 30.
+Then 52 + 30 = 82. Left: 54, 82.
+Then 54 + 82 = 136. Left: 136.
+Then 136 - 39 = 97.
+Check: 39 is not one of the numbers left (only 136 is).
+That doesn't work. Back up. Tried: 91 - 54 = 37; 54 - 52 = 2; 91 - 61 = 30.
+Try 54 - 52 = 2. Left: 61, 91, 2.
+Then 61 + 2 = 63. Left: 91, 63.
+Then 91 + 63 = 97.
+Check: 91 + 63 = 154, not 97.
+That doesn't work. Back up. Tried: 91 - 54 = 37; 54 - 52 = 2; 91 - 61 = 30; 54 - 52 = 2.
+Try 54 - 52 = 2. Left: 61, 91, 2.
+Then 61 + 2 = 63. Left: 91, 63.
+Then 91 + 63 = 97.
+Check: 91 + 63 = 154, not 97.
+That doesn't work. Back up. Tried: 91 - 54 = 37; 54 - 52 = 2; 91 - 61 = 30; 54 - 52 = 2; 61 + 2 = 63.
+Try 54 - 52 = 2. Left: 61, 91, 2.
+Then 61 + 2 = 63. Left: 91, 63.
+Then 91 + 63 = 97.
+Check: 91 + 63 = 154, not 97.
+That doesn't work. Back up. Tried: 91 - 54 = 37; 54 - 52 = 2; 91 - 61 = 30; 54 - 52 = 2; 61 + 2 = 63; 54 - 52 = 2; 61 + 2 = 63; 91 + 63 = 154.
+Try 54 - 52 = 2. Left: 61, 91, 2.
+Then 61 + 2 = 63. Left: 91, 63.
+Then 91 + 63 = 97.
+Then 97 - 90 = 97.
+Check: 90 is not one of the numbers left (only 97 is).
+That doesn't work. Back up. Tried: 91 - 54 = 37; 54 - 52 = 2; 91 - 61 = 30; 54 - 52 = 2; 61 + 2 = 63; 54 - 52 = 2; 61 + 2 = 63; 91 + 63 = 154; 54 - 52 = 2; 61 + 2 = 63; 91 + 63 = 154; 54 - 52 = 2; 61 + 2 = 63; 91 + 63 = 154.
+Try 54 - 52 = 2. Left: 61, 91, 2.
+Then 91 - 61 = 30. Left: 2, 30.
+Then 2 * 30 = 97.
+Check: 2 * 30 = 60, not 97.
+That doesn't work. Back up. Tried: 91 - 54 = 37; 54 - 52 = 2; 91 - 61 = 30; 54 - 52 = 2; 61 + 2 = 63; 54 - 52 = 2; ",1024,True,False,,False,no answer (truncated),,,,,
+4023,"[19, 60, 8, 38]",15,"<reasoning>
+Numbers: 19, 60, 8, 38. Target: 15.
+Try 60 - 8 = 52. Left: 19, 38, 52.
+Then 52 - 19 = 33. Left: 38, 33.
+Check the ways to combine 38 and 33: 38 + 33 = 71, 38 * 33 = 1254, 38 - 33 = 5. None gives 15.
+That doesn't work. Back up. Tried: 60 - 8 = 52.
+Try 19 + 8 = 27. Left: 60, 38, 27.
+Then 60 - 38 = 22. Left: 27, 22.
+Closest: 27 - 22 = 5, off by 10.
+That doesn't work. Back up. Tried: 60 - 8 = 52; 19 + 8 = 27.
+Try 19 + 38 = 57. Left: 60, 8, 57.
+Then 60 - 8 = 52. Left: 57, 52.
+Then 57 - 52 = 5. Left: 5.
+Then 5 + 10 = 15.
+Check: 10 is not one of the numbers left (only 5 is).
+That doesn't work. Back up. Tried: 60 - 8 = 52; 19 + 8 = 27; 19 + 38 = 57.
+Try 19 + 38 = 57. Left: 60, 8, 57.
+Then 60 / 8 = 7.5. Left: 57, 7.5.
+Then 57 - 7.5 = 15.
+Check: 57 - 7.5 = 49.5, not 15.
+That doesn't work. Back up. Tried: 60 - 8 = 52; 19 + 8 = 27; 19 + 38 = 57; 19 + 38 = 57.
+Try 19 + 60 = 79. Left: 8, 38, 79.
+Then 8 + 38 = 46. Left: 79, 46.
+Then 79 - 46 = 15.
+Check: 79 - 46 = 33, not 15.
+That doesn't work. Back up. Tried: 60 - 8 = 52; 19 + 8 = 27; 19 + 38 = 57; 19 + 60 = 79.
+Try 19 - 8 = 11. Left: 60, 38, 11.
+Then 60 - 38 = 22. Left: 11, 22.
+Then 22 - 11 = 15.
+Check: 22 - 11 = 11, not 15.
+That doesn't work. Back up. Tried: 60 - 8 = 52; 19 + 8 = 27; 19 + 38 = 57; 19 + 60 = 79; 19 - 8 = 11.
+Try 19 + 38 = 57. Left: 60, 8, 57.
+Then 60 - 8 = 52. Left: 57, 52.
+Then 57 - 52 = 15. Left: 15.
+That reaches 15.
+Check: (19 + 38) - (60 - 8) uses 8, 19, 38, 60 once each and equals 15.
+</reasoning>
+<solution>
+19 + 38 = 57
+60 - 8 = 52
+57 - 52 = 15
+</solution>
+<answer>
+(19 + 38) - (60 - 8)
+</answer>",823,False,True,(19 + 38) - (60 - 8),False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4024,"[63, 4, 27, 19]",61,"<reasoning>
+Numbers: 63, 4, 27, 19. Target: 61.
+Try 63 - 4 = 59. Left: 27, 19, 59.
+Then 59 + 19 = 78. Left: 27, 78.
+Then 78 - 27 = 61.
+Check: 78 - 27 = 51, not 61.
+That doesn't work. Back up. Tried: 63 - 4 = 59.
+Try 63 - 19 = 44. Left: 4, 27, 44.
+Then 44 - 4 = 40. Left: 27, 40.
+Then 27 + 40 = 61.
+Check: 27 + 40 = 67, not 61.
+That doesn't work. Back up. Tried: 63 - 4 = 59; 63 - 19 = 44.
+Try 63 - 27 = 36. Left: 4, 19, 36.
+Then 4 * 36 = 144. Left: 19, 144.
+Then 144 - 19 = 61.
+Check: 144 - 19 = 125, not 61.
+That doesn't work. Back up. Tried: 63 - 4 = 59; 63 - 19 = 44; 63 - 27 = 36.
+Try 63 - 27 = 36. Left: 4, 19, 36.
+Then 4 * 36 = 144. Left: 19, 144.
+Then 144 - 19 = 61.
+Check: 144 - 19 = 125, not 61.
+That doesn't work. Back up. Tried: 63 - 4 = 59; 63 - 19 = 44; 63 - 27 = 36; 63 - 27 = 36.
+Try 63 - 19 = 44. Left: 4, 27, 44.
+Then 4 * 44 = 176. Left: 27, 176.
+Then 176 - 27 = 61.
+Check: 176 - 27 = 149, not 61.
+That doesn't work. Back up. Tried: 63 - 4 = 59; 63 - 19 = 44; 63 - 27 = 36; 63 - 27 = 36.
+Try 63 - 4 = 59. Left: 27, 19, 59.
+Then 27 + 19 = 46. Left: 59, 46.
+Then 59 + 46 = 61.
+Check: 59 + 46 = 105, not 61.
+That doesn't work. Back up. Tried: 63 - 4 = 59; 63 - 19 = 44; 63 - 27 = 36; 63 - 27 = 36; 63 - 4 = 59; 27 + 19 = 46.
+Try 63 - 27 = 36. Left: 4, 19, 36.
+Then 4 * 36 = 144. Left: 19, 144.
+Then 144 / 19 = 61. Left: 61.
+That reaches 61.
+Check: (4 * (63 - 27)) / 19 uses 4, 19, 27, 63 once each and equals 61.
+</reasoning>
+<solution>
+63 - 27 = 36
+4 * 36 = 144
+144 / 19 = 61
+</solution>
+<answer>
+(4 * (63 - 27)) / 19
+</answer>",793,False,True,(4 * (63 - 27)) / 19,False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4025,"[7, 65, 71, 40]",27,"<reasoning>
+Numbers: 7, 65, 71, 40. Target: 27.
+Try 71 - 40 = 31. Left: 7, 65, 31.
+Then 65 - 7 = 58. Left: 31, 58.
+Check the ways to combine 31 and 58: 31 + 58 = 89, 31 * 58 = 1798, 58 - 31 = 27. Only 58 - 31 = 27.
+Check: 58 - 31 = 27, which is correct.
+Check the ways to combine 7, 65, 71, 40: 7 + 65 = 72, 7 * 65 = 455, 71 - 40 = 31, 71 + 40 = 111, 65 - 40 = 25. None gives 27.
+That doesn't work. Back up. Tried: 71 - 40 = 31.
+Try 65 - 40 = 25. Left: 7, 71, 25.
+Then 71 - 7 = 64. Left: 25, 64.
+Then 64 - 25 = 39. Left: 39.
+Then 39 - 12 = 27.
+Check: 12 is not one of the numbers left (only 39 is).
+That doesn't work. Back up. Tried: 71 - 40 = 31; 65 - 40 = 25.
+Try 65 - 7 = 58. Left: 71, 40, 58.
+Then 71 - 40 = 31. Left: 58, 31.
+Then 58 - 31 = 27. Left: 27.
+That reaches 27.
+Check: (65 - 7) - (71 - 40) uses 7, 40, 65, 71 once each and equals 27.
+</reasoning>
+<solution>
+65 - 7 = 58
+71 - 40 = 31
+58 - 31 = 27
+</solution>
+<answer>
+(65 - 7) - (71 - 40)
+</answer>",468,False,True,(65 - 7) - (71 - 40),True,correct,1.0,0.0,1.0,1.0,1.0
+4026,"[88, 9, 81, 12]",28,"<reasoning>
+Numbers: 88, 9, 81, 12. Target: 28.
+Try 81 * 12 = 972. Left: 88, 9, 972.
+Then 972 - 88 = 884. Left: 9, 884.
+Check the ways to combine 9 and 884: 9 + 884 = 893, 9 * 884 = 7956, 884 - 9 = 875. None gives 28.
+That doesn't work. Back up. Tried: 81 * 12 = 972.
+Try 81 - 9 = 72. Left: 88, 12, 72.
+Then 88 - 72 = 16. Left: 12, 16.
+Check the ways to combine 12 and 16: 12 + 16 = 28, 12 * 16 = 192, 16 - 12 = 4. Only 12 + 16 = 28.
+That reaches 28.
+Check: 12 + (88 - (81 - 9)) uses 9, 12, 81, 88 once each and equals 28.
+</reasoning>
+<solution>
+81 - 9 = 72
+88 - 72 = 16
+12 + 16 = 28
+</solution>
+<answer>
+12 + (88 - (81 - 9))
+</answer>",302,False,True,12 + (88 - (81 - 9)),True,correct,1.0,0.0,1.0,1.0,1.0
+4027,"[31, 75, 78, 53]",81,"<reasoning>
+Numbers: 31, 75, 78, 53. Target: 81.
+Try 78 - 53 = 25. Left: 31, 75, 25.
+Then 75 + 25 = 100. Left: 31, 100.
+Check the ways to combine 31 and 100: 31 + 100 = 131, 31 * 100 = 3100, 100 - 31 = 69. None gives 81.
+That doesn't work. Back up. Tried: 78 - 53 = 25.
+Try 78 - 31 = 47. Left: 75, 53, 47.
+Then 75 + 47 = 122. Left: 53, 122.
+Check the ways to combine 53 and 122: 53 + 122 = 175, 53 * 122 = 6466, 122 - 53 = 69. None gives 81.
+That doesn't work. Back up. Tried: 78 - 53 = 25; 78 - 31 = 47.
+Try 78 - 75 = 3. Left: 31, 53, 3.
+Then 53 + 3 = 56. Left: 31, 56.
+Then 31 + 56 = 87. Left: 87.
+Then 87 - 6 = 81.
+Check: 6 is not one of the numbers left (only 87 is).
+That doesn't work. Back up. Tried: 78 - 53 = 25; 78 - 31 = 47; 78 - 75 = 3.
+Try 78 - 53 = 25. Left: 31, 75, 25.
+Then 75 - 25 = 50. Left: 31, 50.
+Then 31 + 50 = 81. Left: 81.
+That reaches 81.
+Check: 31 + (75 - (78 - 53)) uses 31, 53, 75, 78 once each and equals 81.
+</reasoning>
+<solution>
+78 - 53 = 25
+75 - 25 = 50
+31 + 50 = 81
+</solution>
+<answer>
+31 + (75 - (78 - 53))
+</answer>",498,False,True,31 + (75 - (78 - 53)),True,correct,1.0,0.0,1.0,1.0,1.0
+4028,"[71, 32, 12, 56]",59,"<reasoning>
+Numbers: 71, 32, 12, 56. Target: 59.
+Try 71 - 32 = 39. Left: 12, 56, 39.
+Then 56 + 39 = 95. Left: 12, 95.
+Check the ways to combine 12 and 95: 12 + 95 = 107, 12 * 95 = 1140, 95 - 12 = 83. None gives 59.
+That doesn't work. Back up. Tried: 71 - 32 = 39.
+Try 71 - 56 = 15. Left: 32, 12, 15.
+Then 32 + 15 = 47. Left: 12, 47.
+Then 12 + 47 = 59. Left: 59.
+That reaches 59.
+Check: 12 + (32 + (71 - 56)) uses 12, 32, 56, 71 once each and equals 59.
+</reasoning>
+<solution>
+71 - 56 = 15
+32 + 15 = 47
+12 + 47 = 59
+</solution>
+<answer>
+12 + (32 + (71 - 56))
+</answer>",269,False,True,12 + (32 + (71 - 56)),True,correct,1.0,0.0,1.0,1.0,1.0
+4029,"[99, 12, 22, 63]",70,"<reasoning>
+Numbers: 99, 12, 22, 63. Target: 70.
+Try 99 - 63 = 36. Left: 12, 22, 36.
+Then 36 + 22 = 58. Left: 12, 58.
+Closest: 12 + 58 = 70.
+Check: 12 + 58 = 70, correct.
+Check the ways to combine 12 and 58: 12 + 58 = 70, 12 * 58 = 696, 58 - 12 = 46. None gives 70.
+That doesn't work. Back up. Tried: 99 - 63 = 36.
+Try 99 - 22 = 77. Left: 12, 63, 77.
+Then 77 - 63 = 14. Left: 12, 14.
+Then 12 + 14 = 70.
+Check: 12 + 14 = 26, not 70.
+That doesn't work. Back up. Tried: 99 - 63 = 36; 99 - 22 = 77.
+Try 99 - 12 = 87. Left: 22, 63, 87.
+Then 87 - 63 = 24. Left: 22, 24.
+Then 22 + 24 = 70.
+Check: 22 + 24 = 46, not 70.
+That doesn't work. Back up. Tried: 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87.
+Try 99 - 22 = 77. Left: 12, 63, 77.
+Then 63 - 12 = 51. Left: 77, 51.
+Then 77 - 51 = 70.
+Check: 77 - 51 = 26, not 70.
+That doesn't work. Back up. Tried: 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 22 = 77.
+Try 99 - 63 = 36. Left: 12, 22, 36.
+Then 36 / 12 = 3. Left: 22, 3.
+Then 22 + 3 = 70.
+Check: 22 + 3 = 25, not 70.
+That doesn't work. Back up. Tried: 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 63 = 36; 99 - 63 = 36.
+Try 99 - 12 = 87. Left: 22, 63, 87.
+Then 22 + 63 = 85. Left: 87, 85.
+Then 87 - 85 = 70.
+Check: 87 - 85 = 2, not 70.
+That doesn't work. Back up. Tried: 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 12 = 87; 99 - 63 = 36.
+Try 99 - 22 = 77. Left: 12, 63, 77.
+Then 63 - 12 = 51. Left: 77, 51.
+Then 77 - 51 = 70.
+Check: 77 - 51 = 26, not 70.
+That doesn't work. Back up. Tried: 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 63 = 36; 99 - 22 = 77; 99 - 12 = 87; 99 - 63 = 36; 99 - 22 = 77",1024,True,False,,False,no answer (truncated),,,,,
+4030,"[38, 79, 53, 88]",76,"<reasoning>
+Numbers: 38, 79, 53, 88. Target: 76.
+Try 88 - 53 = 35. Left: 38, 79, 35.
+Then 79 - 35 = 44. Left: 38, 44.
+Closest: 38 + 44 = 82, off by 6.
+That doesn't work. Back up. Tried: 88 - 53 = 35.
+Try 79 - 38 = 41. Left: 53, 88, 41.
+Then 88 - 53 = 35. Left: 41, 35.
+Check the ways to combine 41 and 35: 41 + 35 = 76, 41 * 35 = 1435, 41 - 35 = 6. Only 41 + 35 = 76.
+Check: 41 + (88 - 53) uses 38, 53, 79, 88 once each and equals 76.
+</reasoning>
+<solution>
+79 - 38 = 41
+88 - 53 = 35
+41 + 35 = 76
+</solution>
+<answer>
+88 - 53
+79 - 38
+</answer>",267,False,True,"88 - 53
+79 - 38",False,not an expression,,,1.0,1.0,
+4031,"[62, 9, 22, 36]",38,"<reasoning>
+Numbers: 62, 9, 22, 36. Target: 38.
+Try 36 * 9 = 324. Left: 62, 22, 324.
+Then 62 - 22 = 40. Left: 324, 40.
+Closest: 324 - 40 = 284, off by 246.
+That doesn't work. Back up. Tried: 36 * 9 = 324.
+Try 36 - 22 = 14. Left: 62, 9, 14.
+Then 9 + 14 = 23. Left: 62, 23.
+Then 62 - 23 = 38.
+Check: 62 - 23 = 39, not 38.
+That doesn't work. Back up. Tried: 36 * 9 = 324; 36 - 22 = 14.
+Try 36 - 9 = 27. Left: 62, 22, 27.
+Then 62 - 22 = 40. Left: 27, 40.
+Then 40 - 27 = 38.
+Check: 40 - 27 = 13, not 38.
+That doesn't work. Back up. Tried: 36 * 9 = 324; 36 - 22 = 14; 36 - 9 = 27.
+Try 62 - 36 = 26. Left: 9, 22, 26.
+Then 9 + 22 = 31. Left: 26, 31.
+Then 26 + 31 = 38.
+Check: 26 + 31 = 57, not 38.
+That doesn't work. Back up. Tried: 36 * 9 = 324; 36 - 22 = 14; 36 - 9 = 27; 62 - 36 = 26.
+Try 62 - 22 = 40. Left: 9, 36, 40.
+Then 9 + 36 = 45. Left: 40, 45.
+Then 45 - 40 = 38.
+Check: 45 - 40 = 5, not 38.
+That doesn't work. Back up. Tried: 36 * 9 = 324; 36 - 22 = 14; 36 - 9 = 27; 62 - 36 = 26; 62 - 22 = 40.
+Try 36 - 9 = 27. Left: 62, 22, 27.
+Then 62 - 22 = 40. Left: 27, 40.
+Then 40 - 27 = 38.
+Check: 40 - 27 = 13, not 38.
+That doesn't work. Back up. Tried: 36 * 9 = 324; 36 - 22 = 14; 36 - 9 = 27; 62 - 36 = 26; 62 - 22 = 40; 36 - 9 = 27.
+Try 62 - 36 = 26. Left: 9, 22, 26.
+Then 9 + 22 = 31. Left: 26, 31.
+Then 26 + 31 = 38.
+Check: 26 + 31 = 57, not 38.
+That doesn't work. Back up. Tried: 36 * 9 = 324; 36 - 22 = 14; 36 - 9 = 27; 62 - 36 = 26; 62 - 22 = 40; 36 - 9 = 27; 36 - 22 = 14.
+Try 36 - 22 = 14. Left: 62, 9, 14.
+Then 9 + 14 = 23. Left: 62, 23.
+Then 62 - 23 = 38.
+Check: 62 - 23 = 39, not 38.
+That doesn't work. Back up. Tried: 36 * 9 = 324; 36 - 22 = 14; 36 - 9 = 27; 62 - 36 = 26; 62 - 22 = 40; 36 - 9 = 27; 36 - 22 = 14; 62 - 36 = 26.
+Try 36 - 9 = 27. Left: 62, 22, 27.
+Then 22 + 27 = 49. Left: 62, 49.
+Then 62 - 49 = 38.
+Check: 62 - 49 = 13, not 38.
+That doesn't work. Back up. Tried: 36 * 9 = 324; 36 - 22 = 14; ",1024,True,False,,False,no answer (truncated),,,,,
+4032,"[46, 39, 95, 9]",93,"<reasoning>
+Numbers: 46, 39, 95, 9. Target: 93.
+Try 46 * 9 = 414. Left: 39, 95, 414.
+Then 414 - 39 = 375. Left: 95, 375.
+Check the ways to combine 95 and 375: 95 + 375 = 470, 95 * 375 = 35775, 375 - 95 = 280. None gives 93.
+That doesn't work. Back up. Tried: 46 * 9 = 414.
+Try 46 - 9 = 37. Left: 39, 95, 37.
+Then 95 - 37 = 58. Left: 39, 58.
+Check the ways to combine 39 and 58: 39 + 58 = 97, 39 * 58 = 2262, 58 - 39 = 19. None gives 93.
+That doesn't work. Back up. Tried: 46 * 9 = 414; 46 - 9 = 37.
+Try 46 - 39 = 7. Left: 95, 9, 7.
+Then 95 - 9 = 86. Left: 7, 86.
+Then 7 + 86 = 93. Left: 93.
+That reaches 93.
+Check: (46 - 39) + (95 - 9) uses 9, 39, 46, 95 once each and equals 93.
+</reasoning>
+<solution>
+46 - 39 = 7
+95 - 9 = 86
+7 + 86 = 93
+</solution>
+<answer>
+(46 - 39) + (95 - 9)
+</answer>",383,False,True,(46 - 39) + (95 - 9),True,correct,1.0,0.0,1.0,1.0,1.0
+4033,"[6, 61, 11, 45]",33,"<reasoning>
+Numbers: 6, 61, 11, 45. Target: 33.
+Try 11 * 45 = 495. Left: 6, 61, 495.
+Then 495 - 61 = 434. Left: 6, 434.
+Check the ways to combine 6 and 434: 6 + 434 = 440, 6 * 434 = 2616, 434 - 6 = 428. None gives 33.
+That doesn't work. Back up. Tried: 11 * 45 = 495.
+Try 11 + 45 = 56. Left: 6, 61, 56.
+Then 56 - 6 = 50. Left: 61, 50.
+Check the ways to combine 61 and 50: 61 + 50 = 111, 61 * 50 = 3050, 61 - 50 = 11. None gives 33.
+That doesn't work. Back up. Tried: 11 * 45 = 495; 11 + 45 = 56.
+Try 11 + 6 = 17. Left: 61, 45, 17.
+Then 45 - 17 = 28. Left: 61, 28.
+Then 61 - 28 = 33. Left: 33.
+That reaches 33.
+Check: 61 - (45 - (11 + 6)) uses 6, 11, 45, 61 once each and equals 33.
+</reasoning>
+<solution>
+11 + 6 = 17
+45 - 17 = 28
+61 - 28 = 33
+</solution>
+<answer>
+61 - (45 - (11 + 6))
+</answer>",380,False,True,61 - (45 - (11 + 6)),True,correct,1.0,0.0,1.0,1.0,1.0
+4034,"[37, 40, 28, 48]",12,"<reasoning>
+Numbers: 37, 40, 28, 48. Target: 12.
+Try 40 - 28 = 12. Left: 37, 48, 12.
+Then 48 - 37 = 11. Left: 12, 11.
+Check the ways to combine 12 and 11: 12 + 11 = 23, 12 * 11 = 132, 12 - 11 = 1. None gives 12.
+That doesn't work. Back up. Tried: 40 - 28 = 12.
+Try 40 - 37 = 3. Left: 28, 48, 3.
+Then 48 / 3 = 16. Left: 28, 16.
+Then 28 - 16 = 12. Left: 12.
+That reaches 12.
+Check: 28 - (48 / (40 - 37)) uses 28, 37, 40, 48 once each and equals 12.
+</reasoning>
+<solution>
+40 - 37 = 3
+48 / 3 = 16
+28 - 16 = 12
+</solution>
+<answer>
+28 - (48 / (40 - 37))
+</answer>",268,False,True,28 - (48 / (40 - 37)),True,correct,1.0,0.0,1.0,1.0,1.0
+4035,"[80, 31, 17, 34]",29,"<reasoning>
+Numbers: 80, 31, 17, 34. Target: 29.
+Try 80 - 31 = 49. Left: 17, 34, 49.
+Then 49 - 17 = 32. Left: 34, 32.
+Check the ways to combine 34 and 32: 34 + 32 = 66, 34 * 32 = 1088, 34 - 32 = 2. None gives 29.
+That doesn't work. Back up. Tried: 80 - 31 = 49.
+Try 80 - 34 = 46. Left: 31, 17, 46.
+Then 46 - 17 = 29. Left: 31, 29.
+Check the ways to combine 31 and 29: 31 + 29 = 60, 31 * 29 = 899, 31 - 29 = 2. None gives 29.
+That doesn't work. Back up. Tried: 80 - 31 = 49; 80 - 34 = 46.
+Try 80 - 17 = 63. Left: 31, 34, 63.
+Then 63 - 31 = 32. Left: 34, 32.
+Check the ways to combine 34 and 32: 34 + 32 = 66, 34 * 32 = 1088, 34 - 32 = 2. None gives 29.
+That doesn't work. Back up. Tried: 80 - 31 = 49; 80 - 34 = 46; 80 - 17 = 63.
+Try 80 - 34 = 46. Left: 31, 17, 46.
+Then 31 - 17 = 14. Left: 46, 14.
+Then 46 - 14 = 32. Left: 32.
+Then 32 - 3 = 29.
+Check: 3 is not one of the numbers left (only 32 is).
+That doesn't work. Back up. Tried: 80 - 31 = 49; 80 - 34 = 46; 80 - 17 = 63; 80 - 34 = 46.
+Try 80 - 17 = 63. Left: 31, 34, 63.
+Then 31 + 34 = 65. Left: 63, 65.
+Then 65 - 63 = 2. Left: 2.
+Then 2 + 27 = 29.
+Check: 27 is not one of the numbers left (only 2 is).
+That doesn't work. Back up. Tried: 80 - 31 = 49; 80 - 34 = 46; 80 - 17 = 63; 80 - 34 = 46; 31 + 34 = 65; 80 - 17 = 63.
+Try 80 - 31 = 49. Left: 17, 34, 49.
+Then 17 + 34 = 51. Left: 49, 51.
+Then 51 - 49 = 2. Left: 2.
+Then 2 + 27 = 29.
+Check: 27 is not one of the numbers left (only 2 is).
+That doesn't work. Back up. Tried: 80 - 31 = 49; 80 - 34 = 46; 80 - 17 = 63; 80 - 34 = 46; 31 + 34 = 65; 80 - 17 = 63; 80 - 31 = 49.
+Try 80 - 34 = 46. Left: 31, 17, 46.
+Then 31 + 17 = 48. Left: 46, 48.
+Then 48 - 46 = 2. Left: 2.
+Then 2 + 27 = 29.
+Check: 27 is not one of the numbers left (only 2 is).
+That doesn't work. Back up. Tried: 80 - 31 = 49; 80 - 34 = 46; 80 - 17 = 63; 80 - 34 = 46; 31 + 34 = 65; 80 - 17 = 63; 80 - 31 = 49; 80 - 34 = 46.
+Try 80 - 17 = 63. Left: 31, 34, 63.
+Then 31 + 34 = 65. Left: 63, 65.
+Then 63 - 65 = 29. Left: 29.
+That reaches 29.
+Check: (80 - 17) - (31 + 34) uses 17, 31",1024,True,False,,False,no answer (truncated),,,,,
+4036,"[12, 66, 9, 6]",34,"<reasoning>
+Numbers: 12, 66, 9, 6. Target: 34.
+Try 9 + 66 = 75. Left: 12, 6, 75.
+Then 75 - 6 = 69. Left: 12, 69.
+Closest: 69 - 12 = 57, off by 23.
+That doesn't work. Back up. Tried: 9 + 66 = 75.
+Try 12 + 9 = 21. Left: 66, 6, 21.
+Then 66 - 21 = 45. Left: 6, 45.
+Then 45 - 6 = 39. Left: 39.
+Then 39 - 5 = 34.
+Check: 5 is not one of the numbers left (only 39 is).
+That doesn't work. Back up. Tried: 9 + 66 = 75; 12 + 9 = 21.
+Try 66 - 12 = 54. Left: 9, 6, 54.
+Then 54 / 6 = 9. Left: 9, 9.
+Then 9 + 9 = 18. Left: 18.
+Then 18 + 16 = 34.
+Check: 16 is not one of the numbers left (only 18 is).
+That doesn't work. Back up. Tried: 9 + 66 = 75; 12 + 9 = 21; 66 - 12 = 54.
+Try 66 - 6 = 60. Left: 12, 9, 60.
+Then 60 / 12 = 5. Left: 9, 5.
+Then 9 * 5 = 45. Left: 45.
+Then 45 - 11 = 34. Left: 34.
+Check: 11 is not one of the numbers left (only 45 is).
+That doesn't work. Back up. Tried: 9 + 66 = 75; 12 + 9 = 21; 66 - 12 = 54; 66 - 6 = 60.
+Try 66 - 9 = 57. Left: 12, 6, 57.
+Then 12 + 6 = 18. Left: 57, 18.
+Then 57 - 18 = 39. Left: 39.
+Then 39 - 5 = 34. Left: 34.
+That reaches 34.
+Check: (66 - 9) - (12 + 6) uses 6, 9, 12, 66 once each and equals 34.
+</reasoning>
+<solution>
+66 - 9 = 57
+12 + 6 = 18
+57 - 18 = 39
+39 - 5 = 34
+</solution>
+<answer>
+(66 - 9) - (12 + 6)
+</answer>",627,False,True,(66 - 9) - (12 + 6),False,"right numbers, wrong value",1.0,0.0,1.0,1.0,0.0
+4037,"[80, 98, 63, 86]",41,"<reasoning>
+Numbers: 80, 98, 63, 86. Target: 41.
+Try 98 - 80 = 18. Left: 63, 86, 18.
+Then 86 - 63 = 23. Left: 18, 23.
+Closest: 18 + 23 = 41.
+Check: 18 + 23 = 41, correct.
+Check the ways to combine 18 and 23: 18 + 23 = 41, 18 * 23 = 414, 23 - 18 = 5. None gives 41.
+That doesn't work. Back up. Tried: 98 - 80 = 18.
+Try 98 - 86 = 12. Left: 80, 63, 12.
+Then 80 - 63 = 17. Left: 12, 17.
+Then 12 + 17 = 41.
+Check: 12 + 17 = 29, not 41.
+That doesn't work. Back up. Tried: 98 - 80 = 18; 98 - 86 = 12.
+Try 98 - 63 = 35. Left: 80, 86, 35.
+Then 86 - 80 = 6. Left: 35, 6.
+Then 35 + 6 = 41. Left: 41.
+That reaches 41.
+Check: (98 - 63) + (86 - 80) uses 63, 80, 86, 98 once each and equals 41.
+</reasoning>
+<solution>
+98 - 63 = 35
+86 - 80 = 6
+35 + 6 = 41
+</solution>
+<answer>
+(98 - 63) + (86 - 80)
+</answer>",388,False,True,(98 - 63) + (86 - 80),True,correct,1.0,0.0,1.0,1.0,1.0
+4038,"[57, 45, 76, 94]",84,"<reasoning>
+Numbers: 57, 45, 76, 94. Target: 84.
+Try 76 - 57 = 19. Left: 45, 94, 19.
+Then 45 + 19 = 64. Left: 94, 64.
+Check the ways to combine 94 and 64: 94 + 64 = 158, 94 * 64 = 6016, 94 - 64 = 30. None gives 84.
+That doesn't work. Back up. Tried: 76 - 57 = 19.
+Try 76 - 45 = 31. Left: 57, 94, 31.
+Then 94 - 31 = 63. Left: 57, 63.
+Closest: 57 + 63 = 120, off by 36.
+That doesn't work. Back up. Tried: 76 - 57 = 19; 76 - 45 = 31.
+Try 94 - 76 = 18. Left: 57, 45, 18.
+Then 45 + 18 = 63. Left: 57, 63.
+Then 57 + 63 = 120. Left: 120.
+Then 120 - 36 = 84.
+Check: 36 is not one of the numbers left (only 120 is).
+That doesn't work. Back up. Tried: 76 - 57 = 19; 76 - 45 = 31; 94 - 76 = 18.
+Try 94 - 57 = 37. Left: 45, 76, 37.
+Then 76 - 45 = 31. Left: 37, 31.
+Then 37 + 31 = 84.
+Check: 37 + 31 = 68, not 84.
+That doesn't work. Back up. Tried: 76 - 57 = 19; 76 - 45 = 31; 94 - 76 = 18; 94 - 57 = 37.
+Try 76 - 45 = 31. Left: 57, 94, 31.
+Then 57 + 31 = 88. Left: 94, 88.
+Then 94 - 88 = 84.
+Check: 94 - 88 = 6, not 84.
+That doesn't work. Back up. Tried: 76 - 57 = 19; 76 - 45 = 31; 94 - 76 = 18; 94 - 57 = 37; 76 - 45 = 31.
+Try 94 - 76 = 18. Left: 57, 45, 18.
+Then 57 + 18 = 75. Left: 45, 75.
+Then 45 + 75 = 84.
+Check: 45 + 75 = 120, not 84.
+That doesn't work. Back up. Tried: 76 - 57 = 19; 76 - 45 = 31; 94 - 76 = 18; 94 - 57 = 37; 76 - 45 = 31; 94 - 57 = 37.
+Try 94 - 45 = 49. Left: 57, 76, 49.
+Then 76 - 49 = 27. Left: 57, 27.
+Then 57 + 27 = 84. Left: 84.
+That reaches 84.
+Check: 57 + (76 - (94 - 45)) uses 45, 57, 76, 94 once each and equals 84.
+</reasoning>
+<solution>
+94 - 45 = 49
+76 - 49 = 27
+57 + 27 = 84
+</solution>
+<answer>
+57 + (76 - (94 - 45))
+</answer>",828,False,True,57 + (76 - (94 - 45)),True,correct,1.0,0.0,1.0,1.0,1.0
+4039,"[99, 76, 63, 16]",70,"<reasoning>
+Numbers: 99, 76, 63, 16. Target: 70.
+Try 63 * 16 = 1008. Left: 99, 76, 1008.
+Then 1008 - 76 = 932. Left: 99, 932.
+Check the ways to combine 99 and 932: 99 + 932 = 1031, 99 * 932 = 92528, 932 - 99 = 833. None gives 70.
+That doesn't work. Back up. Tried: 63 * 16 = 1008.
+Try 76 - 63 = 13. Left: 99, 16, 13.
+Then 16 + 13 = 29. Left: 99, 29.
+Then 99 - 29 = 70. Left: 70.
+That reaches 70.
+Check: 99 - (16 + (76 - 63)) uses 16, 63, 76, 99 once each and equals 70.
+</reasoning>
+<solution>
+76 - 63 = 13
+16 + 13 = 29
+99 - 29 = 70
+</solution>
+<answer>
+99 - (16 + (76 - 63))
+</answer>",274,False,True,99 - (16 + (76 - 63)),True,correct,1.0,0.0,1.0,1.0,1.0
+4040,"[3, 14, 9, 87]",79,"<reasoning>
+Numbers: 3, 14, 9, 87. Target: 79.
+Try 14 * 3 = 42. Left: 9, 87, 42.
+Then 87 - 42 = 45. Left: 9, 45.
+Closest: 9 + 45 = 54, off by 25.
+That doesn't work. Back up. Tried: 14 * 3 = 42.
+Try 9 + 3 = 12. Left: 14, 87, 12.
+Then 87 - 12 = 75. Left: 14, 75.
+Check the ways to combine 14 and 75: 14 + 75 = 89, 14 * 75 = 1050, 75 - 14 = 61. None gives 79.
+That doesn't work. Back up. Tried: 14 * 3 = 42; 9 + 3 = 12.
+Try 9 + 87 = 96. Left: 3, 14, 96.
+Then 96 / 3 = 32. Left: 14, 32.
+Then 14 + 32 = 46. Left: 46.
+Then 46 + 33 = 79.
+Check: 33 is not one of the numbers left (only 46 is).
+That doesn't work. Back up. Tried: 14 * 3 = 42; 9 + 3 = 12; 9 + 87 = 96.
+Try 14 - 3 = 11. Left: 9, 87, 11.
+Then 87 - 11 = 76. Left: 9, 76.
+Then 9 + 76 = 85. Left: 85.
+Then 85 - 6 = 79.
+Check: 6 is not one of the numbers left (only 85 is).
+That doesn't work. Back up. Tried: 14 * 3 = 42; 9 + 3 = 12; 9 + 87 = 96; 14 - 3 = 11.
+Try 14 - 9 = 5. Left: 3, 87, 5.
+Then 87 / 3 = 29. Left: 5, 29.
+Then 5 + 29 = 34. Left: 34.
+Then 34 + 45 = 79.
+Check: 45 is not one of the numbers left (only 34 is).
+That doesn't work. Back up. Tried: 14 * 3 = 42; 9 + 3 = 12; 9 + 87 = 96; 14 - 3 = 11; 14 - 9 = 5.
+Try 14 - 9 = 5. Left: 3, 87, 5.
+Then 3 * 5 = 15. Left: 87, 15.
+Then 87 - 15 = 79.
+Check: 87 - 15 = 72, not 79.
+That doesn't work. Back up. Tried: 14 * 3 = 42; 9 + 3 = 12; 9 + 87 = 96; 14 - 3 = 11; 14 - 9 = 5; 14 - 9 = 5.
+Try 9 + 87 = 96. Left: 3, 14, 96.
+Then 14 / 3 = 4. Left: 96, 4.
+Then 96 - 4 = 79.
+Check: 96 - 4 = 92, not 79.
+That doesn't work. Back up. Tried: 14 * 3 = 42; 9 + 3 = 12; 9 + 87 = 96; 14 - 3 = 11; 14 - 9 = 5; 9 + 87 = 96; 14 / 3 = 4.
+Try 9 + 14 = 23. Left: 3, 87, 23.
+Then 87 - 3 = 84. Left: 23, 84.
+Then 84 - 23 = 79.
+Check: 87 - 3 = 84, not 84.
+That doesn't work. Back up. Tried: 14 * 3 = 42; 9 + 3 = 12; 9 + 87 = 96; 14 - 3 = 11; 14 - 9 = 5; 9 + 87 = 96; 14 / 3 = 4; 9 + 14 = 23.
+Try 9 + 87 = 96. Left: 3, 14, 96.
+Then ",1024,True,False,,False,no answer (truncated),,,,,
+4041,"[47, 62, 5, 44]",43,"<reasoning>
+Numbers: 47, 62, 5, 44. Target: 43.
+Try 44 * 5 = 220. Left: 47, 62, 220.
+Then 220 - 47 = 173. Left: 62, 173.
+Check the ways to combine 62 and 173: 62 + 173 = 235, 62 * 173 = 10766, 173 - 62 = 111. None gives 43.
+That doesn't work. Back up. Tried: 44 * 5 = 220.
+Try 47 - 44 = 3. Left: 62, 5, 3.
+Then 5 * 3 = 15. Left: 62, 15.
+Then 62 - 15 = 47. Left: 47.
+Then 47 - 4 = 43.
+Check: 4 is not one of the numbers left (only 47 is).
+That doesn't work. Back up. Tried: 44 * 5 = 220; 47 - 44 = 3.
+Try 47 - 5 = 42. Left: 62, 44, 42.
+Then 62 - 42 = 20. Left: 44, 20.
+Then 44 - 20 = 24. Left: 24.
+Then 24 + 19 = 43.
+Check: 19 is not one of the numbers left (only 24 is).
+That doesn't work. Back up. Tried: 44 * 5 = 220; 47 - 44 = 3; 47 - 5 = 42.
+Try 62 - 5 = 57. Left: 47, 44, 57.
+Then 57 - 44 = 13. Left: 47, 13.
+Then 47 - 13 = 43.
+Check: 47 - 13 = 34, not 43.
+That doesn't work. Back up. Tried: 44 * 5 = 220; 47 - 44 = 3; 47 - 5 = 42; 62 - 5 = 57.
+Try 62 - 47 = 15. Left: 5, 44, 15.
+Then 44 - 5 = 39. Left: 15, 39.
+Then 15 + 39 = 54. Left: 54.
+Then 54 - 11 = 43. Left: 11.
+Then 11 + 32 = 43. Left: 32.
+Then 32 + 11 = 43. Left: 43.
+That reaches 43.
+Check: (44 - 5) + (62 - 47) uses 5, 44, 47, 62 once each and equals 43.
+</reasoning>
+<solution>
+62 - 47 = 15
+44 - 5 = 39
+15 + 39 = 54
+54 - 11 = 43
+</solution>
+<answer>
+(44 - 5) + (62 - 47)
+</answer>",662,False,True,(44 - 5) + (62 - 47),False,"right numbers, wrong value",1.0,0.0,1.0,1.0,0.0
+4042,"[62, 49, 14, 43]",70,"<reasoning>
+Numbers: 62, 49, 14, 43. Target: 70.
+Try 49 + 14 = 63. Left: 62, 43, 63.
+Then 62 + 63 = 125. Left: 43, 125.
+Check the ways to combine 43 and 125: 43 + 125 = 168, 43 * 125 = 5375, 125 - 43 = 82. None gives 70.
+That doesn't work. Back up. Tried: 49 + 14 = 63.
+Try 49 - 14 = 35. Left: 62, 43, 35.
+Then 62 + 35 = 97. Left: 43, 97.
+Then 97 - 43 = 70.
+Check: 97 - 43 = 54, not 70.
+That doesn't work. Back up. Tried: 49 + 14 = 63; 49 - 14 = 35.
+Try 49 - 43 = 6. Left: 62, 14, 6.
+Then 14 * 6 = 84. Left: 62, 84.
+Then 84 - 62 = 70.
+Check: 84 - 62 = 22, not 70.
+That doesn't work. Back up. Tried: 49 + 14 = 63; 49 - 14 = 35; 49 - 43 = 6.
+Try 49 - 43 = 6. Left: 62, 14, 6.
+Then 14 * 6 = 84. Left: 62, 84.
+Then 84 - 62 = 70.
+Check: 84 - 62 = 22, not 70.
+That doesn't work. Back up. Tried: 49 + 14 = 63; 49 - 14 = 35; 49 - 43 = 6; 49 - 43 = 6.
+Try 49 - 14 = 35. Left: 62, 43, 35.
+Then 62 - 35 = 27. Left: 43, 27.
+Then 43 + 27 = 70. Left: 70.
+That reaches 70.
+Check: 43 + (62 - (49 - 14)) uses 14, 43, 49, 62 once each and equals 70.
+</reasoning>
+<solution>
+49 - 14 = 35
+62 - 35 = 27
+43 + 27 = 70
+</solution>
+<answer>
+43 + (62 - (49 - 14))
+</answer>",572,False,True,43 + (62 - (49 - 14)),True,correct,1.0,0.0,1.0,1.0,1.0
+4043,"[50, 33, 7, 66]",56,"<reasoning>
+Numbers: 50, 33, 7, 66. Target: 56.
+Try 50 * 7 = 350. Left: 33, 66, 350.
+Then 66 - 33 = 33. Left: 350, 33.
+Check the ways to combine 350 and 33: 350 + 33 = 383, 350 * 33 = 11550, 350 - 33 = 317. None gives 56.
+That doesn't work. Back up. Tried: 50 * 7 = 350.
+Try 50 - 7 = 43. Left: 33, 66, 43.
+Then 43 + 33 = 76. Left: 66, 76.
+Then 76 - 66 = 10. Left: 10.
+Then 10 + 46 = 56.
+Check: 46 is not one of the numbers left (only 10 is).
+That doesn't work. Back up. Tried: 50 * 7 = 350; 50 - 7 = 43.
+Try 50 - 33 = 17. Left: 7, 66, 17.
+Then 7 * 17 = 119. Left: 66, 119.
+Then 119 - 66 = 53. Left: 53.
+Then 53 + 3 = 56.
+Check: 3 is not one of the numbers left (only 53 is).
+That doesn't work. Back up. Tried: 50 * 7 = 350; 50 - 7 = 43; 50 - 33 = 17.
+Try 50 - 33 = 17. Left: 7, 66, 17.
+Then 7 * 17 = 119. Left: 66, 119.
+Then 119 - 66 = 53. Left: 53.
+Then 53 + 3 = 56.
+Check: 3 is not one of the numbers left (only 53 is).
+That doesn't work. Back up. Tried: 50 * 7 = 350; 50 - 7 = 43; 50 - 33 = 17; 50 - 33 = 17.
+Try 50 - 7 = 43. Left: 33, 66, 43.
+Then 66 - 33 = 33. Left: 43, 33.
+Then 43 + 33 = 76. Left: 76.
+Then 76 - 20 = 56. Left: 20.
+Then 20 + 36 = 56.
+Check: 36 is not one of the numbers left (only 20 is).
+That doesn't work. Back up. Tried: 50 * 7 = 350; 50 - 7 = 43; 50 - 33 = 17; 50 - 33 = 17; 50 - 7 = 43; 50 - 33 = 17.
+Try 50 - 33 = 17. Left: 7, 66, 17.
+Then 7 * 17 = 119. Left: 66, 119.
+Then 119 - 66 = 53. Left: 53.
+Then 53 + 3 = 56.
+Check the ways to combine 53 and 3: 53 + 3 = 56, 53 * 3 = 159, 53 - 3 = 50. None gives 56.
+That doesn't work. Back up. Tried: 50 * 7 = 350; 50 - 7 = 43; 50 - 33 = 17; 50 - 33 = 17; 50 - 7 = 43; 50 - 33 = 17; 50 - 7 = 43; 50 - 33 = 17.
+Try 50 - 7 = 43. Left: 33, 66, 43.
+Then 66 - 33 = 33. Left: 43, 33.
+Then 43 + 33 = 76. Left: 76.
+Then 76 - 20 = 56. Left: 20.
+Then 20 + 36 = 56.
+Check the ways to combine 20 and 36: 20 + 36 = 56, 20 * 36 = 720, 36 - 20 = 16. None gives 56.
+That doesn't work. Back up. Tried: 50 * 7 = 350; 50 - 7 = 43; 50 - 33 = 17; 50 - 33 = 17; 50 - 7 = 43; 50 - 33 = 17; 50 - 7 = 43; ",1024,True,False,,False,no answer (truncated),,,,,
+4044,"[12, 8, 42, 82]",86,"<reasoning>
+Numbers: 12, 8, 42, 82. Target: 86.
+Try 12 + 8 = 20. Left: 42, 82, 20.
+Then 42 + 20 = 62. Left: 82, 62.
+Check the ways to combine 82 and 62: 82 + 62 = 144, 82 * 62 = 5084, 82 - 62 = 20. None gives 86.
+That doesn't work. Back up. Tried: 12 + 8 = 20.
+Try 12 * 8 = 96. Left: 42, 82, 96.
+Then 96 - 42 = 54. Left: 82, 54.
+Closest: 82 + 54 = 136, off by 50.
+That doesn't work. Back up. Tried: 12 + 8 = 20; 12 * 8 = 96.
+Try 12 + 82 = 94. Left: 8, 42, 94.
+Then 94 - 8 = 86. Left: 42, 86.
+Check the ways to combine 42 and 86: 42 + 86 = 128, 42 * 86 = 3612, 86 - 42 = 44. None gives 86.
+That doesn't work. Back up. Tried: 12 + 8 = 20; 12 * 8 = 96; 12 + 82 = 94.
+Try 42 - 8 = 34. Left: 12, 82, 34.
+Then 34 + 12 = 46. Left: 82, 46.
+Then 82 + 46 = 128. Left: 128.
+Then 128 - 42 = 86.
+Check: 42 is not one of the numbers left (only 128 is).
+That doesn't work. Back up. Tried: 12 + 8 = 20; 12 * 8 = 96; 12 + 82 = 94; 42 - 8 = 34.
+Try 42 - 12 = 30. Left: 8, 82, 30.
+Then 30 / 10 = 3. Left: 8, 82, 3.
+Then 82 + 8 + 3 = 93. Left: 93.
+Then 93 - 7 = 86.
+Check: 7 is not one of the numbers left (only 93 is).
+That doesn't work. Back up. Tried: 12 + 8 = 20; 12 * 8 = 96; 12 + 82 = 94; 42 - 8 = 34; 42 - 12 = 30; 30 / 10 = 3.
+Try 12 + 42 = 54. Left: 8, 82, 54.
+Then 82 - 8 = 74. Left: 54, 74.
+Then 54 + 74 = 128. Left: 128.
+Then 128 - 42 = 86. Left: 86.
+That reaches 86.
+Check: (12 + 42) + (82 - 8) uses 8, 12, 42, 82 once each and equals 86.
+</reasoning>
+<solution>
+12 + 42 = 54
+82 - 8 = 74
+54 + 74 = 128
+128 - 42 = 86
+</solution>
+<answer>
+(12 + 42) + (82 - 8)
+</answer>",777,False,True,(12 + 42) + (82 - 8),False,"right numbers, wrong value",1.0,0.0,1.0,1.0,0.0
+4045,"[30, 3, 84, 10]",67,"<reasoning>
+Numbers: 30, 3, 84, 10. Target: 67.
+Try 30 * 3 = 90. Left: 84, 10, 90.
+Then 90 - 10 = 80. Left: 84, 80.
+Check the ways to combine 84 and 80: 84 + 80 = 164, 84 * 80 = 6720, 84 - 80 = 4. None gives 67.
+That doesn't work. Back up. Tried: 30 * 3 = 90.
+Try 30 + 10 = 40. Left: 3, 84, 40.
+Then 84 - 40 = 44. Left: 3, 44.
+Then 3 + 44 = 47. Left: 47.
+Then 47 + 20 = 67.
+Check: 20 is not one of the numbers left (only 47 is).
+That doesn't work. Back up. Tried: 30 * 3 = 90; 30 + 10 = 40.
+Try 30 - 10 = 20. Left: 3, 84, 20.
+Then 84 / 3 = 28. Left: 20, 28.
+Then 20 + 28 = 48. Left: 48.
+Then 48 + 19 = 67.
+Check: 19 is not one of the numbers left (only 48 is).
+That doesn't work. Back up. Tried: 30 * 3 = 90; 30 + 10 = 40; 30 - 10 = 20.
+Try 30 - 3 = 27. Left: 84, 10, 27.
+Then 84 / 10 = 8.4. Left: 27, 8.4.
+Then 27 + 8.4 = 35.4. Left: 35.4.
+Then 35.4 + 31.6 = 67.
+Check: 31.6 is not one of the numbers left (only 35.4 is).
+That doesn't work. Back up. Tried: 30 * 3 = 90; 30 + 10 = 40; 30 - 10 = 20; 30 - 3 = 27.
+Try 30 / 3 = 10. Left: 84, 10, 10.
+Then 10 + 10 = 20. Left: 84, 20.
+Then 84 - 20 = 64. Left: 64.
+Then 64 + 3 = 67.
+Check: 3 is not one of the numbers left (only 64 is).
+That doesn't work. Back up. Tried: 30 * 3 = 90; 30 + 10 = 40; 30 - 10 = 20; 30 - 3 = 27; 30 / 3 = 10.
+Try 30 - 10 = 20. Left: 3, 84, 20.
+Then 84 / 3 = 28. Left: 20, 28.
+Then 20 + 28 = 48. Left: 48.
+Then 48 + 19 = 67.
+Check: 19 is not one of the numbers left (only 48 is).
+That doesn't work. Back up. Tried: 30 * 3 = 90; 30 + 10 = 40; 30 - 10 = 20; 30 - 3 = 27; 30 / 3 = 10; 30 - 10 = 20.
+Try 30 / 10 = 3. Left: 3, 84, 3.
+Then 3 * 3 = 9. Left: 84, 9.
+Then 84 - 9 = 75. Left: 75.
+Then 75 - 8 = 67.
+Check: 8 is not one of the numbers left (only 75 is).
+That doesn't work. Back up. Tried: 30 * 3 = 90; 30 + 10 = 40; 30 - 10 = 20; 30 - 3 = 27; 30 / 3 = 10; 30 - 10 = 20; 30 / 10 = 3.
+Try 30 - 3 = 27. Left: 84, 10, 27.
+Then 84 / 10 = 8.4. Left: 27, 8.4.
+Then 27 + 8.4 = 35.4. Left: 35.4.
+Then 35.4 + 31.6 = 67.
+Check: 31.6 is not one of the numbers left (",1024,True,False,,False,no answer (truncated),,,,,
+4046,"[45, 63, 15, 60]",56,"<reasoning>
+Numbers: 45, 63, 15, 60. Target: 56.
+Try 45 + 15 = 60. Left: 63, 60, 60.
+Then 63 - 60 = 3. Left: 60, 3.
+Then 60 / 3 = 56.
+Check: 60 / 3 = 20, not 56.
+That doesn't work. Back up. Tried: 45 + 15 = 60.
+Try 63 - 45 = 18. Left: 15, 60, 18.
+Then 60 / 15 = 4. Left: 18, 4.
+Then 18 + 4 = 56.
+Check: 18 + 4 = 22, not 56.
+That doesn't work. Back up. Tried: 45 + 15 = 60; 63 - 45 = 18.
+Try 45 + 60 = 105. Left: 63, 15, 105.
+Then 63 - 15 = 48. Left: 105, 48.
+Then 105 - 48 = 56.
+Check: 105 - 48 = 57, not 56.
+That doesn't work. Back up. Tried: 45 + 15 = 60; 63 - 45 = 18; 45 + 60 = 105.
+Try 63 - 60 = 3. Left: 45, 15, 3.
+Then 45 / 3 = 15. Left: 15, 15.
+Then 15 + 15 = 56.
+Check: 15 + 15 = 30, not 56.
+That doesn't work. Back up. Tried: 45 + 15 = 60; 63 - 45 = 18; 45 + 60 = 105; 63 - 60 = 3.
+Try 63 - 15 = 48. Left: 45, 60, 48.
+Then 60 - 45 = 15. Left: 48, 15.
+Then 48 + 15 = 56.
+Check: 48 + 15 = 63, not 56.
+That doesn't work. Back up. Tried: 45 + 15 = 60; 63 - 45 = 18; 45 + 60 = 105; 63 - 60 = 3; 63 - 15 = 48.
+Try 45 + 63 = 108. Left: 15, 60, 108.
+Then 60 - 15 = 45. Left: 108, 45.
+Then 108 - 45 = 56.
+Check: 108 - 45 = 63, not 56.
+That doesn't work. Back up. Tried: 45 + 15 = 60; 63 - 45 = 18; 45 + 60 = 105; 63 - 60 = 3; 63 - 15 = 48; 45 + 63 = 108.
+Try 63 - 45 = 18. Left: 60, 15, 18.
+Then 60 / 15 = 4. Left: 18, 4.
+Then 18 * 4 = 56.
+Check: 18 * 4 = 72, not 56.
+That doesn't work. Back up. Tried: 45 + 15 = 60; 63 - 45 = 18; 45 + 60 = 105; 63 - 60 = 3; 63 - 15 = 48; 45 + 63 = 108; 63 - 45 = 18.
+Try 45 + 60 = 105. Left: 63, 15, 105.
+Then 63 - 15 = 48. Left: 105, 48.
+Then 105 - 48 = 56.
+Check: 105 - 48 = 57, not 56.
+That doesn't work. Back up. Tried: 45 + 15 = 60; 63 - 45 = 18; 45 + 60 = 105; 63 - 60 = 3; 63 - 15 = 48; 45 + 63 = 108; 63 - 45 = 18; 45 + 60 = 105; 63 - 15 = 48; 45 + 63 = 108; 63 - 45 = 18; 45 + 60 = 105; 63 - 60 = 3; 63 - 15 = 48; 45 + 63 = 108; 63 - 45 = 18; 45 + 60 = 105; 63 - ",1024,True,False,,False,no answer (truncated),,,,,
+4047,"[14, 74, 50, 30]",52,"<reasoning>
+Numbers: 14, 74, 50, 30. Target: 52.
+Try 74 - 14 = 60. Left: 50, 30, 60.
+Then 60 - 30 = 30. Left: 50, 30.
+Closest: 50 + 30 = 80, off by 28.
+That doesn't work. Back up. Tried: 74 - 14 = 60.
+Try 74 - 50 = 24. Left: 14, 30, 24.
+Then 30 - 24 = 6. Left: 14, 6.
+Then 14 + 6 = 20. Left: 20.
+Then 20 + 32 = 52.
+Check: 32 is not one of the numbers left (only 20 is).
+That doesn't work. Back up. Tried: 74 - 14 = 60; 74 - 50 = 24.
+Try 74 - 30 = 44. Left: 14, 50, 44.
+Then 50 - 44 = 6. Left: 14, 6.
+Then 14 + 6 = 20. Left: 20.
+Then 20 + 32 = 52.
+Check: 32 is not one of the numbers left (only 20 is).
+That doesn't work. Back up. Tried: 74 - 14 = 60; 74 - 50 = 24; 74 - 30 = 44.
+Try 74 - 14 = 60. Left: 50, 30, 60.
+Then 60 / 30 = 2. Left: 50, 2.
+Then 50 + 2 = 52. Left: 52.
+That reaches 52.
+Check: 50 + ((74 - 14) / (74 - 30)) uses 14, 30, 50, 74 once each and equals 52.
+</reasoning>
+<solution>
+74 - 14 = 60
+60 / 30 = 2
+50 + 2 = 52
+</solution>
+<answer>
+50 + ((74 - 14) / (74 - 30))
+</answer>",477,False,True,50 + ((74 - 14) / (74 - 30)),False,a number reused or added,0.0,1.0,1.0,1.0,0.0
+4048,"[9, 52, 7, 35]",90,"<reasoning>
+Numbers: 9, 52, 7, 35. Target: 90.
+Try 52 * 7 = 364. Left: 9, 35, 364.
+Then 364 - 35 = 329. Left: 9, 329.
+Check the ways to combine 9 and 329: 9 + 329 = 338, 9 * 329 = 2961, 329 - 9 = 320. None gives 90.
+That doesn't work. Back up. Tried: 52 * 7 = 364.
+Try 9 + 7 = 16. Left: 52, 35, 16.
+Then 52 + 35 = 87. Left: 16, 87.
+Closest: 16 + 87 = 103, off by 13.
+That doesn't work. Back up. Tried: 52 * 7 = 364; 9 + 7 = 16.
+Try 9 + 35 = 44. Left: 52, 7, 44.
+Then 52 / 7 = 8. Left: 44, 8.
+Then 44 + 8 = 52. Left: 52.
+Then 52 + 38 = 90.
+Check: 38 is not one of the numbers left (only 52 is).
+That doesn't work. Back up. Tried: 52 * 7 = 364; 9 + 7 = 16; 9 + 35 = 44.
+Try 9 + 52 = 61. Left: 7, 35, 61.
+Then 7 + 35 = 42. Left: 61, 42.
+Then 61 + 42 = 90.
+Check: 61 + 42 = 103, not 90.
+That doesn't work. Back up. Tried: 52 * 7 = 364; 9 + 7 = 16; 9 + 35 = 44; 9 + 52 = 61.
+Try 9 + 35 = 44. Left: 52, 7, 44.
+Then 52 / 7 = 8. Left: 44, 8.
+Then 44 + 8 = 52. Left: 52.
+Then 52 + 38 = 90.
+Check: 38 is not one of the numbers left (only 52 is).
+That doesn't work. Back up. Tried: 52 * 7 = 364; 9 + 7 = 16; 9 + 35 = 44; 9 + 52 = 61; 9 + 35 = 44.
+Try 9 + 52 = 61. Left: 7, 35, 61.
+Then 7 + 35 = 42. Left: 61, 42.
+Then 61 + 42 = 90.
+Check: 61 + 42 = 103, not 90.
+That doesn't work. Back up. Tried: 52 * 7 = 364; 9 + 7 = 16; 9 + 35 = 44; 9 + 52 = 61; 9 + 35 = 44.
+Try 9 + 35 = 44. Left: 52, 7, 44.
+Then 52 / 7 = 8. Left: 44, 8.
+Then 44 + 8 = 52. Left: 52.
+Then 52 + 38 = 90.
+Check: 38 is not one of the numbers left (only 52 is).
+That doesn't work. Back up. Tried: 52 * 7 = 364; 9 + 7 = 16; 9 + 35 = 44; 9 + 52 = 61; 9 + 35 = 44; 52 / 7 = 8.
+Try 52 - 7 = 45. Left: 9, 35, 45.
+Then 9 + 35 = 44. Left: 45, 44.
+Then 45 + 44 = 89. Left: 89.
+Then 89 + 1 = 90.
+Check: 1 is not one of the numbers left (only 89 is).
+That doesn't work. Back up. Tried: 52 * 7 = 364; 9 + 7 = 16; 9 + 35 = 44; 9 + 52 = 61; 9 + 35 = 44; 52 / 7 = 8; 52 - 7 = 45.
+Try 52 - 9 = 43. Left: 7, 35, 43.
+Then 7 + 35 = 42. Left:",1024,True,False,,False,no answer (truncated),,,,,
+4049,"[15, 85, 50, 57]",63,"<reasoning>
+Numbers: 15, 85, 50, 57. Target: 63.
+Try 57 * 50 = 2850. Left: 15, 85, 2850.
+Then 2850 - 85 = 2765. Left: 15, 2765.
+Check the ways to combine 15 and 2765: 15 + 2765 = 2780, 15 * 2765 = 41575, 2765 - 15 = 2750. None gives 63.
+That doesn't work. Back up. Tried: 57 * 50 = 2850.
+Try 57 - 50 = 7. Left: 15, 85, 7.
+Then 85 - 15 = 70. Left: 7, 70.
+Then 70 - 7 = 63. Left: 63.
+That reaches 63.
+Check: (85 - 15) - (57 - 50) uses 15, 50, 57, 85 once each and equals 63.
+</reasoning>
+<solution>
+57 - 50 = 7
+85 - 15 = 70
+70 - 7 = 63
+</solution>
+<answer>
+(85 - 15) - (57 - 50)
+</answer>",284,False,True,(85 - 15) - (57 - 50),True,correct,1.0,0.0,1.0,1.0,1.0
+4050,"[31, 89, 15, 86]",78,"<reasoning>
+Numbers: 31, 89, 15, 86. Target: 78.
+Try 31 + 15 = 46. Left: 89, 86, 46.
+Then 89 - 46 = 43. Left: 86, 43.
+Check the ways to combine 86 and 43: 86 + 43 = 129, 86 * 43 = 3698, 86 - 43 = 43. None gives 78.
+That doesn't work. Back up. Tried: 31 + 15 = 46.
+Try 31 + 86 = 117. Left: 89, 15, 117.
+Then 89 - 15 = 74. Left: 117, 74.
+Closest: 117 - 74 = 43, off by 35.
+That doesn't work. Back up. Tried: 31 + 15 = 46; 31 + 86 = 117.
+Try 31 + 89 = 120. Left: 15, 86, 120.
+Then 120 - 15 = 105. Left: 86, 105.
+Then 105 - 86 = 19. Left: 19.
+Then 19 + 59 = 78.
+Check: 59 is not one of the numbers left (only 19 is).
+That doesn't work. Back up. Tried: 31 + 15 = 46; 31 + 86 = 117; 31 + 89 = 120.
+Try 31 - 15 = 16. Left: 89, 86, 16.
+Then 89 - 16 = 73. Left: 86, 73.
+Then 86 - 73 = 78.
+Check: 86 - 73 = 13, not 78.
+That doesn't work. Back up. Tried: 31 + 15 = 46; 31 + 86 = 117; 31 + 89 = 120; 31 - 15 = 16.
+Try 31 - 15 = 16. Left: 89, 86, 16.
+Then 89 - 16 = 73. Left: 86, 73.
+Then 86 - 73 = 78.
+Check: 86 - 73 = 13, not 78.
+That doesn't work. Back up. Tried: 31 + 15 = 46; 31 + 86 = 117; 31 + 89 = 120; 31 - 15 = 16; 31 - 15 = 16.
+Try 31 - 86 = 45. Left: 89, 15, 45.
+Then 89 - 45 = 44. Left: 15, 44.
+Then 15 + 44 = 59. Left: 59.
+Then 59 + 19 = 78.
+Check: 19 is not one of the numbers left (only 59 is).
+That doesn't work. Back up. Tried: 31 + 15 = 46; 31 + 86 = 117; 31 + 89 = 120; 31 - 15 = 16; 31 - 86 = 45; 31 - 86 = 45.
+Try 31 - 89 = 42. Left: 15, 86, 42.
+Then 15 + 42 = 57. Left: 86, 57.
+Then 86 - 57 = 78.
+Check: 86 - 57 = 29, not 78.
+That doesn't work. Back up. Tried: 31 + 15 = 46; 31 + 86 = 117; 31 + 89 = 120; 31 - 15 = 16; 31 - 86 = 45; 31 - 89 = 42; 31 - 86 = 45.
+Try 31 - 15 = 16. Left: 89, 86, 16.
+Then 89 - 16 = 73. Left: 86, 73.
+Then 86 - 73 = 78.
+Check: 86 - 73 = 13, not 78.
+That doesn't work. Back up. Tried: 31 + 15 = 46; 31 + 86 = 117; 31 + 89 = 120; 31 - 15 = 16; 31 - 86 = 45; 31 - 89 = 42; 31 - 86 = 45.
+Try 31 + 86 = 117. Left: 89, 15, 117.
+Then 89 - 15 = 74. Left: 117, 74.
+Then 117 - 74 = 78.
+",1024,True,False,,False,no answer (truncated),,,,,
+4051,"[61, 22, 14, 56]",41,"<reasoning>
+Numbers: 61, 22, 14, 56. Target: 41.
+Try 56 + 22 = 78. Left: 61, 14, 78.
+Then 78 - 14 = 64. Left: 61, 64.
+Closest: 64 - 61 = 3, off by 38.
+That doesn't work. Back up. Tried: 56 + 22 = 78.
+Try 56 - 14 = 42. Left: 61, 22, 42.
+Then 61 - 22 = 39. Left: 42, 39.
+Closest: 42 - 39 = 3, off by 38.
+That doesn't work. Back up. Tried: 56 + 22 = 78; 56 - 14 = 42.
+Try 56 - 22 = 34. Left: 61, 14, 34.
+Then 61 - 14 = 47. Left: 34, 47.
+Then 47 - 34 = 41.
+Check: 47 - 34 = 13, not 41.
+That doesn't work. Back up. Tried: 56 + 22 = 78; 56 - 14 = 42; 56 - 22 = 34.
+Try 61 - 56 = 5. Left: 22, 14, 5.
+Then 14 * 5 = 70. Left: 22, 70.
+Then 70 - 22 = 41.
+Check: 14 * (61 - 56) uses 14, 22, 56, 61 once each and equals 41.
+</reasoning>
+<solution>
+61 - 56 = 5
+14 * 5 = 70
+70 - 22 = 41
+</solution>
+<answer>
+14 * (61 - 56)
+</answer>",411,False,True,14 * (61 - 56),False,a number missing,0.0,0.0,0.0,1.0,0.0
+4052,"[86, 49, 45, 25]",28,"<reasoning>
+Numbers: 86, 49, 45, 25. Target: 28.
+Try 49 * 25 = 1225. Left: 86, 45, 1225.
+Then 1225 - 86 = 1139. Left: 45, 1139.
+Check the ways to combine 45 and 1139: 45 + 1139 = 1184, 45 * 1139 = 51015, 1139 - 45 = 1094. None gives 28.
+That doesn't work. Back up. Tried: 49 * 25 = 1225.
+Try 49 - 45 = 4. Left: 86, 25, 4.
+Then 86 - 25 = 61. Left: 4, 61.
+Then 61 / 4 = 28.
+Check: 61 / 4 = 15. Not 28.
+That doesn't work. Back up. Tried: 49 * 25 = 1225; 49 - 45 = 4.
+Try 49 - 25 = 24. Left: 86, 45, 24.
+Then 86 - 45 = 41. Left: 24, 41.
+Then 41 - 24 = 28.
+Check: 41 - 24 = 17, not 28.
+That doesn't work. Back up. Tried: 49 * 25 = 1225; 49 - 45 = 4; 49 - 25 = 24.
+Try 49 - 45 = 4. Left: 86, 25, 4.
+Then 86 - 25 = 61. Left: 4, 61.
+Then 61 / 4 = 28.
+Check: 61 / 4 = 15. Not 28.
+That doesn't work. Back up. Tried: 49 * 25 = 1225; 49 - 45 = 4; 49 - 25 = 24.
+Try 49 - 86 = 63. Left: 45, 25, 63.
+Then 63 - 45 = 18. Left: 25, 18.
+Then 25 + 18 = 28.
+Check: 25 + 18 = 43, not 28.
+That doesn't work. Back up. Tried: 49 * 25 = 1225; 49 - 45 = 4; 49 - 86 = 63; 49 - 86 = 63.
+Try 49 - 25 = 24. Left: 86, 45, 24.
+Then 86 - 45 = 41. Left: 24, 41.
+Then 41 - 24 = 28.
+Check: 41 - 24 = 17, not 28.
+That doesn't work. Back up. Tried: 49 * 25 = 1225; 49 - 45 = 4; 49 - 86 = 63; 49 - 25 = 24.
+Try 49 - 45 = 4. Left: 86, 25, 4.
+Then 86 - 25 = 61. Left: 4, 61.
+Then 61 / 4 = 28.
+Check: 61 / 4 = 15. Not 28.
+That doesn't work. Back up. Tried: 49 * 25 = 1225; 49 - 45 = 4; 49 - 86 = 63; 49 - 25 = 24; 49 - 25 = 24.
+Try 49 - 45 = 4. Left: 86, 25, 4.
+Then 86 - 25 = 61. Left: 4, 61.
+Then 61 / 4 = 28.
+Check: 61 / 4 = 15. Not 28.
+That doesn't work. Back up. Tried: 49 * 25 = 1225; 49 - 45 = 4; 49 - 86 = 63; 49 - 25 = 24; 49 - 25 = 24; 86 - 25 = 61.
+Try 49 - 25 = 24. Left: 86, 45, 24.
+Then 86 - 45 = 41. Left: 24, 41.
+Then 41 - 24 = 28.
+Check: 41 - 24 = 17. Not 28.
+That doesn't work. Back up. Tried: 49 * 25 = 1225; 49 - 45 = 4; 49 - 86 = 63; 49 - 25 = 24; 49 - 25 = 24",1024,True,False,,False,no answer (truncated),,,,,
+4053,"[81, 5, 19, 96]",21,"<reasoning>
+Numbers: 81, 5, 19, 96. Target: 21.
+Try 81 + 19 = 100. Left: 5, 96, 100.
+Then 100 - 5 = 95. Left: 96, 95.
+Check the ways to combine 96 and 95: 96 + 95 = 191, 96 * 95 = 9120, 96 - 95 = 1. None gives 21.
+That doesn't work. Back up. Tried: 81 + 19 = 100.
+Try 81 - 19 = 62. Left: 5, 96, 62.
+Then 96 - 62 = 34. Left: 5, 34.
+Then 34 - 5 = 21.
+Check: 34 - 5 = 29, not 21.
+That doesn't work. Back up. Tried: 81 + 19 = 100; 81 - 19 = 62.
+Try 81 - 5 = 76. Left: 19, 96, 76.
+Then 96 - 19 = 77. Left: 76, 77.
+Then 77 - 76 = 21. Left: 21.
+That reaches 21.
+Check: (96 - 19) - (81 - 5) uses 5, 19, 81, 96 once each and equals 21.
+</reasoning>
+<solution>
+81 - 5 = 76
+96 - 19 = 77
+77 - 76 = 21
+</solution>
+<answer>
+(96 - 19) - (81 - 5)
+</answer>",364,False,True,(96 - 19) - (81 - 5),False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4054,"[12, 17, 17, 26]",45,"<reasoning>
+Numbers: 12, 17, 17, 26. Target: 45.
+Try 17 * 17 = 289. Left: 12, 26, 289.
+Then 289 - 12 = 277. Left: 26, 277.
+Check the ways to combine 26 and 277: 26 + 277 = 303, 26 * 277 = 7222, 277 - 26 = 251. None gives 45.
+That doesn't work. Back up. Tried: 17 * 17 = 289.
+Try 17 - 12 = 5. Left: 17, 17, 26.
+Then 17 + 17 = 34. Left: 26, 34.
+Closest: 26 + 34 = 60, off by 15.
+That doesn't work. Back up. Tried: 17 * 17 = 289; 17 - 12 = 5.
+Try 17 - 17 = 0. Left: 12, 26, 0.
+Then 12 * 0 = 0. Left: 26, 0.
+Then 26 + 0 = 26. Left: 26.
+Then 26 + 19 = 45.
+Check: 19 is not one of the numbers left (only 26 is).
+That doesn't work. Back up. Tried: 17 * 17 = 289; 17 - 12 = 5; 17 - 17 = 0.
+Try 17 - 17 = 0. Left: 12, 26, 0.
+Then 12 * 0 = 0. Left: 26, 0.
+Then 26 + 0 = 26. Left: 26.
+Then 26 + 19 = 45.
+Check: 19 is not one of the numbers left (only 26 is).
+That doesn't work. Back up. Tried: 17 * 17 = 289; 17 - 12 = 5; 17 - 17 = 0; 17 - 17 = 0.
+Try 17 - 12 = 5. Left: 17, 17, 26.
+Then 17 / 17 = 1. Left: 26, 1.
+Then 26 + 1 = 45.
+Check: 26 + 1 = 27, not 45.
+That doesn't work. Back up. Tried: 17 * 17 = 289; 17 - 12 = 5; 17 - 17 = 0; 17 - 17 = 0; 17 - 12 = 5; 17 / 17 = 1.
+Try 17 - 17 = 0. Left: 12, 26, 0.
+Then 26 / 12 = 2. Left: 0, 2.
+Then 0 * 2 = 0. Left: 0.
+Then 45 = 0.
+Check: 0 is not 45.
+That doesn't work. Back up. Tried: 17 * 17 = 289; 17 - 12 = 5; 17 - 17 = 0; 17 - 17 = 0; 17 - 12 = 5; 17 / 17 = 1; 17 - 17 = 0; 26 / 12 = 2; 0 * 2 = 0.
+Try 17 - 12 = 5. Left: 17, 17, 26.
+Then 17 / 17 = 1. Left: 26, 1.
+Then 26 + 1 = 45. Left: 45.
+That reaches 45.
+Check: 26 + (17 / (17 - 12)) uses 12, 17, 17, 26 once each and equals 45.
+</reasoning>
+<solution>
+17 - 12 = 5
+17 / 17 = 1
+26 + 1 = 45
+</solution>
+<answer>
+26 + (17 / (17 - 12))
+</answer>",887,False,True,26 + (17 / (17 - 12)),False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4055,"[5, 37, 44, 19]",17,"<reasoning>
+Numbers: 5, 37, 44, 19. Target: 17.
+Try 37 * 5 = 185. Left: 44, 19, 185.
+Then 185 - 19 = 166. Left: 44, 166.
+Check the ways to combine 44 and 166: 44 + 166 = 210, 44 * 166 = 7304, 166 - 44 = 122. None gives 17.
+That doesn't work. Back up. Tried: 37 * 5 = 185.
+Try 37 - 19 = 18. Left: 5, 44, 18.
+Then 44 - 18 = 26. Left: 5, 26.
+Then 26 - 5 = 21. Left: 21.
+Then 21 - 4 = 17.
+Check: 4 is not one of the numbers left (only 21 is).
+That doesn't work. Back up. Tried: 37 * 5 = 185; 37 - 19 = 18.
+Try 37 - 5 = 32. Left: 44, 19, 32.
+Then 44 - 19 = 25. Left: 32, 25.
+Then 32 - 25 = 7. Left: 7.
+Then 7 + 10 = 17.
+Check: 10 is not one of the numbers left (only 7 is).
+That doesn't work. Back up. Tried: 37 * 5 = 185; 37 - 19 = 18; 37 - 5 = 32.
+Try 37 - 44 = 7. Left: 5, 19, 7.
+Then 5 * 7 = 35. Left: 19, 35.
+Then 35 - 19 = 16. Left: 16.
+Then 16 + 1 = 17.
+Check: 1 is not one of the numbers left (only 16 is).
+That doesn't work. Back up. Tried: 37 * 5 = 185; 37 - 19 = 18; 37 - 44 = 7; 37 - 5 = 32.
+Try 37 - 19 = 18. Left: 5, 44, 18.
+Then 44 - 18 = 26. Left: 5, 26.
+Then 26 - 5 = 21. Left: 21.
+Then 21 - 4 = 17.
+Check: 4 is not one of the numbers left (only 21 is).
+That doesn't work. Back up. Tried: 37 * 5 = 185; 37 - 19 = 18; 37 - 44 = 7; 37 - 5 = 32; 37 - 19 = 18.
+Try 37 - 5 = 32. Left: 44, 19, 32.
+Then 44 - 19 = 25. Left: 32, 25.
+Then 32 - 25 = 7. Left: 7.
+Then 7 + 10 = 17.
+Check: 10 is not one of the numbers left (only 7 is).
+That doesn't work. Back up. Tried: 37 * 5 = 185; 37 - 19 = 18; 37 - 44 = 7; 37 - 5 = 32; 37 - 19 = 18; 37 - 5 = 32.
+Try 44 - 19 = 25. Left: 5, 37, 25.
+Then 37 - 5 = 32. Left: 25, 32.
+Then 32 - 25 = 7. Left: 7.
+Then 7 + 10 = 17.
+Check: 10 is not one of the numbers left (only 7 is).
+That doesn't work. Back up. Tried: 37 * 5 = 185; 37 - 19 = 18; 37 - 44 = 7; 37 - 5 = 32; 37 - 19 = 18; 37 - 5 = 32; 44 - 19 = 25.
+Try 37 - 19 = 18. Left: 5, 44, 18.
+Then 44 - 18 = 26. Left: 5, 26.
+Then 26 - 5 = 21. Left: 21.
+Then 21 - 4 = 17.
+Check: 4 is not one of the numbers left (only 21 is).
+That doesn't work. Back up. Tried: 37 * 5 = 185; 37 - 19 = 18; ",1024,True,False,,False,no answer (truncated),,,,,
+4056,"[40, 43, 42, 35]",49,"<reasoning>
+Numbers: 40, 43, 42, 35. Target: 49.
+Try 42 * 40 = 1680. Left: 43, 35, 1680.
+Then 1680 - 35 = 1645. Left: 43, 1645.
+Check the ways to combine 43 and 1645: 43 + 1645 = 1688, 43 * 1645 = 70615, 1645 - 43 = 1602. None gives 49.
+That doesn't work. Back up. Tried: 42 * 40 = 1680.
+Try 42 - 40 = 2. Left: 43, 35, 2.
+Then 43 - 35 = 8. Left: 2, 8.
+Then 2 * 8 = 16. Left: 16.
+Then 16 + 33 = 49.
+Check: 33 is not one of the numbers left (only 16 is).
+That doesn't work. Back up. Tried: 42 * 40 = 1680; 42 - 40 = 2.
+Try 42 - 35 = 7. Left: 40, 43, 7.
+Then 43 - 40 = 3. Left: 7, 3.
+Then 7 * 3 = 21. Left: 21.
+Then 21 + 28 = 49.
+Check: 28 is not one of the numbers left (only 21 is).
+That doesn't work. Back up. Tried: 42 * 40 = 1680; 42 - 40 = 2; 42 - 35 = 7.
+Try 43 - 42 = 1. Left: 40, 35, 1.
+Then 40 - 35 = 5. Left: 1, 5.
+Then 1 * 5 = 5. Left: 5.
+Then 5 + 44 = 49.
+Check: 44 is not one of the numbers left (only 5 is).
+That doesn't work. Back up. Tried: 42 * 40 = 1680; 42 - 40 = 2; 42 - 35 = 7; 43 - 42 = 1.
+Try 43 - 35 = 8. Left: 40, 42, 8.
+Then 42 - 40 = 2. Left: 8, 2.
+Then 8 * 2 = 16. Left: 16.
+Then 16 + 33 = 49.
+Check: 33 is not one of the numbers left (only 16 is).
+That doesn't work. Back up. Tried: 42 * 40 = 1680; 42 - 40 = 2; 42 - 35 = 7; 43 - 42 = 1; 43 - 35 = 8.
+Try 43 - 40 = 3. Left: 42, 35, 3.
+Then 42 / 3 = 14. Left: 35, 14.
+Then 35 + 14 = 49. Left: 49.
+That reaches 49.
+Check: 35 + (42 / (43 - 40)) uses 35, 40, 42, 43 once each and equals 49.
+</reasoning>
+<solution>
+43 - 40 = 3
+42 / 3 = 14
+35 + 14 = 49
+</solution>
+<answer>
+35 + (42 / (43 - 40))
+</answer>",775,False,True,35 + (42 / (43 - 40)),True,correct,1.0,0.0,1.0,1.0,1.0
+4057,"[91, 94, 54, 27]",63,"<reasoning>
+Numbers: 91, 94, 54, 27. Target: 63.
+Try 94 - 27 = 67. Left: 91, 54, 67.
+Then 91 - 54 = 37. Left: 67, 37.
+Closest: 67 - 37 = 30, off by 33.
+That doesn't work. Back up. Tried: 94 - 27 = 67.
+Try 94 - 91 = 3. Left: 54, 27, 3.
+Then 54 / 3 = 18. Left: 27, 18.
+Then 27 + 18 = 63.
+Check: 27 + 18 = 45, not 63.
+That doesn't work. Back up. Tried: 94 - 27 = 67; 94 - 91 = 3.
+Try 94 - 54 = 40. Left: 91, 27, 40.
+Then 91 - 27 = 64. Left: 40, 64.
+Then 64 - 40 = 63.
+Check: 64 - 40 = 24, not 63.
+That doesn't work. Back up. Tried: 94 - 27 = 67; 94 - 91 = 3; 94 - 54 = 40.
+Try 94 - 91 = 3. Left: 54, 27, 3.
+Then 54 / 3 = 18. Left: 27, 18.
+Then 27 + 18 = 63.
+Check: 27 + 18 = 45, not 63.
+That doesn't work. Back up. Tried: 94 - 27 = 67; 94 - 91 = 3; 94 - 54 = 40; 94 - 91 = 3.
+Try 94 - 27 = 67. Left: 91, 54, 67.
+Then 91 - 54 = 37. Left: 67, 37.
+Then 67 - 37 = 63.
+Check: (94 - 27) - (91 - 54) uses 27, 54, 91, 94 once each and equals 63.
+</reasoning>
+<solution>
+94 - 27 = 67
+91 - 54 = 37
+67 - 37 = 63
+</solution>
+<answer>
+(94 - 27) - (91 - 54)
+</answer>",538,False,True,(94 - 27) - (91 - 54),False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4058,"[14, 62, 62, 38]",23,"<reasoning>
+Numbers: 14, 62, 62, 38. Target: 23.
+Try 62 * 62 = 3844. Left: 14, 38, 3844.
+Then 3844 - 38 = 3806. Left: 14, 3806.
+Closest: 3806 - 14 = 3792, off by 3769.
+That doesn't work. Back up. Tried: 62 * 62 = 3844.
+Try 62 - 14 = 48. Left: 62, 38, 48.
+Then 62 - 38 = 24. Left: 48, 24.
+Check the ways to combine 48 and 24: 48 + 24 = 72, 48 * 24 = 1152, 48 - 24 = 24. None gives 23.
+That doesn't work. Back up. Tried: 62 * 62 = 3844; 62 - 14 = 48.
+Try 62 - 38 = 24. Left: 14, 62, 24.
+Then 62 / 14 = 4. Left: 24, 4.
+Then 24 / 4 = 23.
+Check: 24 / 4 = 6, not 23.
+That doesn't work. Back up. Tried: 62 * 62 = 3844; 62 - 14 = 48; 62 - 38 = 24.
+Try 62 - 62 = 0. Left: 14, 38, 0.
+Then 38 / 14 = 2. Left: 0, 2.
+Then 0 * 2 = 23.
+Check: 0 * 2 = 0, not 23.
+That doesn't work. Back up. Tried: 62 * 62 = 3844; 62 - 14 = 48; 62 - 38 = 24; 62 - 62 = 0.
+Try 62 - 14 = 48. Left: 62, 38, 48.
+Then 62 / 38 = 1.6. Left: 48, 1.6.
+Then 48 - 1.6 = 23.
+Check: 48 - 1.6 = 46.6, not 23.
+That doesn't work. Back up. Tried: 62 * 62 = 3844; 62 - 14 = 48; 62 - 38 = 24; 62 - 62 = 0; 62 - 14 = 48.
+Try 62 - 38 = 24. Left: 14, 62, 24.
+Then 62 / 14 = 4.4. Left: 24, 4.4.
+Then 24 - 4.4 = 23. Left: 23.
+That reaches 23.
+Check: (62 - 38) - (62 / 14) uses 14, 38, 62, 62 once each and equals 23.
+</reasoning>
+<solution>
+62 - 38 = 24
+62 / 14 = 4.4
+24 - 4.4 = 23
+</solution>
+<answer>
+(62 - 38) - (62 / 14)
+</answer>",719,False,True,(62 - 38) - (62 / 14),False,"right numbers, wrong value",1.0,0.0,,,
+4059,"[59, 76, 9, 18]",13,"<reasoning>
+Numbers: 59, 76, 9, 18. Target: 13.
+Try 76 - 59 = 17. Left: 9, 18, 17.
+Then 18 - 9 = 9. Left: 17, 9.
+Closest: 17 - 9 = 8, off by 5.
+That doesn't work. Back up. Tried: 76 - 59 = 17.
+Try 76 - 18 = 58. Left: 59, 9, 58.
+Then 58 - 9 = 49. Left: 59, 49.
+Check the ways to combine 59 and 49: 59 + 49 = 108, 59 * 49 = 2891, 59 - 49 = 10. None gives 13.
+That doesn't work. Back up. Tried: 76 - 59 = 17; 76 - 18 = 58.
+Try 59 - 18 = 41. Left: 76, 9, 41.
+Then 41 - 9 = 32. Left: 76, 32.
+Then 76 - 32 = 44. Left: 44.
+Then 44 - 31 = 13.
+Check: 31 is not one of the numbers left (only 44 is).
+That doesn't work. Back up. Tried: 76 - 59 = 17; 76 - 18 = 58; 59 - 18 = 41.
+Try 59 + 18 = 77. Left: 76, 9, 77.
+Then 77 - 9 = 68. Left: 76, 68.
+Then 68 - 76 = 13.
+Check: 68 - 76 = -8, not 13.
+That doesn't work. Back up. Tried: 76 - 59 = 17; 76 - 18 = 58; 59 - 18 = 41; 59 + 18 = 77.
+Try 59 - 9 = 50. Left: 76, 18, 50.
+Then 76 - 18 = 58. Left: 50, 58.
+Then 58 - 50 = 8. Left: 8.
+Then 8 + 5 = 13.
+Check: 5 is not one of the numbers left (only 8 is).
+That doesn't work. Back up. Tried: 76 - 59 = 17; 76 - 18 = 58; 59 - 18 = 41; 59 + 18 = 77; 59 - 9 = 50.
+Try 59 - 18 = 41. Left: 76, 9, 41.
+Then 41 - 9 = 32. Left: 76, 32.
+Then 76 - 32 = 44. Left: 44.
+Then 44 - 31 = 13.
+Check: 31 is not one of the numbers left (only 44 is).
+That doesn't work. Back up. Tried: 76 - 59 = 17; 76 - 18 = 58; 59 - 18 = 41; 59 + 18 = 77; 59 - 9 = 50; 59 - 18 = 41.
+Try 59 + 76 = 135. Left: 18, 9, 135.
+Then 135 / 9 = 15. Left: 18, 15.
+Then 18 - 15 = 13. Left: 13.
+That reaches 13.
+Check: 18 - ((59 + 76) / 9) uses 9, 18, 59, 76 once each and equals 13.
+</reasoning>
+<solution>
+59 + 76 = 135
+135 / 9 = 15
+18 - 15 = 13
+</solution>
+<answer>
+18 - ((59 + 76) / 9)
+</answer>",864,False,True,18 - ((59 + 76) / 9),False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4060,"[92, 94, 9, 8]",74,"<reasoning>
+Numbers: 92, 94, 9, 8. Target: 74.
+Try 92 * 8 = 736. Left: 94, 9, 736.
+Then 736 - 9 = 727. Left: 94, 727.
+Check the ways to combine 94 and 727: 94 + 727 = 821, 94 * 727 = 68318, 727 - 94 = 633. None gives 74.
+That doesn't work. Back up. Tried: 92 * 8 = 736.
+Try 92 - 8 = 84. Left: 94, 9, 84.
+Then 84 - 9 = 75. Left: 94, 75.
+Check the ways to combine 94 and 75: 94 + 75 = 169, 94 * 75 = 7050, 94 - 75 = 19. None gives 74.
+That doesn't work. Back up. Tried: 92 * 8 = 736; 92 - 8 = 84.
+Try 92 - 9 = 83. Left: 94, 8, 83.
+Then 94 - 83 = 11. Left: 8, 11.
+Then 8 * 11 = 88. Left: 88.
+Then 88 - 14 = 74.
+Check: 14 is not one of the numbers left (only 88 is).
+That doesn't work. Back up. Tried: 92 * 8 = 736; 92 - 8 = 84; 92 - 9 = 83.
+Try 92 - 94 = -2. Left: 9, 8, -2.
+Then 8 * -2 = -16. Left: 9, -16.
+Then 9 + (-16) = 74. Left: 74.
+That reaches 74.
+Check: 9 + (8 * (92 - 94)) uses 8, 9, 92, 94 once each and equals 74.
+</reasoning>
+<solution>
+92 - 94 = -2
+8 * -2 = -16
+9 + (-16) = 74
+</solution>
+<answer>
+9 + (8 * (92 - 94))
+</answer>",500,False,True,9 + (8 * (92 - 94)),False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4061,"[32, 64, 44, 66]",38,"<reasoning>
+Numbers: 32, 64, 44, 66. Target: 38.
+Try 44 * 32 = 1408. Left: 64, 66, 1408.
+Then 1408 - 64 = 1344. Left: 66, 1344.
+Check the ways to combine 66 and 1344: 66 + 1344 = 1410, 66 * 1344 = 88304, 1344 - 66 = 1278. None gives 38.
+That doesn't work. Back up. Tried: 44 * 32 = 1408.
+Try 64 - 44 = 20. Left: 32, 66, 20.
+Then 66 - 20 = 46. Left: 32, 46.
+Then 46 - 32 = 38.
+Check: 46 - 32 = 14, not 38.
+That doesn't work. Back up. Tried: 44 * 32 = 1408; 64 - 44 = 20.
+Try 64 - 32 = 32. Left: 44, 66, 32.
+Then 44 - 32 = 12. Left: 66, 12.
+Then 66 - 12 = 38.
+Check: 66 - 12 = 54, not 38.
+That doesn't work. Back up. Tried: 44 * 32 = 1408; 64 - 44 = 20; 64 - 32 = 32.
+Try 64 - 66 = 2. Left: 32, 44, 2.
+Then 44 / 2 = 22. Left: 32, 22.
+Then 32 + 22 = 38.
+Check: 32 + 22 = 54, not 38.
+That doesn't work. Back up. Tried: 44 * 32 = 1408; 64 - 44 = 20; 64 - 32 = 32; 64 - 66 = 2.
+Try 64 - 44 = 20. Left: 32, 66, 20.
+Then 32 + 20 = 52. Left: 66, 52.
+Then 66 - 52 = 38.
+Check: 66 - 52 = 14, not 38.
+That doesn't work. Back up. Tried: 44 * 32 = 1408; 64 - 44 = 20; 64 - 32 = 32; 64 - 66 = 2; 64 - 44 = 20.
+Try 64 - 32 = 32. Left: 44, 66, 32.
+Then 44 - 32 = 12. Left: 66, 12.
+Then 66 - 12 = 38.
+Check: 66 - 12 = 54, not 38.
+That doesn't work. Back up. Tried: 44 * 32 = 1408; 64 - 44 = 20; 64 - 32 = 32; 64 - 66 = 2; 64 - 44 = 20; 44 - 32 = 12.
+Try 64 - 66 = 2. Left: 32, 44, 2.
+Then 44 / 2 = 22. Left: 32, 22.
+Then 32 + 22 = 38.
+Check: 32 + 22 = 54, not 38.
+That doesn't work. Back up. Tried: 44 * 32 = 1408; 64 - 44 = 20; 64 - 32 = 32; 64 - 66 = 2; 64 - 44 = 20; 44 - 32 = 12; 64 - 32 = 32; 64 - 66 = 2; 44 - 32 = 12.
+Try 64 - 44 = 20. Left: 32, 66, 20.
+Then 32 + 20 = 52. Left: 66, 52.
+Then 66 - 52 = 38.
+Check: 66 - 52 = 14, not 38.
+That doesn't work. Back up. Tried: 44 * 32 = 1408; 64 - 44 = 20; 64 - 32 = 32; 64 - 66 = 2; 64 - 44 = 20; 44 - 32 = 12; 64 - 32 = 32; 64 - 66 = 2; 64 - 44 = 20; 32 + 44 = 76; 64 - 32 = 32; 66",1024,True,False,,False,no answer (truncated),,,,,
+4062,"[71, 12, 21, 2]",74,"<reasoning>
+Numbers: 71, 12, 21, 2. Target: 74.
+Try 71 * 2 = 142. Left: 12, 21, 142.
+Then 142 - 12 = 130. Left: 21, 130.
+Check the ways to combine 21 and 130: 21 + 130 = 151, 21 * 130 = 2730, 130 - 21 = 109. None gives 74.
+That doesn't work. Back up. Tried: 71 * 2 = 142.
+Try 71 - 2 = 69. Left: 12, 21, 69.
+Then 69 + 21 = 90. Left: 12, 90.
+Check the ways to combine 12 and 90: 12 + 90 = 102, 12 * 90 = 1080, 90 - 12 = 78. None gives 74.
+That doesn't work. Back up. Tried: 71 * 2 = 142; 71 - 2 = 69.
+Try 71 - 21 = 50. Left: 12, 2, 50.
+Then 12 * 2 = 24. Left: 50, 24.
+Then 50 + 24 = 74. Left: 74.
+That reaches 74.
+Check: (71 - 21) + (12 * 2) uses 2, 12, 21, 71 once each and equals 74.
+</reasoning>
+<solution>
+71 - 21 = 50
+12 * 2 = 24
+50 + 24 = 74
+</solution>
+<answer>
+(71 - 21) + (12 * 2)
+</answer>",383,False,True,(71 - 21) + (12 * 2),True,correct,1.0,0.0,1.0,1.0,1.0
+4063,"[26, 9, 65, 89]",18,"<reasoning>
+Numbers: 26, 9, 65, 89. Target: 18.
+Try 89 - 65 = 24. Left: 26, 9, 24.
+Then 26 - 9 = 17. Left: 24, 17.
+Closest: 24 - 17 = 7, off by 11.
+That doesn't work. Back up. Tried: 89 - 65 = 24.
+Try 26 - 9 = 17. Left: 65, 89, 17.
+Then 89 - 65 = 24. Left: 17, 24.
+Then 24 - 17 = 7. Left: 7.
+Then 7 + 11 = 18.
+Check: 11 is not one of the numbers left (only 7 is).
+That doesn't work. Back up. Tried: 89 - 65 = 24; 26 - 9 = 17.
+Try 89 - 26 = 63. Left: 9, 65, 63.
+Then 9 + 65 = 74. Left: 63, 74.
+Then 74 - 63 = 11. Left: 11.
+Then 11 + 7 = 18.
+Check: 7 is not one of the numbers left (only 11 is).
+That doesn't work. Back up. Tried: 89 - 65 = 24; 26 - 9 = 17; 89 - 26 = 63.
+Try 89 - 65 = 24. Left: 26, 9, 24.
+Then 26 - 9 = 17. Left: 24, 17.
+Then 24 - 17 = 7. Left: 7.
+Then 7 + 11 = 18.
+Check: 11 is not one of the numbers left (only 7 is).
+That doesn't work. Back up. Tried: 89 - 65 = 24; 26 - 9 = 17; 89 - 26 = 63.
+Try 89 - 9 = 80. Left: 26, 65, 80.
+Then 80 - 65 = 15. Left: 26, 15.
+Then 26 - 15 = 11. Left: 11.
+Then 11 + 7 = 18.
+Check: 7 is not one of the numbers left (only 11 is).
+That doesn't work. Back up. Tried: 89 - 65 = 24; 26 - 9 = 17; 89 - 26 = 63; 89 - 9 = 80.
+Try 89 - 26 = 63. Left: 9, 65, 63.
+Then 9 + 65 = 74. Left: 63, 74.
+Then 74 - 63 = 11. Left: 11.
+Then 11 + 7 = 18. Left: 18.
+That reaches 18.
+Check: (9 + 65) - (89 - (89 - 26)) uses 9, 26, 65, 89 once each and equals 18.
+</reasoning>
+<solution>
+89 - 26 = 63
+9 + 65 = 74
+74 - 63 = 11
+11 + 7 = 18
+</solution>
+<answer>
+(9 + 65) - (89 - (89 - 26))
+</answer>",746,False,True,(9 + 65) - (89 - (89 - 26)),False,a number reused or added,0.0,1.0,1.0,1.0,0.0
+4064,"[77, 24, 55, 43]",86,"<reasoning>
+Numbers: 77, 24, 55, 43. Target: 86.
+Try 43 * 55 = 2365. Left: 77, 24, 2365.
+Then 2365 - 24 = 2341. Left: 77, 2341.
+Check the ways to combine 77 and 2341: 77 + 2341 = 2418, 77 * 2341 = 180727, 2341 - 77 = 2264. None gives 86.
+That doesn't work. Back up. Tried: 43 * 55 = 2365.
+Try 77 - 24 = 53. Left: 55, 43, 53.
+Then 55 + 53 = 108. Left: 43, 108.
+Check the ways to combine 43 and 108: 43 + 108 = 151, 43 * 108 = 4644, 108 - 43 = 65. None gives 86.
+That doesn't work. Back up. Tried: 43 * 55 = 2365; 77 - 24 = 53.
+Try 77 - 55 = 22. Left: 24, 43, 22.
+Then 24 + 43 = 67. Left: 22, 67.
+Then 22 + 67 = 86.
+Check: 22 + 67 = 89, not 86.
+That doesn't work. Back up. Tried: 43 * 55 = 2365; 77 - 24 = 53; 77 - 55 = 22.
+Try 77 - 43 = 34. Left: 24, 55, 34.
+Then 24 + 55 = 79. Left: 34, 79.
+Then 34 + 79 = 113. Left: 113.
+Then 113 - 27 = 86.
+Check: 27 is not one of the numbers left (only 113 is).
+That doesn't work. Back up. Tried: 43 * 55 = 2365; 77 - 24 = 53; 77 - 55 = 22; 77 - 43 = 34.
+Try 77 - 43 = 34. Left: 24, 55, 34.
+Then 24 + 55 = 79. Left: 34, 79.
+Then 34 + 79 = 113. Left: 113.
+Then 113 - 27 = 86.
+Check: 27 is not one of the numbers left (only 113 is).
+That doesn't work. Back up. Tried: 43 * 55 = 2365; 77 - 24 = 53; 77 - 55 = 22; 77 - 43 = 34; 77 - 43 = 34.
+Try 77 - 55 = 22. Left: 24, 43, 22.
+Then 24 + 43 = 67. Left: 22, 67.
+Then 22 + 67 = 86.
+Check: 22 + 67 = 89, not 86.
+That doesn't work. Back up. Tried: 43 * 55 = 2365; 77 - 24 = 53; 77 - 55 = 22; 77 - 43 = 34; 77 - 43 = 34; 24 + 55 = 79.
+Try 77 - 24 = 53. Left: 55, 43, 53.
+Then 55 - 43 = 12. Left: 53, 12.
+Then 53 + 12 = 65. Left: 65.
+Then 65 + 21 = 86.
+Check: 21 is not one of the numbers left (only 65 is).
+That doesn't work. Back up. Tried: 43 * 55 = 2365; 77 - 24 = 53; 77 - 55 = 22; 77 - 43 = 34; 77 - 43 = 34; 24 + 55 = 79; 77 - 24 = 53; 55 - 43 = 12; 24 + 55 = 79; 77 - 55 = 22.
+Try 77 - 43 = 34. Left: 24, 55, 34.
+Then 24 + 55 = 79. Left: 34, 79.
+Then 34 + 79 = 113. Left: 113.
+Then 113 - 27 = 86. Left: 86.
+That reaches 86.
+Check: (77 - 43) + (24 + 55) - 27 uses 24, ",1024,True,False,,False,no answer (truncated),,,,,
+4065,"[40, 8, 95, 30]",49,"<reasoning>
+Numbers: 40, 8, 95, 30. Target: 49.
+Try 40 * 8 = 320. Left: 95, 30, 320.
+Then 320 - 30 = 290. Left: 95, 290.
+Check the ways to combine 95 and 290: 95 + 290 = 385, 95 * 290 = 27350, 290 - 95 = 195. None gives 49.
+That doesn't work. Back up. Tried: 40 * 8 = 320.
+Try 40 - 8 = 32. Left: 95, 30, 32.
+Then 95 - 32 = 63. Left: 30, 63.
+Then 63 - 30 = 33. Left: 33.
+Then 33 + 16 = 49.
+Check: 16 is not one of the numbers left (only 33 is).
+That doesn't work. Back up. Tried: 40 * 8 = 320; 40 - 8 = 32.
+Try 40 - 30 = 10. Left: 8, 95, 10.
+Then 8 * 10 = 80. Left: 95, 80.
+Then 95 - 80 = 15. Left: 15.
+Then 15 + 34 = 49.
+Check: 34 is not one of the numbers left (only 15 is).
+That doesn't work. Back up. Tried: 40 * 8 = 320; 40 - 8 = 32; 40 - 30 = 10.
+Try 40 - 30 = 10. Left: 8, 95, 10.
+Then 8 * 10 = 80. Left: 95, 80.
+Then 95 - 80 = 15. Left: 15.
+Then 15 + 34 = 49.
+Check: 34 is not one of the numbers left (only 15 is).
+That doesn't work. Back up. Tried: 40 * 8 = 320; 40 - 8 = 32; 40 - 30 = 10; 40 - 30 = 10.
+Try 40 - 30 = 10. Left: 8, 95, 10.
+Then 8 * 10 = 80. Left: 95, 80.
+Then 95 - 80 = 15. Left: 15.
+Then 15 + 34 = 49.
+Check: 34 is not one of the numbers left (only 15 is).
+That doesn't work. Back up. Tried: 40 * 8 = 320; 40 - 8 = 32; 40 - 30 = 10; 40 - 30 = 10.
+Try 8 * 30 = 240. Left: 40, 95, 240.
+Then 95 - 40 = 55. Left: 240, 55.
+Then 240 / 55 = 49/11 = 4.5, not 49.
+That doesn't work. Back up. Tried: 40 * 8 = 320; 40 - 8 = 32; 40 - 30 = 10; 8 * 30 = 240.
+Try 40 - 8 = 32. Left: 95, 30, 32.
+Then 95 - 30 = 65. Left: 32, 65.
+Then 65 - 32 = 33. Left: 33.
+Then 33 + 16 = 49.
+Check: 16 is not one of the numbers left (only 33 is).
+That doesn't work. Back up. Tried: 40 * 8 = 320; 40 - 8 = 32; 40 - 30 = 10; 8 * 30 = 240; 40 - 8 = 32.
+Try 40 - 30 = 10. Left: 8, 95, 10.
+Then 8 * 10 = 80. Left: 95, 80.
+Then 95 - 80 = 15. Left: 15.
+Then 15 + 34 = 49.
+Check: 34 is not one of the numbers left (only 15 is).
+That doesn't work. Back up. Tried: 40 * 8 = 320; 40 - 8 = 32; 40 - 30 = 10; 8 * 30 = 240; 40 - 8 = 32; 40 - 30 = 10.
+Try 40 - 30 = 10. Left: 8, 95, 10.
+Then 8 * 10 = 80.",1024,True,False,,False,no answer (truncated),,,,,
+4066,"[21, 73, 96, 56]",12,"<reasoning>
+Numbers: 21, 73, 96, 56. Target: 12.
+Try 73 * 21 = 1533. Left: 96, 56, 1533.
+Then 1533 - 96 = 1437. Left: 56, 1437.
+Check the ways to combine 56 and 1437: 56 + 1437 = 1493, 56 * 1437 = 80512, 1437 - 56 = 1381. None gives 12.
+That doesn't work. Back up. Tried: 73 * 21 = 1533.
+Try 73 - 21 = 52. Left: 96, 56, 52.
+Then 96 - 52 = 44. Left: 56, 44.
+Check the ways to combine 56 and 44: 56 + 44 = 100, 56 * 44 = 2464, 56 - 44 = 12. 56 - 44 = 12.
+That reaches 12.
+Check: 56 - (96 - (73 - 21)) uses 21, 56, 73, 96 once each and equals 12.
+</reasoning>
+<solution>
+73 - 21 = 52
+96 - 52 = 44
+56 - 44 = 12
+</solution>
+<answer>
+56 - (96 - (73 - 21))
+</answer>",314,False,True,56 - (96 - (73 - 21)),True,correct,1.0,0.0,1.0,1.0,1.0
+4067,"[33, 69, 65, 99]",68,"<reasoning>
+Numbers: 33, 69, 65, 99. Target: 68.
+Try 99 - 65 = 34. Left: 33, 69, 34.
+Then 69 - 34 = 35. Left: 33, 35.
+Closest: 33 + 35 = 68.
+Check: 33 + 35 = 68, correct.
+Check the ways to combine 33 and 69: 33 + 69 = 102, 33 * 69 = 2277, 69 - 33 = 36. None gives 68.
+That doesn't work. Back up. Tried: 99 - 65 = 34.
+Try 69 - 33 = 36. Left: 65, 99, 36.
+Then 99 - 65 = 34. Left: 36, 34.
+Then 36 + 34 = 68.
+Check: 36 + 34 = 70, not 68.
+That doesn't work. Back up. Tried: 99 - 65 = 34; 69 - 33 = 36.
+Try 69 - 65 = 4. Left: 33, 99, 4.
+Then 99 / 33 = 3. Left: 4, 3.
+Then 4 * 3 = 12. Left: 12.
+Then 12 + 56 = 68.
+Check: 56 is not one of the numbers left (only 12 is).
+That doesn't work. Back up. Tried: 99 - 65 = 34; 69 - 33 = 36; 69 - 65 = 4.
+Try 69 - 33 = 36. Left: 65, 99, 36.
+Then 65 + 36 = 101. Left: 99, 101.
+Then 101 - 99 = 68.
+Check: 101 - 99 = 2, not 68.
+That doesn't work. Back up. Tried: 99 - 65 = 34; 69 - 33 = 36; 69 - 65 = 4.
+Try 69 - 65 = 4. Left: 33, 99, 4.
+Then 99 / 33 = 3. Left: 4, 3.
+Then 4 * 3 = 12. Left: 12.
+Then 12 + 56 = 68. Left: 68.
+That reaches 68.
+Check: (69 - 65) * (99 / 33) + 56 uses 33, 65, 69, 99 once each and equals 68.
+</reasoning>
+<solution>
+69 - 65 = 4
+99 / 33 = 3
+4 * 3 = 12
+12 + 56 = 68
+</solution>
+<answer>
+(69 - 65) * (99 / 33) + 56
+</answer>",638,False,True,(69 - 65) * (99 / 33) + 56,False,a number reused or added,0.0,1.0,1.0,1.0,1.0
+4068,"[4, 69, 76, 11]",37,"<reasoning>
+Numbers: 4, 69, 76, 11. Target: 37.
+Try 76 - 4 = 72. Left: 69, 11, 72.
+Then 72 - 11 = 61. Left: 69, 61.
+Check the ways to combine 69 and 61: 69 + 61 = 130, 69 * 61 = 4189, 69 - 61 = 8. None gives 37.
+That doesn't work. Back up. Tried: 76 - 4 = 72.
+Try 76 - 69 = 7. Left: 4, 11, 7.
+Then 11 - 4 = 7. Left: 7, 7.
+Then 7 + 7 = 14. Left: 14.
+Then 14 + 23 = 37.
+Check: 23 is not one of the numbers left (only 14 is).
+That doesn't work. Back up. Tried: 76 - 4 = 72; 76 - 69 = 7.
+Try 76 - 11 = 65. Left: 4, 69, 65.
+Then 69 - 4 = 65. Left: 65, 65.
+Then 65 - 65 = 37.
+Check: 65 - 65 = 0, not 37.
+That doesn't work. Back up. Tried: 76 - 4 = 72; 76 - 69 = 7; 76 - 11 = 65.
+Try 76 - 4 = 72. Left: 69, 11, 72.
+Then 72 - 11 = 61. Left: 69, 61.
+Then 69 - 61 = 37.
+Check: 69 - 61 = 8, not 37.
+That doesn't work. Back up. Tried: 76 - 4 = 72; 76 - 69 = 7; 76 - 11 = 65; 76 - 4 = 72.
+Try 76 - 69 = 7. Left: 4, 11, 7.
+Then 11 - 4 = 7. Left: 7, 7.
+Then 7 + 7 = 37.
+Check: 7 + 7 = 14, not 37.
+That doesn't work. Back up. Tried: 76 - 4 = 72; 76 - 69 = 7; 76 - 11 = 65; 76 - 4 = 72; 76 - 11 = 65; 76 - 69 = 7.
+Try 76 - 11 = 65. Left: 4, 69, 65.
+Then 4 * 65 = 260. Left: 69, 260.
+Then 260 - 69 = 37.
+Check: 260 - 69 = 191, not 37.
+That doesn't work. Back up. Tried: 76 - 4 = 72; 76 - 69 = 7; 76 - 11 = 65; 76 - 4 = 72; 76 - 11 = 65; 76 - 69 = 7; 4 * 65 = 260.
+Try 4 * 11 = 44. Left: 69, 76, 44.
+Then 76 - 44 = 32. Left: 69, 32.
+Then 69 - 32 = 37. Left: 37.
+That reaches 37.
+Check: 69 - (76 - (4 * 11)) uses 4, 11, 69, 76 once each and equals 37.
+</reasoning>
+<solution>
+4 * 11 = 44
+76 - 44 = 32
+69 - 32 = 37
+</solution>
+<answer>
+69 - (76 - (4 * 11))
+</answer>",854,False,True,69 - (76 - (4 * 11)),True,correct,1.0,0.0,1.0,1.0,1.0
+4069,"[10, 75, 64, 2]",31,"<reasoning>
+Numbers: 10, 75, 64, 2. Target: 31.
+Try 10 * 2 = 20. Left: 75, 64, 20.
+Then 75 - 20 = 55. Left: 64, 55.
+Check the ways to combine 64 and 55: 64 + 55 = 119, 64 * 55 = 3520, 64 - 55 = 9. None gives 31.
+That doesn't work. Back up. Tried: 10 * 2 = 20.
+Try 10 + 64 = 74. Left: 75, 2, 74.
+Then 75 - 2 = 73. Left: 74, 73.
+Closest: 74 - 73 = 1, off by 30.
+That doesn't work. Back up. Tried: 10 * 2 = 20; 10 + 64 = 74.
+Try 10 + 75 = 85. Left: 64, 2, 85.
+Then 85 - 64 = 21. Left: 2, 21.
+Then 2 * 21 = 42. Left: 42.
+Then 42 - 11 = 31.
+Check: 11 is not one of the numbers left (only 42 is).
+That doesn't work. Back up. Tried: 10 * 2 = 20; 10 + 64 = 74; 10 + 75 = 85.
+Try 10 * 64 = 640. Left: 75, 2, 640.
+Then 640 / 2 = 320. Left: 75, 320.
+Then 320 - 75 = 245. Left: 245.
+Then 245 - 214 = 31.
+Check: 214 is not one of the numbers left (only 245 is).
+That doesn't work. Back up. Tried: 10 * 2 = 20; 10 + 64 = 74; 10 + 75 = 85; 10 * 64 = 640.
+Try 10 + 75 = 85. Left: 64, 2, 85.
+Then 64 - 2 = 62. Left: 85, 62.
+Then 85 - 62 = 23. Left: 23.
+Then 23 + 8 = 31.
+Check: 8 is not one of the numbers left (only 23 is).
+That doesn't work. Back up. Tried: 10 * 2 = 20; 10 + 64 = 74; 10 + 75 = 85; 10 * 64 = 640; 10 + 75 = 85.
+Try 10 + 2 = 12. Left: 75, 64, 12.
+Then 75 - 64 = 11. Left: 12, 11.
+Then 12 + 11 = 23. Left: 23.
+Then 23 + 8 = 31.
+Check: 8 is not one of the numbers left (only 23 is).
+That doesn't work. Back up. Tried: 10 * 2 = 20; 10 + 64 = 74; 10 + 75 = 85; 10 * 64 = 640; 10 + 75 = 85; 10 + 2 = 12.
+Try 10 + 75 = 85. Left: 64, 2, 85.
+Then 64 / 2 = 32. Left: 85, 32.
+Then 85 - 32 = 53. Left: 53.
+Then 53 - 22 = 31.
+Check: 22 is not one of the numbers left (only 53 is).
+That doesn't work. Back up. Tried: 10 * 2 = 20; 10 + 64 = 74; 10 + 75 = 85; 10 * 64 = 640; 10 + 75 = 85; 10 + 2 = 12; 10 + 75 = 85.
+Try 10 + 64 = 74. Left: 75, 2, 74.
+Then 2 * 75 = 150. Left: 74, 150.
+Then 150 - 74 = 76. Left: 76.
+Then 76 - 45 = 31.
+Check: 45 is not one of the numbers left (only 76 is).
+That doesn't work. Back up. Tried: 10 * 2 = 20; 10 + 64 = 74; 10 + 75 = 85; 10 * 64 = 640; 10 + 75 = 85",1024,True,False,,False,no answer (truncated),,,,,
+4070,"[51, 34, 14, 33]",11,"<reasoning>
+Numbers: 51, 34, 14, 33. Target: 11.
+Try 51 - 14 = 37. Left: 34, 33, 37.
+Then 37 - 34 = 3. Left: 33, 3.
+Check the ways to combine 33 and 3: 33 + 3 = 36, 33 * 3 = 99, 33 - 3 = 30. None gives 11.
+That doesn't work. Back up. Tried: 51 - 14 = 37.
+Try 51 - 34 = 17. Left: 14, 33, 17.
+Then 33 - 17 = 16. Left: 14, 16.
+Then 16 - 14 = 2. Left: 2.
+Then 2 + 9 = 11.
+Check: 9 is not one of the numbers left (only 2 is).
+That doesn't work. Back up. Tried: 51 - 14 = 37; 51 - 34 = 17.
+Try 51 - 33 = 18. Left: 34, 14, 18.
+Then 34 - 14 = 20. Left: 18, 20.
+Then 20 - 18 = 2. Left: 2.
+Then 2 + 9 = 11.
+Check: 9 is not one of the numbers left (only 2 is).
+That doesn't work. Back up. Tried: 51 - 14 = 37; 51 - 34 = 17; 51 - 33 = 18.
+Try 51 - 33 = 18. Left: 34, 14, 18.
+Then 34 - 14 = 20. Left: 18, 20.
+Then 20 - 18 = 2. Left: 2.
+Then 2 + 9 = 11.
+Check: 9 is not one of the numbers left (only 2 is).
+That doesn't work. Back up. Tried: 51 - 14 = 37; 51 - 34 = 17; 51 - 33 = 18; 51 - 33 = 18.
+Try 51 - 34 = 17. Left: 14, 33, 17.
+Then 14 + 17 = 31. Left: 33, 31.
+Then 33 - 31 = 2. Left: 2.
+Then 2 + 9 = 11.
+Check: 9 is not one of the numbers left (only 2 is).
+That doesn't work. Back up. Tried: 51 - 14 = 37; 51 - 34 = 17; 51 - 33 = 18; 51 - 33 = 18.
+Try 51 - 14 = 37. Left: 34, 33, 37.
+Then 34 - 33 = 1. Left: 37, 1.
+Then 37 - 1 = 36. Left: 36.
+Then 36 - 25 = 11.
+Check: 25 is not one of the numbers left (only 36 is).
+That doesn't work. Back up. Tried: 51 - 14 = 37; 51 - 34 = 17; 51 - 33 = 18; 51 - 33 = 18; 51 - 14 = 37; 34 - 14 = 20; 51 - 34 = 17; 51 - 33 = 18; 51 - 14 = 37; 34 - 33 = 1; 51 - 34 = 17.
+Try 51 - 33 = 18. Left: 34, 14, 18.
+Then 34 - 14 = 20. Left: 18, 20.
+Then 20 - 18 = 2. Left: 2.
+Then 2 + 9 = 11.
+Check the ways to combine 2 and 9: 2 + 9 = 11, 2 * 9 = 18, 9 - 2 = 7. None gives 11.
+That doesn't work. Back up. Tried: 51 - 14 = 37; 51 - 34 = 17; 51 - 33 = 18; 51 - 33 = 18; 51 - 14 = 37; 34 - 14 = 20; 51 - 34 = 17; 51 - 33 = 18; 51 - 14 = 37; 34 - 33 = 1; 51 - 34 = 17; 51 - 33 = 18; 34 - ",1024,True,False,,False,no answer (truncated),,,,,
+4071,"[9, 10, 25, 86]",100,"<reasoning>
+Numbers: 9, 10, 25, 86. Target: 100.
+Try 25 * 10 = 250. Left: 9, 86, 250.
+Then 250 - 9 = 241. Left: 86, 241.
+Check the ways to combine 86 and 241: 86 + 241 = 327, 86 * 241 = 20746, 241 - 86 = 155. None gives 100.
+That doesn't work. Back up. Tried: 25 * 10 = 250.
+Try 25 - 9 = 16. Left: 10, 86, 16.
+Then 10 + 16 = 26. Left: 86, 26.
+Then 86 + 26 = 112. Left: 112.
+Then 112 - 12 = 100.
+Check: 12 is not one of the numbers left (only 112 is).
+That doesn't work. Back up. Tried: 25 * 10 = 250; 25 - 9 = 16.
+Try 9 + 10 = 19. Left: 25, 86, 19.
+Then 86 - 25 = 61. Left: 19, 61.
+Then 19 + 61 = 80. Left: 80.
+Then 80 + 20 = 100.
+Check: 20 is not one of the numbers left (only 80 is).
+That doesn't work. Back up. Tried: 25 * 10 = 250; 25 - 9 = 16; 9 + 10 = 19.
+Try 9 + 86 = 95. Left: 10, 25, 95.
+Then 95 - 10 = 85. Left: 25, 85.
+Then 25 + 85 = 110. Left: 110.
+Then 110 - 10 = 100. Left: 100.
+That reaches 100.
+Check: (25 + ((9 + 86) - 10)) - 10 uses 9, 10, 25, 86 once each and equals 100.
+</reasoning>
+<solution>
+9 + 86 = 95
+95 - 10 = 85
+25 + 85 = 110
+110 - 10 = 100
+</solution>
+<answer>
+(25 + ((9 + 86) - 10)) - 10
+</answer>",529,False,True,(25 + ((9 + 86) - 10)) - 10,False,a number reused or added,0.0,1.0,1.0,1.0,1.0
+4072,"[4, 63, 95, 73]",61,"<reasoning>
+Numbers: 4, 63, 95, 73. Target: 61.
+Try 95 - 73 = 22. Left: 4, 63, 22.
+Then 63 - 22 = 41. Left: 4, 41.
+Check the ways to combine 4 and 41: 4 + 41 = 45, 4 * 41 = 164, 41 - 4 = 37. None gives 61.
+That doesn't work. Back up. Tried: 95 - 73 = 22.
+Try 63 - 4 = 59. Left: 95, 73, 59.
+Then 95 - 73 = 22. Left: 59, 22.
+Closest: 59 + 22 = 81, off by 20.
+That doesn't work. Back up. Tried: 95 - 73 = 22; 63 - 4 = 59.
+Try 63 - 73 = 10. Left: 4, 95, 10.
+Then 95 - 10 = 85. Left: 4, 85.
+Then 85 - 4 = 61.
+Check: 85 - 4 = 81, not 61.
+That doesn't work. Back up. Tried: 95 - 73 = 22; 63 - 4 = 59; 63 - 73 = 10.
+Try 63 - 95 = 32. Left: 4, 73, 32.
+Then 73 - 32 = 41. Left: 4, 41.
+Then 4 + 41 = 45. Left: 45.
+Then 45 + 16 = 61.
+Check: 16 is not one of the numbers left (only 45 is).
+That doesn't work. Back up. Tried: 95 - 73 = 22; 63 - 4 = 59; 63 - 95 = 32.
+Try 63 - 4 = 59. Left: 95, 73, 59.
+Then 95 - 73 = 22. Left: 59, 22.
+Then 59 + 22 = 61. Left: 61.
+That reaches 61.
+Check: (63 - 4) + (95 - 73) uses 4, 63, 73, 95 once each and equals 61.
+</reasoning>
+<solution>
+63 - 4 = 59
+95 - 73 = 22
+59 + 22 = 61
+</solution>
+<answer>
+(63 - 4) + (95 - 73)
+</answer>",574,False,True,(63 - 4) + (95 - 73),False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4073,"[96, 12, 99, 21]",18,"<reasoning>
+Numbers: 96, 12, 99, 21. Target: 18.
+Try 21 * 12 = 252. Left: 96, 99, 252.
+Then 252 - 96 = 156. Left: 99, 156.
+Check the ways to combine 99 and 156: 99 + 156 = 255, 99 * 156 = 15444, 156 - 99 = 57. None gives 18.
+That doesn't work. Back up. Tried: 21 * 12 = 252.
+Try 99 - 96 = 3. Left: 12, 21, 3.
+Then 21 - 12 = 9. Left: 3, 9.
+Then 3 * 9 = 27. Left: 27.
+Then 27 - 9 = 18.
+Check: 9 is not one of the numbers left (only 27 is).
+That doesn't work. Back up. Tried: 21 * 12 = 252; 99 - 96 = 3.
+Try 96 - 12 = 84. Left: 99, 21, 84.
+Then 99 - 84 = 15. Left: 21, 15.
+Then 21 - 15 = 6. Left: 6.
+Then 6 + 12 = 18.
+Check: 12 is not one of the numbers left (only 6 is).
+That doesn't work. Back up. Tried: 21 * 12 = 252; 99 - 96 = 3; 96 - 12 = 84.
+Try 99 - 21 = 78. Left: 96, 12, 78.
+Then 96 - 12 = 84. Left: 78, 84.
+Then 84 - 78 = 6. Left: 6.
+Then 6 + 12 = 18.
+Check: 12 is not one of the numbers left (only 6 is).
+That doesn't work. Back up. Tried: 21 * 12 = 252; 99 - 96 = 3; 96 - 12 = 84; 99 - 21 = 78.
+Try 99 - 96 = 3. Left: 12, 21, 3.
+Then 21 - 12 = 9. Left: 3, 9.
+Then 3 * 9 = 27. Left: 27.
+Then 27 - 9 = 18. Left: 18.
+That reaches 18.
+Check: (99 - 96) * (21 - 12) uses 12, 21, 96, 99 once each and equals 18.
+</reasoning>
+<solution>
+99 - 96 = 3
+21 - 12 = 9
+3 * 9 = 27
+27 - 9 = 18
+</solution>
+<answer>
+(99 - 96) * (21 - 12)
+</answer>",649,False,True,(99 - 96) * (21 - 12),False,"right numbers, wrong value",1.0,0.0,1.0,1.0,0.0
+4074,"[16, 89, 88, 81]",40,"<reasoning>
+Numbers: 16, 89, 88, 81. Target: 40.
+Try 88 * 89 = 7832. Left: 16, 81, 7832.
+Then 7832 - 81 = 7751. Left: 16, 7751.
+Check the ways to combine 16 and 7751: 16 + 7751 = 7767, 16 * 7751 = 124416, 7751 - 16 = 7735. None gives 40.
+That doesn't work. Back up. Tried: 88 * 89 = 7832.
+Try 88 - 81 = 7. Left: 16, 89, 7.
+Then 89 - 7 = 82. Left: 16, 82.
+Then 82 - 16 = 40.
+Check: 82 - 16 = 66, not 40.
+That doesn't work. Back up. Tried: 88 * 89 = 7832; 88 - 81 = 7.
+Try 88 - 16 = 72. Left: 89, 81, 72.
+Then 89 - 81 = 8. Left: 72, 8.
+Then 72 / 8 = 40.
+Check: 72 / 8 = 9, not 40.
+That doesn't work. Back up. Tried: 88 * 89 = 7832; 88 - 81 = 7; 88 - 16 = 72.
+Try 89 - 81 = 8. Left: 16, 88, 8.
+Then 88 / 8 = 11. Left: 16, 11.
+Then 16 + 11 = 40.
+Check: 16 + 11 = 27, not 40.
+That doesn't work. Back up. Tried: 88 * 89 = 7832; 88 - 81 = 7; 88 - 16 = 72; 89 - 81 = 8.
+Try 89 - 88 = 1. Left: 16, 81, 1.
+Then 16 * 1 = 16. Left: 81, 16.
+Then 81 - 16 = 40.
+Check: 81 - 16 = 65, not 40.
+That doesn't work. Back up. Tried: 88 * 89 = 7832; 88 - 81 = 7; 88 - 16 = 72; 89 - 81 = 8; 89 - 88 = 1.
+Try 88 - 81 = 7. Left: 16, 89, 7.
+Then 89 - 7 = 82. Left: 16, 82.
+Then 82 - 16 = 40.
+Check: 82 - 16 = 66, not 40.
+That doesn't work. Back up. Tried: 88 * 89 = 7832; 88 - 81 = 7; 88 - 16 = 72; 89 - 81 = 8; 89 - 88 = 1; 88 - 81 = 7.
+Try 89 - 16 = 73. Left: 88, 81, 73.
+Then 88 - 81 = 7. Left: 73, 7.
+Then 73 - 7 = 40.
+Check: 73 - 7 = 66, not 40.
+That doesn't work. Back up. Tried: 88 * 89 = 7832; 88 - 81 = 7; 88 - 16 = 72; 89 - 81 = 8; 89 - 88 = 1; 88 - 81 = 7; 89 - 16 = 73.
+Try 89 - 88 = 1. Left: 16, 81, 1.
+Then 16 * 1 = 16. Left: 81, 16.
+Then 81 - 16 = 40.
+Check: 81 - 16 = 65, not 40.
+That doesn't work. Back up. Tried: 88 * 89 = 7832; 88 - 81 = 7; 88 - 16 = 72; 89 - 81 = 8; 89 - 88 = 1; 88 - 81 = 7; 89 - 16 = 73; 89 - 88 = 1; 81 - 16 = 65.
+Try 88 - 81 = 7. Left: 16, 89, 7.
+Then 89 - 7 = 82. Left: 16, 82",1024,True,False,,False,no answer (truncated),,,,,
+4075,"[92, 48, 17, 4]",18,"<reasoning>
+Numbers: 92, 48, 17, 4. Target: 18.
+Try 92 - 48 = 44. Left: 17, 4, 44.
+Then 44 - 4 = 40. Left: 17, 40.
+Closest: 40 - 17 = 23, off by 5.
+That doesn't work. Back up. Tried: 92 - 48 = 44.
+Try 92 - 17 = 75. Left: 48, 4, 75.
+Then 75 - 4 = 71. Left: 48, 71.
+Check the ways to combine 48 and 71: 48 + 71 = 119, 48 * 71 = 3408, 71 - 48 = 23. None gives 18.
+That doesn't work. Back up. Tried: 92 - 48 = 44; 92 - 17 = 75.
+Try 92 - 4 = 88. Left: 48, 17, 88.
+Then 88 - 17 = 71. Left: 48, 71.
+Closest: 71 - 48 = 23, off by 5.
+That doesn't work. Back up. Tried: 92 - 48 = 44; 92 - 17 = 75; 92 - 4 = 88.
+Try 92 - 48 = 44. Left: 17, 4, 44.
+Then 44 / 4 = 11. Left: 17, 11.
+Then 17 + 11 = 18.
+Check: 17 + 11 = 28, not 18.
+That doesn't work. Back up. Tried: 92 - 48 = 44; 92 - 17 = 75; 92 - 4 = 88; 92 - 48 = 44.
+Try 92 - 17 = 75. Left: 48, 4, 75.
+Then 48 / 4 = 12. Left: 75, 12.
+Then 75 - 12 = 18.
+Check: 75 - 12 = 63, not 18.
+That doesn't work. Back up. Tried: 92 - 48 = 44; 92 - 17 = 75; 92 - 4 = 88; 92 - 48 = 44; 92 - 17 = 75; 92 - 48 = 44.
+Try 92 - 4 = 88. Left: 48, 17, 88.
+Then 88 / 4 = 22. Left: 48, 17, 22.
+Then 48 - 17 = 31. Left: 22, 31.
+Then 31 - 22 = 9. Left: 9.
+Then 9 + 9 = 18.
+Check: 9 + 9 = 18, which is correct.
+Check: (92 - 4) / 4 uses 4, 17, 48, 92 once each and equals 18.
+</reasoning>
+<solution>
+92 - 4 = 88
+88 / 4 = 22
+48 - 17 = 31
+31 - 22 = 9
+9 + 9 = 18
+</solution>
+<answer>
+(92 - 4) / 4
+</answer>",737,False,True,(92 - 4) / 4,False,wrong numbers (made up or swapped),0.0,1.0,1.0,1.0,0.0
+4076,"[12, 75, 62, 30]",92,"<reasoning>
+Numbers: 12, 75, 62, 30. Target: 92.
+Try 12 + 30 = 42. Left: 75, 62, 42.
+Then 75 + 42 = 117. Left: 62, 117.
+Check the ways to combine 62 and 117: 62 + 117 = 179, 62 * 117 = 7254, 117 - 62 = 55. None gives 92.
+That doesn't work. Back up. Tried: 12 + 30 = 42.
+Try 75 - 62 = 13. Left: 12, 30, 13.
+Then 12 * 13 = 156. Left: 30, 156.
+Then 156 - 30 = 92.
+Check: 156 - 30 = 126, not 92.
+That doesn't work. Back up. Tried: 12 + 30 = 42; 75 - 62 = 13.
+Try 12 + 75 = 87. Left: 62, 30, 87.
+Then 87 - 62 = 25. Left: 30, 25.
+Then 30 + 25 = 92.
+Check: 30 + 25 = 55, not 92.
+That doesn't work. Back up. Tried: 12 + 30 = 42; 75 - 62 = 13; 12 + 75 = 87.
+Try 75 - 12 = 63. Left: 62, 30, 63.
+Then 62 + 63 = 125. Left: 30, 125.
+Then 125 - 30 = 92.
+Check: 125 - 30 = 95, not 92.
+That doesn't work. Back up. Tried: 12 + 30 = 42; 75 - 62 = 13; 12 + 75 = 87; 75 - 12 = 63.
+Try 75 - 30 = 45. Left: 12, 62, 45.
+Then 62 - 45 = 17. Left: 12, 17.
+Then 12 * 17 = 204. Left: 204.
+Then 204 - 112 = 92.
+Check: 112 is not one of the numbers left (only 204 is).
+That doesn't work. Back up. Tried: 12 + 30 = 42; 75 - 62 = 13; 12 + 75 = 87; 75 - 12 = 63; 75 - 30 = 45.
+Try 75 - 62 = 13. Left: 12, 30, 13.
+Then 12 * 13 = 156. Left: 30, 156.
+Then 156 - 30 = 92.
+Check: 156 - 30 = 126, not 92.
+That doesn't work. Back up. Tried: 12 + 30 = 42; 75 - 62 = 13; 12 + 75 = 87; 75 - 12 = 63; 75 - 30 = 45; 75 - 62 = 13.
+Try 75 - 62 = 13. Left: 12, 30, 13.
+Then 12 + 30 = 42. Left: 13, 42.
+Then 13 * 42 = 546. Left: 546.
+Then 546 - 454 = 92.
+Check: 454 is not one of the numbers left (only 546 is).
+That doesn't work. Back up. Tried: 12 + 30 = 42; 75 - 62 = 13; 12 + 75 = 87; 75 - 12 = 63; 75 - 30 = 45; 75 - 62 = 13; 12 + 75 = 87.
+Try 75 - 12 = 63. Left: 62, 30, 63.
+Then 62 + 63 = 125. Left: 30, 125.
+Then 125 - 30 = 92. Left: 92.
+That reaches 92.
+Check: (62 + (75 - 12)) - 30 uses 12, 30, 62, 75 once each and equals 92.
+</reasoning>
+<solution>
+75 - 12 = 63
+62 + 63 = 125
+125 - 30 = 92
+</solution>
+<answer>
+(62 + (75 - 12)) - 30
+</answer>",992,False,True,(62 + (75 - 12)) - 30,False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4077,"[35, 74, 70, 92]",56,"<reasoning>
+Numbers: 35, 74, 70, 92. Target: 56.
+Try 74 * 35 = 2590. Left: 70, 92, 2590.
+Then 2590 - 70 = 2520. Left: 92, 2520.
+Check the ways to combine 92 and 2520: 92 + 2520 = 2612, 92 * 2520 = 231360, 2520 - 92 = 2428. None gives 56.
+That doesn't work. Back up. Tried: 74 * 35 = 2590.
+Try 70 - 35 = 35. Left: 74, 92, 35.
+Then 92 - 35 = 57. Left: 74, 57.
+Closest: 74 - 57 = 17, off by 39.
+That doesn't work. Back up. Tried: 74 * 35 = 2590; 70 - 35 = 35.
+Try 70 - 74 = 4. Left: 35, 92, 4.
+Then 92 - 35 = 57. Left: 4, 57.
+Then 57 - 4 = 53. Left: 53.
+Then 53 + 3 = 56.
+Check: 3 is not one of the numbers left (only 53 is).
+That doesn't work. Back up. Tried: 74 * 35 = 2590; 70 - 35 = 35; 70 - 74 = 4.
+Try 74 - 70 = 4. Left: 35, 92, 4.
+Then 92 / 4 = 23. Left: 35, 23.
+Then 35 + 23 = 58. Left: 58.
+Then 58 - 2 = 56.
+Check: 2 is not one of the numbers left (only 58 is).
+That doesn't work. Back up. Tried: 74 * 35 = 2590; 70 - 35 = 35; 70 - 74 = 4; 74 - 70 = 4.
+Try 74 - 35 = 39. Left: 70, 92, 39.
+Then 70 - 39 = 31. Left: 92, 31.
+Then 92 - 31 = 61. Left: 61.
+Then 61 - 5 = 56.
+Check: 5 is not one of the numbers left (only 61 is).
+That doesn't work. Back up. Tried: 74 * 35 = 2590; 70 - 35 = 35; 70 - 74 = 4; 74 - 70 = 4; 74 - 35 = 39; 70 - 74 = 4; 74 - 70 = 4; 74 - 35 = 39.
+Try 74 - 70 = 4. Left: 35, 92, 4.
+Then 92 - 35 = 57. Left: 4, 57.
+Then 57 - 4 = 53. Left: 53.
+Then 53 + 3 = 56.
+Check the ways to combine 3 with 53: 3 + 53 = 56, 3 * 53 = 159, 53 - 3 = 50. Only 3 + 53 gives 56.
+Check: (92 - 35) - (74 - 70) uses 35, 70, 74, 92 once each and equals 3, not 56.
+That doesn't work. Back up. Tried: 74 * 35 = 2590; 70 - 35 = 35; 70 - 74 = 4; 74 - 70 = 4; 74 - 35 = 39; 70 - 74 = 4; 74 - 70 = 4; 74 - 35 = 39; 70 - 74 = 4; 74 - 70 = 4; 74 - 35 = 39; 70 - 74 = 4; 74 - 70 = 4; 74 - 35 = 39; 70 - 74 = 4; 74 - 70 = 4; 74 - 35 = 39; 70 - 74 = 4; 74 - 70 = 4; 74 - 35 = 39; 70 - 74 = 4; 74 - 70 = 4; 74 - 35 = 39; 70 - 74 = 4; 74 - 70 = 4; 74 - 35",1024,True,False,,False,no answer (truncated),,,,,
+4078,"[33, 11, 37, 78]",93,"<reasoning>
+Numbers: 33, 11, 37, 78. Target: 93.
+Try 33 + 78 = 111. Left: 11, 37, 111.
+Then 111 - 37 = 74. Left: 11, 74.
+Closest: 11 + 74 = 85, off by 8.
+That doesn't work. Back up. Tried: 33 + 78 = 111.
+Try 33 + 37 = 70. Left: 11, 78, 70.
+Then 78 - 70 = 8. Left: 11, 8.
+Then 11 * 8 = 88. Left: 88.
+Then 88 + 5 = 93.
+Check: 5 is not one of the numbers left (only 88 is).
+That doesn't work. Back up. Tried: 33 + 78 = 111; 33 + 37 = 70.
+Try 33 - 11 = 22. Left: 37, 78, 22.
+Then 78 - 37 = 41. Left: 22, 41.
+Then 22 + 41 = 63. Left: 63.
+Then 63 + 30 = 93.
+Check: 30 is not one of the numbers left (only 63 is).
+That doesn't work. Back up. Tried: 33 + 78 = 111; 33 + 37 = 70; 33 - 11 = 22.
+Try 33 - 11 = 22. Left: 37, 78, 22.
+Then 78 - 37 = 41. Left: 22, 41.
+Then 22 + 41 = 63. Left: 63.
+Then 63 + 30 = 93.
+Check: 30 is not one of the numbers left (only 63 is).
+That doesn't work. Back up. Tried: 33 + 78 = 111; 33 + 37 = 70; 33 - 11 = 22; 33 - 11 = 22.
+Try 33 - 37 = 4. Left: 11, 78, 4.
+Then 11 * 4 = 44. Left: 78, 44.
+Then 78 + 44 = 122. Left: 122.
+Then 122 - 29 = 93.
+Check: 29 is not one of the numbers left (only 122 is).
+That doesn't work. Back up. Tried: 33 + 78 = 111; 33 + 37 = 70; 33 - 11 = 22; 33 - 37 = 4.
+Try 33 - 11 = 22. Left: 37, 78, 22.
+Then 78 - 37 = 41. Left: 22, 41.
+Then 22 + 41 = 63. Left: 63.
+Then 63 + 30 = 93.
+Check the ways to combine 63 and 30: 63 + 30 = 93, 63 * 30 = 1890, 63 - 30 = 33. None gives 93.
+That doesn't work. Back up. Tried: 33 + 78 = 111; 33 + 37 = 70; 33 - 11 = 22; 33 - 37 = 4; 33 - 11 = 22.
+Try 33 - 37 = 4. Left: 11, 78, 4.
+Then 78 / 4 = 19.5. Left: 11, 19.5.
+Then 11 + 19.5 = 30.5. Left: 30.5.
+Then 30.5 + 62.5 = 93.
+Check: 62.5 is not one of the numbers left (only 30.5 is).
+That doesn't work. Back up. Tried: 33 + 78 = 111; 33 + 37 = 70; 33 - 11 = 22; 33 - 37 = 4; 33 - 11 = 22; 33 - 37 = 4; 33 - 37 = 4.
+Try 33 - 11 = 22. Left: 37, 78, 22.
+Then 78 - 37 = 41. Left: 22, 41.
+Then 22 + 41 = 63. Left: 63.
+Then 63 + 30 = 93.
+Check the ways to combine 63 and 30: 63 + 30 = 93, 63 * 30 = 1890, 63 - 30 = 33. None gives 93.
+That doesn",1024,True,False,,False,no answer (truncated),,,,,
+4079,"[92, 3, 23, 15]",51,"<reasoning>
+Numbers: 92, 3, 23, 15. Target: 51.
+Try 23 * 3 = 69. Left: 92, 15, 69.
+Then 92 - 15 = 77. Left: 69, 77.
+Check the ways to combine 69 and 77: 69 + 77 = 146, 69 * 77 = 5303, 77 - 69 = 8. None gives 51.
+That doesn't work. Back up. Tried: 23 * 3 = 69.
+Try 92 - 23 = 69. Left: 3, 15, 69.
+Then 69 - 15 = 54. Left: 3, 54.
+Closest: 54 - 3 = 51.
+Check: 54 - 3 = 51.
+That reaches 51.
+Check: (92 - 23) - 15 uses 3, 15, 23, 92 once each and equals 51.
+</reasoning>
+<solution>
+92 - 23 = 69
+69 - 15 = 54
+54 - 3 = 51
+</solution>
+<answer>
+(92 - 23) - 15
+</answer>",273,False,True,(92 - 23) - 15,False,a number missing,0.0,0.0,1.0,1.0,0.0
+4080,"[56, 91, 15, 95]",75,"<reasoning>
+Numbers: 56, 91, 15, 95. Target: 75.
+Try 56 + 15 = 71. Left: 91, 95, 71.
+Then 95 - 71 = 24. Left: 91, 24.
+Check the ways to combine 91 and 24: 91 + 24 = 115, 91 * 24 = 2184, 91 - 24 = 67. None gives 75.
+That doesn't work. Back up. Tried: 56 + 15 = 71.
+Try 56 + 95 = 151. Left: 91, 15, 151.
+Then 151 - 15 = 136. Left: 91, 136.
+Check the ways to combine 91 and 136: 91 + 136 = 227, 91 * 136 = 12376, 136 - 91 = 45. None gives 75.
+That doesn't work. Back up. Tried: 56 + 15 = 71; 56 + 95 = 151.
+Try 56 + 91 = 147. Left: 15, 95, 147.
+Then 147 - 15 = 132. Left: 95, 132.
+Then 132 - 95 = 75.
+Check: 132 - 95 = 37, not 75.
+That doesn't work. Back up. Tried: 56 + 15 = 71; 56 + 95 = 151; 56 + 91 = 147.
+Try 56 + 95 = 151. Left: 91, 15, 151.
+Then 151 - 15 = 136. Left: 91, 136.
+Then 136 - 91 = 75. Left: 75.
+That reaches 75.
+Check: ((56 + 95) - 15) - 91 uses 15, 56, 91, 95 once each and equals 75.
+</reasoning>
+<solution>
+56 + 95 = 151
+151 - 15 = 136
+136 - 91 = 75
+</solution>
+<answer>
+((56 + 95) - 15) - 91
+</answer>",485,False,True,((56 + 95) - 15) - 91,False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4081,"[5, 49, 8, 89]",64,"<reasoning>
+Numbers: 5, 49, 8, 89. Target: 64.
+Try 89 - 5 = 84. Left: 49, 8, 84.
+Then 84 - 8 = 76. Left: 49, 76.
+Check the ways to combine 49 and 76: 49 + 76 = 125, 49 * 76 = 3724, 76 - 49 = 27. None gives 64.
+That doesn't work. Back up. Tried: 89 - 5 = 84.
+Try 89 - 8 = 81. Left: 5, 49, 81.
+Then 81 - 49 = 32. Left: 5, 32.
+Closest: 5 + 32 = 37, off by 27.
+That doesn't work. Back up. Tried: 89 - 5 = 84; 89 - 8 = 81.
+Try 5 * 89 = 445. Left: 49, 8, 445.
+Then 445 - 49 = 396. Left: 8, 396.
+Then 396 / 8 = 64.
+Check: 396 / 8 = 49. Not 64.
+That doesn't work. Back up. Tried: 89 - 5 = 84; 89 - 8 = 81; 5 * 89 = 445.
+Try 49 - 5 = 44. Left: 8, 89, 44.
+Then 89 - 44 = 45. Left: 8, 45.
+Then 8 * 45 = 360. Left: 360.
+Then 360 - 296 = 64.
+Check: 296 is not one of the numbers left (only 360 is).
+That doesn't work. Back up. Tried: 89 - 5 = 84; 89 - 8 = 81; 5 * 89 = 445; 49 - 5 = 44.
+Try 49 - 8 = 41. Left: 5, 89, 41.
+Then 89 - 41 = 48. Left: 5, 48.
+Then 5 * 48 = 240. Left: 240.
+Then 240 - 176 = 64.
+Check: 176 is not one of the numbers left (only 240 is).
+That doesn't work. Back up. Tried: 89 - 5 = 84; 89 - 8 = 81; 5 * 89 = 445; 49 - 5 = 44; 49 - 8 = 41.
+Try 49 - 5 = 44. Left: 8, 89, 44.
+Then 89 - 44 = 45. Left: 8, 45.
+Then 8 * 45 = 360. Left: 360.
+Then 360 - 296 = 64.
+Check the ways to combine 296 and 64: 296 + 64 = 360, 296 * 64 = 18944, 296 - 64 = 232. None gives 64.
+That doesn't work. Back up. Tried: 89 - 5 = 84; 89 - 8 = 81; 5 * 89 = 445; 49 - 5 = 44; 49 - 8 = 41; 49 - 5 = 44.
+Try 8 * 89 = 712. Left: 5, 49, 712.
+Then 712 - 49 = 663. Left: 5, 663.
+Then 663 / 5 = 132. Left: 132.
+Then 132 - 68 = 64.
+Check: 68 is not one of the numbers left (only 132 is).
+That doesn't work. Back up. Tried: 89 - 5 = 84; 89 - 8 = 81; 5 * 89 = 445; 49 - 5 = 44; 49 - 8 = 41; 49 - 5 = 44; 8 * 89 = 712.
+Try 8 * 49 = 392. Left: 5, 89, 392.
+Then 89 - 5 = 84. Left: 392, 84.
+Then 392 / 84 = 64. Left: 64.
+That reaches 64.
+Check: (8 * 49) / (89 - 5) uses 5, 8, 49, 89 once each and equals 64.
+</reasoning>
+<solution>
+8 * 49 = 392
+89 - 5 = 84
+392 / 84 = 64
+</",1024,True,False,,False,no answer (truncated),,,,,
+4082,"[44, 30, 76, 58]",62,"<reasoning>
+Numbers: 44, 30, 76, 58. Target: 62.
+Try 58 * 44 = 2548. Left: 30, 76, 2548.
+Then 2548 - 76 = 2472. Left: 30, 2472.
+Check the ways to combine 30 and 2472: 30 + 2472 = 2502, 30 * 2472 = 74040, 2472 - 30 = 2442. None gives 62.
+That doesn't work. Back up. Tried: 58 * 44 = 2548.
+Try 58 - 44 = 14. Left: 30, 76, 14.
+Then 76 - 30 = 46. Left: 14, 46.
+Check the ways to combine 14 and 46: 14 + 46 = 60, 14 * 46 = 644, 46 - 14 = 32. None gives 62.
+That doesn't work. Back up. Tried: 58 * 44 = 2548; 58 - 44 = 14.
+Try 58 - 30 = 28. Left: 44, 76, 28.
+Then 76 - 44 = 32. Left: 28, 32.
+Then 28 + 32 = 60. Left: 60.
+Then 60 + 2 = 62.
+Check: 2 is not one of the numbers left (only 60 is).
+That doesn't work. Back up. Tried: 58 * 44 = 2548; 58 - 44 = 14; 58 - 30 = 28.
+Try 58 - 30 = 28. Left: 44, 76, 28.
+Then 76 - 44 = 32. Left: 28, 32.
+Then 28 + 32 = 60. Left: 60.
+Then 60 + 2 = 62.
+Check: 2 is not one of the numbers left (only 60 is).
+That doesn't work. Back up. Tried: 58 * 44 = 2548; 58 - 44 = 14; 58 - 30 = 28; 58 - 30 = 28.
+Try 58 - 44 = 14. Left: 30, 76, 14.
+Then 76 - 30 = 46. Left: 14, 46.
+Then 14 + 46 = 60. Left: 60.
+Then 60 + 2 = 62.
+Check: 2 is not one of the numbers left (only 60 is).
+That doesn't work. Back up. Tried: 58 * 44 = 2548; 58 - 44 = 14; 58 - 30 = 28; 58 - 30 = 28.
+Try 58 - 30 = 28. Left: 44, 76, 28.
+Then 76 - 44 = 32. Left: 28, 32.
+Then 28 + 32 = 60. Left: 60.
+Then 60 + 2 = 62.
+Check the ways to combine 2 with 60: 2 + 60 = 62, 2 * 60 = 120, 60 - 2 = 58, 60 / 2 = 30. None gives 62.
+That doesn't work. Back up. Tried: 58 * 44 = 2548; 58 - 44 = 14; 58 - 30 = 28; 58 - 30 = 28.
+Try 58 - 44 = 14. Left: 30, 76, 14.
+Then 76 - 30 = 46. Left: 14, 46.
+Then 14 + 46 = 60. Left: 60.
+Then 60 + 2 = 62.
+Check the ways to combine 2 with 60: 2 + 60 = 62, 2 * 60 = 120, 60 - 2 = 58, 60 / 2 = 30. None gives 62.
+That doesn't work. Back up. Tried: 58 * 44 = 2548; 58 - 44 = 14; 58 - 30 = 28; 58 - 30 = 28; 58 - 44 = 14; 76 - 30 = 46; 76 - 44 = 32.
+Try 58 - 30 = 28. Left: 44, 76, 28.
+Then 76 - 44 = 32. Left: 28, 32.
+Then 28 + 32 = 60",1024,True,False,,False,no answer (truncated),,,,,
+4083,"[82, 75, 36, 25]",77,"<reasoning>
+Numbers: 82, 75, 36, 25. Target: 77.
+Try 82 - 75 = 7. Left: 36, 25, 7.
+Then 36 + 25 = 61. Left: 7, 61.
+Check the ways to combine 7 and 61: 7 + 61 = 68, 7 * 61 = 427, 61 - 7 = 54. None gives 77.
+That doesn't work. Back up. Tried: 82 - 75 = 7.
+Try 82 - 25 = 57. Left: 75, 36, 57.
+Then 75 + 36 = 111. Left: 57, 111.
+Then 111 - 57 = 77.
+Check: 111 - 57 = 54, not 77.
+That doesn't work. Back up. Tried: 82 - 75 = 7; 82 - 25 = 57.
+Try 82 - 36 = 46. Left: 75, 25, 46.
+Then 75 + 25 = 100. Left: 46, 100.
+Then 100 - 46 = 77.
+Check: 100 - 46 = 54, not 77.
+That doesn't work. Back up. Tried: 82 - 75 = 7; 82 - 25 = 57; 82 - 36 = 46.
+Try 82 - 75 = 7. Left: 36, 25, 7.
+Then 25 + 7 = 32. Left: 36, 32.
+Then 36 + 32 = 77.
+Check: 36 + 32 = 68, not 77.
+That doesn't work. Back up. Tried: 82 - 75 = 7; 82 - 25 = 57; 82 - 36 = 46; 82 - 75 = 7.
+Try 82 - 25 = 57. Left: 75, 36, 57.
+Then 75 + 57 = 132. Left: 36, 132.
+Then 132 - 36 = 77.
+Check: 132 - 36 = 96, not 77.
+That doesn't work. Back up. Tried: 82 - 75 = 7; 82 - 25 = 57; 82 - 36 = 46; 82 - 75 = 7; 82 - 25 = 57.
+Try 82 - 36 = 46. Left: 75, 25, 46.
+Then 75 + 25 = 100. Left: 46, 100.
+Then 100 - 46 = 77.
+Check: 100 - 46 = 54, not 77.
+That doesn't work. Back up. Tried: 82 - 75 = 7; 82 - 25 = 57; 82 - 36 = 46; 82 - 75 = 7; 82 - 25 = 57; 82 - 36 = 46; 75 + 25 = 100.
+Try 75 - 25 = 50. Left: 82, 36, 50.
+Then 82 - 36 = 46. Left: 50, 46.
+Then 50 + 46 = 77.
+Check: 50 + 46 = 96, not 77.
+That doesn't work. Back up. Tried: 82 - 75 = 7; 82 - 25 = 57; 82 - 36 = 46; 82 - 75 = 7; 82 - 25 = 57; 82 - 36 = 46; 75 + 25 = 100; 82 - 36 = 46.
+Try 82 - 75 = 7. Left: 36, 25, 7.
+Then 36 / 7 = 5. Left: 25, 5.
+Then 25 + 5 = 77.
+Check: 25 + (36 / (82 - 75)) uses 25, 36, 75, 82 once each and equals 77.
+Answer: 25 + (36 / (82 - 75))",926,False,False,,False,no answer,,,,,
+4084,"[65, 94, 89, 86]",99,"<reasoning>
+Numbers: 65, 94, 89, 86. Target: 99.
+Try 86 + 89 = 175. Left: 65, 94, 175.
+Then 175 - 65 = 110. Left: 94, 110.
+Check the ways to combine 94 and 110: 94 + 110 = 204, 94 * 110 = 10340, 110 - 94 = 16. None gives 99.
+That doesn't work. Back up. Tried: 86 + 89 = 175.
+Try 94 - 86 = 8. Left: 65, 89, 8.
+Then 89 - 65 = 24. Left: 8, 24.
+Then 8 + 24 = 32. Left: 32.
+Then 32 + 67 = 99.
+Check: 67 is not one of the numbers left (only 32 is).
+That doesn't work. Back up. Tried: 86 + 89 = 175; 94 - 86 = 8.
+Try 89 - 86 = 3. Left: 65, 94, 3.
+Then 65 + 3 = 68. Left: 94, 68.
+Then 94 + 68 = 99.
+Check: 94 + 68 = 162, not 99.
+That doesn't work. Back up. Tried: 86 + 89 = 175; 94 - 86 = 8; 89 - 86 = 3.
+Try 89 - 65 = 24. Left: 94, 86, 24.
+Then 94 - 86 = 8. Left: 24, 8.
+Then 24 + 8 = 32. Left: 32.
+Then 32 + 67 = 99.
+Check: 67 is not one of the numbers left (only 32 is).
+That doesn't work. Back up. Tried: 86 + 89 = 175; 94 - 86 = 8; 89 - 86 = 3; 89 - 65 = 24.
+Try 89 - 86 = 3. Left: 65, 94, 3.
+Then 65 + 3 = 68. Left: 94, 68.
+Then 94 + 68 = 99.
+Check: 94 + 68 = 162, not 99.
+That doesn't work. Back up. Tried: 86 + 89 = 175; 94 - 86 = 8; 89 - 86 = 3; 89 - 65 = 24; 89 - 86 = 3.
+Try 94 - 89 = 5. Left: 65, 86, 5.
+Then 86 - 65 = 21. Left: 5, 21.
+Then 5 + 21 = 26. Left: 26.
+Then 26 + 73 = 99.
+Check: 73 is not one of the numbers left (only 26 is).
+That doesn't work. Back up. Tried: 86 + 89 = 175; 94 - 86 = 8; 89 - 86 = 3; 89 - 65 = 24; 89 - 86 = 3; 94 - 89 = 5.
+Try 89 - 65 = 24. Left: 94, 86, 24.
+Then 94 - 86 = 8. Left: 24, 8.
+Then 24 + 8 = 32. Left: 32.
+Then 32 + 67 = 99.
+Check: 67 is not one of the numbers left (only 32 is).
+That doesn't work. Back up. Tried: 86 + 89 = 175; 94 - 86 = 8; 89 - 86 = 3; 89 - 65 = 24; 89 - 86 = 3; 94 - 89 = 5; 89 - 65 = 24.
+Try 89 - 86 = 3. Left: 65, 94, 3.
+Then 94 - 65 = 29. Left: 3, 29.
+Then 3 * 29 = 99.
+Check: 3 * 29 = 87, not 99.
+That doesn't work. Back up. Tried: 86 + 89 = 175; 94 - 86 = 8; 89 - 86 = 3; 89 - 65 = 24; 89 - 86 = 3; 94 - 89 = 5; 89 - 65 = 24; 89 - 86 = ",1024,True,False,,False,no answer (truncated),,,,,
+4085,"[40, 98, 40, 42]",69,"<reasoning>
+Numbers: 40, 98, 40, 42. Target: 69.
+Try 98 - 40 = 58. Left: 40, 42, 58.
+Then 58 + 42 = 100. Left: 40, 100.
+Check the ways to combine 40 and 100: 40 + 100 = 140, 40 * 100 = 4000, 100 - 40 = 60. None gives 69.
+That doesn't work. Back up. Tried: 98 - 40 = 58.
+Try 98 - 42 = 56. Left: 40, 40, 56.
+Then 40 + 40 = 80. Left: 56, 80.
+Then 80 - 56 = 69.
+Check: 80 - 56 = 24, not 69.
+That doesn't work. Back up. Tried: 98 - 40 = 58; 98 - 42 = 56.
+Try 40 + 42 = 82. Left: 98, 40, 82.
+Then 82 - 40 = 42. Left: 98, 42.
+Then 98 - 42 = 69.
+Check: 98 - 42 = 56, not 69.
+That doesn't work. Back up. Tried: 98 - 40 = 58; 98 - 42 = 56; 40 + 42 = 82.
+Try 40 + 98 = 138. Left: 40, 42, 138.
+Then 138 / 42 = 3.3. Left: 40, 3.3.
+Then 40 + 3.3 = 69. Left: 69.
+That reaches 69.
+Check: 40 + ((40 + 98) / 42) uses 40, 40, 42, 98 once each and equals 69.
+</reasoning>
+<solution>
+40 + 98 = 138
+138 / 42 = 3.3
+40 + 3.3 = 69
+</solution>
+<answer>
+40 + ((40 + 98) / 42)
+</answer>",474,False,True,40 + ((40 + 98) / 42),False,"right numbers, wrong value",1.0,0.0,,,
+4086,"[47, 24, 77, 44]",55,"<reasoning>
+Numbers: 47, 24, 77, 44. Target: 55.
+Try 77 - 24 = 53. Left: 47, 44, 53.
+Then 53 + 44 = 97. Left: 47, 97.
+Closest: 97 - 47 = 50, off by 5.
+That doesn't work. Back up. Tried: 77 - 24 = 53.
+Try 24 * 77 = 1848. Left: 47, 44, 1848.
+Then 1848 - 44 = 1804. Left: 47, 1804.
+Closest: 1804 - 47 = 1757, off by 1702.
+That doesn't work. Back up. Tried: 77 - 24 = 53; 24 * 77 = 1848.
+Try 24 + 44 = 68. Left: 47, 77, 68.
+Then 68 - 47 = 21. Left: 77, 21.
+Then 77 - 21 = 55.
+Check: 77 - 21 = 56, not 55.
+That doesn't work. Back up. Tried: 77 - 24 = 53; 24 * 77 = 1848; 24 + 44 = 68.
+Try 77 - 47 = 30. Left: 24, 44, 30.
+Then 44 - 24 = 20. Left: 30, 20.
+Then 30 + 20 = 50. Left: 50.
+Then 50 + 5 = 55.
+Check: 5 is not one of the numbers left (only 50 is).
+That doesn't work. Back up. Tried: 77 - 24 = 53; 24 * 77 = 1848; 24 + 44 = 68; 77 - 47 = 30.
+Try 77 - 44 = 33. Left: 47, 24, 33.
+Then 24 + 33 = 57. Left: 47, 57.
+Then 57 - 47 = 55.
+Check: 57 - 47 = 10, not 55.
+That doesn't work. Back up. Tried: 77 - 24 = 53; 24 * 77 = 1848; 24 + 44 = 68; 77 - 47 = 30; 77 - 44 = 33.
+Try 24 + 77 = 101. Left: 47, 44, 101.
+Then 101 - 44 = 57. Left: 47, 57.
+Then 57 - 47 = 55.
+Check: (24 + 77) - 44 uses 24, 44, 47, 77 once each and equals 55.
+</reasoning>
+<solution>
+24 + 77 = 101
+101 - 44 = 57
+57 - 47 = 55
+</solution>
+<answer>
+(24 + 77) - 44
+</answer>",671,False,True,(24 + 77) - 44,False,a number missing,0.0,0.0,0.0,1.0,0.0
+4087,"[69, 67, 59, 46]",26,"<reasoning>
+Numbers: 69, 67, 59, 46. Target: 26.
+Try 69 - 59 = 10. Left: 67, 46, 10.
+Then 67 - 10 = 57. Left: 46, 57.
+Check the ways to combine 46 and 57: 46 + 57 = 103, 46 * 57 = 2612, 57 - 46 = 11. None gives 26.
+That doesn't work. Back up. Tried: 69 - 59 = 10.
+Try 69 - 67 = 2. Left: 59, 46, 2.
+Then 59 - 46 = 13. Left: 2, 13.
+Then 2 * 13 = 26. Left: 26.
+That reaches 26.
+Check: (69 - 67) * (59 - 46) uses 46, 59, 67, 69 once each and equals 26.
+</reasoning>
+<solution>
+69 - 67 = 2
+59 - 46 = 13
+2 * 13 = 26
+</solution>
+<answer>
+(69 - 67) * (59 - 46)
+</answer>",272,False,True,(69 - 67) * (59 - 46),True,correct,1.0,0.0,1.0,1.0,1.0
+4088,"[5, 83, 29, 27]",39,"<reasoning>
+Numbers: 5, 83, 29, 27. Target: 39.
+Try 83 - 27 = 56. Left: 5, 29, 56.
+Then 56 - 5 = 51. Left: 29, 51.
+Check the ways to combine 29 and 51: 29 + 51 = 80, 29 * 51 = 1479, 51 - 29 = 22. None gives 39.
+That doesn't work. Back up. Tried: 83 - 27 = 56.
+Try 29 - 27 = 2. Left: 5, 83, 2.
+Then 5 * 2 = 10. Left: 83, 10.
+Then 83 - 10 = 39.
+Check: 83 - 10 = 73, not 39.
+That doesn't work. Back up. Tried: 83 - 27 = 56; 29 - 27 = 2.
+Try 29 - 5 = 24. Left: 83, 27, 24.
+Then 83 - 24 = 59. Left: 27, 59.
+Then 59 - 27 = 39.
+Check: 59 - 27 = 32, not 39.
+That doesn't work. Back up. Tried: 83 - 27 = 56; 29 - 27 = 2; 29 - 5 = 24.
+Try 83 - 29 = 54. Left: 5, 27, 54.
+Then 27 + 5 = 32. Left: 54, 32.
+Then 54 - 32 = 39.
+Check: 54 - 32 = 22, not 39.
+That doesn't work. Back up. Tried: 83 - 27 = 56; 29 - 27 = 2; 29 - 5 = 24; 83 - 29 = 54.
+Try 83 - 27 = 56. Left: 5, 29, 56.
+Then 29 - 5 = 24. Left: 56, 24.
+Then 56 - 24 = 39.
+Check: 56 - 24 = 32, not 39.
+That doesn't work. Back up. Tried: 83 - 27 = 56; 29 - 27 = 2; 29 - 5 = 24; 83 - 29 = 54; 83 - 27 = 56.
+Try 29 - 5 = 24. Left: 83, 27, 24.
+Then 83 - 27 = 56. Left: 24, 56.
+Then 56 - 24 = 39.
+Check: (83 - 27) - (29 - 5) uses 5, 27, 29, 83 once each and equals 39.
+</reasoning>
+<solution>
+29 - 5 = 24
+83 - 27 = 56
+56 - 24 = 39
+</solution>
+<answer>
+(83 - 27) - (29 - 5)
+</answer>",684,False,True,(83 - 27) - (29 - 5),False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4089,"[64, 58, 42, 31]",49,"<reasoning>
+Numbers: 64, 58, 42, 31. Target: 49.
+Try 58 * 31 = 1798. Left: 64, 42, 1798.
+Then 1798 - 64 = 1734. Left: 42, 1734.
+Check the ways to combine 42 and 1734: 42 + 1734 = 1776, 42 * 1734 = 73058, 1734 - 42 = 1692. None gives 49.
+That doesn't work. Back up. Tried: 58 * 31 = 1798.
+Try 58 - 31 = 27. Left: 64, 42, 27.
+Then 64 - 42 = 22. Left: 27, 22.
+Check the ways to combine 27 and 22: 27 + 22 = 49, 27 * 22 = 594, 27 - 22 = 5. Only 27 + 22 = 49.
+Check: 27 + (64 - 42) uses 31, 42, 58, 64 once each and equals 49.
+</reasoning>
+<solution>
+58 - 31 = 27
+64 - 42 = 22
+27 + 22 = 49
+</solution>
+<answer>
+58 - 31 + (64 - 42)
+</answer>",306,False,True,58 - 31 + (64 - 42),True,correct,1.0,0.0,1.0,1.0,1.0
+4090,"[65, 91, 6, 7]",13,"<reasoning>
+Numbers: 65, 91, 6, 7. Target: 13.
+Try 91 - 65 = 26. Left: 6, 7, 26.
+Then 26 - 6 = 20. Left: 7, 20.
+Check the ways to combine 7 and 20: 7 + 20 = 27, 7 * 20 = 140, 20 - 7 = 13. Only 20 - 7 = 13.
+Check: 20 - 7 = 13, which is correct.
+Check the ways to combine 6 and 7: 6 + 7 = 13, 6 * 7 = 42, 7 - 6 = 1. None gives 13.
+That doesn't work. Back up. Tried: 91 - 65 = 26.
+Try 91 - 7 = 84. Left: 65, 6, 84.
+Then 84 - 65 = 19. Left: 6, 19.
+Then 19 - 6 = 13. Left: 13.
+That reaches 13.
+Check: ((91 - 7) - 65) - 6 uses 6, 7, 65, 91 once each and equals 13.
+</reasoning>
+<solution>
+91 - 7 = 84
+84 - 65 = 19
+19 - 6 = 13
+</solution>
+<answer>
+((91 - 7) - 65) - 6
+</answer>",335,False,True,((91 - 7) - 65) - 6,True,correct,1.0,0.0,1.0,1.0,1.0
+4091,"[40, 75, 7, 55]",30,"<reasoning>
+Numbers: 40, 75, 7, 55. Target: 30.
+Try 40 * 55 = 2200. Left: 75, 7, 2200.
+Then 2200 - 75 = 2125. Left: 7, 2125.
+Check the ways to combine 7 and 2125: 7 + 2125 = 2132, 7 * 2125 = 14925, 2125 - 7 = 2118. None gives 30.
+That doesn't work. Back up. Tried: 40 * 55 = 2200.
+Try 40 - 7 = 33. Left: 75, 55, 33.
+Then 75 - 55 = 20. Left: 33, 20.
+Closest: 33 - 20 = 13, off by 17.
+That doesn't work. Back up. Tried: 40 * 55 = 2200; 40 - 7 = 33.
+Try 40 - 55 = 15. Left: 75, 7, 15.
+Then 75 / 15 = 5. Left: 7, 5.
+Then 7 * 5 = 30.
+Check: 7 * 5 = 35, not 30.
+That doesn't work. Back up. Tried: 40 * 55 = 2200; 40 - 7 = 33; 40 - 55 = 15.
+Try 75 - 55 = 20. Left: 40, 7, 20.
+Then 40 / 20 = 2. Left: 7, 2.
+Then 7 * 2 = 14. Left: 14.
+Then 14 + 16 = 30.
+Check: 16 is not one of the numbers left (only 14 is).
+That doesn't work. Back up. Tried: 40 * 55 = 2200; 40 - 7 = 33; 40 - 55 = 15; 75 - 55 = 20.
+Try 75 - 40 = 35. Left: 7, 55, 35.
+Then 55 - 7 = 48. Left: 35, 48.
+Then 48 - 35 = 13. Left: 13.
+Then 13 + 17 = 30.
+Check: 17 is not one of the numbers left (only 13 is).
+That doesn't work. Back up. Tried: 40 * 55 = 2200; 40 - 7 = 33; 40 - 55 = 15; 75 - 55 = 20; 75 - 40 = 35.
+Try 75 - 7 = 68. Left: 40, 55, 68.
+Then 40 + 55 = 95. Left: 68, 95.
+Then 95 - 68 = 27. Left: 27.
+Then 27 + 3 = 30.
+Check: 3 is not one of the numbers left (only 27 is).
+That doesn't work. Back up. Tried: 40 * 55 = 2200; 40 - 7 = 33; 40 - 55 = 15; 75 - 55 = 20; 75 - 40 = 35; 75 - 7 = 68.
+Try 75 - 40 = 35. Left: 7, 55, 35.
+Then 55 - 7 = 48. Left: 35, 48.
+Then 48 - 35 = 13. Left: 13.
+Then 13 + 17 = 30.
+Check: 17 is not one of the numbers left (only 13 is).
+That doesn't work. Back up. Tried: 40 * 55 = 2200; 40 - 7 = 33; 40 - 55 = 15; 75 - 55 = 20; 75 - 40 = 35; 75 - 7 = 68; 75 - 40 = 35.
+Try 40 - 7 = 33. Left: 75, 55, 33.
+Then 75 - 55 = 20. Left: 33, 20.
+Then 33 - 20 = 13. Left: 13.
+Then 13 + 17 = 30.
+Check: 17 is not one of the numbers left (only 13 is).
+That doesn't work. Back up. Tried: 40 * 55 = 2200; 40 - 7 = 33; 40 - 55 = 15; 75 - 55 = 20; 75 - 40 =",1024,True,False,,False,no answer (truncated),,,,,
+4092,"[23, 47, 97, 72]",21,"<reasoning>
+Numbers: 23, 47, 97, 72. Target: 21.
+Try 72 * 23 = 1656. Left: 47, 97, 1656.
+Then 1656 - 97 = 1559. Left: 47, 1559.
+Check the ways to combine 47 and 1559: 47 + 1559 = 1606, 47 * 1559 = 73243, 1559 - 47 = 1512. None gives 21.
+That doesn't work. Back up. Tried: 72 * 23 = 1656.
+Try 47 - 23 = 24. Left: 97, 72, 24.
+Then 97 - 24 = 73. Left: 72, 73.
+Then 73 - 72 = 21. Left: 21.
+That reaches 21.
+Check: (97 - (47 - 23)) - 72 uses 23, 47, 72, 97 once each and equals 21.
+</reasoning>
+<solution>
+47 - 23 = 24
+97 - 24 = 73
+73 - 72 = 21
+</solution>
+<answer>
+(97 - (47 - 23)) - 72
+</answer>",283,False,True,(97 - (47 - 23)) - 72,False,"right numbers, wrong value",1.0,0.0,0.0,1.0,0.0
+4093,"[21, 41, 93, 99]",56,"<reasoning>
+Numbers: 21, 41, 93, 99. Target: 56.
+Try 99 - 93 = 6. Left: 21, 41, 6.
+Then 41 + 6 = 47. Left: 21, 47.
+Closest: 21 + 47 = 68, off by 12.
+That doesn't work. Back up. Tried: 99 - 93 = 6.
+Try 99 - 21 = 78. Left: 41, 93, 78.
+Then 93 - 41 = 52. Left: 78, 52.
+Check the ways to combine 78 and 52: 78 + 52 = 130, 78 * 52 = 4064, 78 - 52 = 26. None gives 56.
+That doesn't work. Back up. Tried: 99 - 93 = 6; 99 - 21 = 78.
+Try 99 - 41 = 58. Left: 21, 93, 58.
+Then 93 - 21 = 72. Left: 58, 72.
+Then 72 - 58 = 14. Left: 14.
+Then 14 + 42 = 56.
+Check: 42 is not one of the numbers left (only 14 is).
+That doesn't work. Back up. Tried: 99 - 93 = 6; 99 - 21 = 78; 99 - 41 = 58.
+Try 99 - 93 = 6. Left: 21, 41, 6.
+Then 41 - 21 = 20. Left: 6, 20.
+Then 6 * 20 = 56.
+Check: 6 * 20 = 120, not 56.
+That doesn't work. Back up. Tried: 99 - 93 = 6; 99 - 21 = 78; 99 - 41 = 58; 99 - 93 = 6.
+Try 99 - 21 = 78. Left: 41, 93, 78.
+Then 93 - 41 = 52. Left: 78, 52.
+Then 78 - 52 = 26. Left: 26.
+Then 26 + 30 = 56.
+Check: 30 is not one of the numbers left (only 26 is).
+That doesn't work. Back up. Tried: 99 - 93 = 6; 99 - 21 = 78; 99 - 41 = 58; 99 - 93 = 6; 99 - 21 = 78; 93 - 41 = 52.
+Try 99 - 41 = 58. Left: 21, 93, 58.
+Then 93 - 21 = 72. Left: 58, 72.
+Then 72 - 58 = 14. Left: 14.
+Then 14 + 42 = 56.
+Check the ways to combine 14 and 42: 14 + 42 = 56, 14 * 42 = 588, 42 - 14 = 28. Only 14 + 42 gives 56.
+Check: 14 + 42 = 56.
+That reaches 56.
+Check: (99 - 41) + (93 - 21) uses 21, 41, 93, 99 once each and equals 56.
+</reasoning>
+<solution>
+99 - 41 = 58
+93 - 21 = 72
+72 - 58 = 14
+14 + 42 = 56
+</solution>
+<answer>
+(99 - 41) + (93 - 21)
+</answer>",806,False,True,(99 - 41) + (93 - 21),False,"right numbers, wrong value",1.0,0.0,1.0,1.0,0.0
+4094,"[25, 12, 54, 28]",12,"<reasoning>
+Numbers: 25, 12, 54, 28. Target: 12.
+Try 54 - 12 = 42. Left: 25, 28, 42.
+Then 42 - 25 = 17. Left: 28, 17.
+Closest: 28 - 17 = 11, off by 1.
+That doesn't work. Back up. Tried: 54 - 12 = 42.
+Try 54 - 28 = 26. Left: 25, 12, 26.
+Then 26 - 12 = 14. Left: 25, 14.
+Check the ways to combine 25 and 14: 25 + 14 = 39, 25 * 14 = 350, 25 - 14 = 11. None gives 12.
+That doesn't work. Back up. Tried: 54 - 12 = 42; 54 - 28 = 26.
+Try 54 - 25 = 29. Left: 12, 28, 29.
+Then 28 - 12 = 16. Left: 29, 16.
+Then 29 - 16 = 13. Left: 13.
+Then 13 - 1 = 12.
+Check: 1 is not one of the numbers left (only 13 is).
+That doesn't work. Back up. Tried: 54 - 12 = 42; 54 - 28 = 26; 54 - 25 = 29.
+Try 54 - 28 = 26. Left: 25, 12, 26.
+Then 26 - 12 = 14. Left: 25, 14.
+Then 25 - 14 = 12.
+Check: 25 - 14 = 11, not 12.
+That doesn't work. Back up. Tried: 54 - 12 = 42; 54 - 28 = 26; 54 - 25 = 29; 54 - 28 = 26.
+Try 54 - 12 = 42. Left: 25, 28, 42.
+Then 42 / 14 = 3. Left: 25, 3.
+Then 25 - 3 = 12.
+Check: 25 - 3 = 22, not 12.
+That doesn't work. Back up. Tried: 54 - 12 = 42; 54 - 28 = 26; 54 - 25 = 29; 54 - 12 = 42; 54 - 28 = 26.
+Try 54 - 25 = 29. Left: 12, 28, 29.
+Then 28 - 12 = 16. Left: 29, 16.
+Then 29 - 16 = 13. Left: 13.
+Then 13 - 1 = 12.
+Check: 1 is not one of the numbers left (only 13 is).
+That doesn't work. Back up. Tried: 54 - 12 = 42; 54 - 28 = 26; 54 - 25 = 29; 54 - 12 = 42; 54 - 28 = 26; 54 - 25 = 29.
+Try 54 - 28 = 26. Left: 25, 12, 26.
+Then 25 - 12 = 13. Left: 26, 13.
+Then 26 - 13 = 12.
+Check: 26 - 13 = 13, not 12.
+That doesn't work. Back up. Tried: 54 - 12 = 42; 54 - 28 = 26; 54 - 25 = 29; 54 - 12 = 42; 54 - 28 = 26; 54 - 25 = 29; 54 - 28 = 26; 25 - 12 = 13.
+Try 54 - 12 = 42. Left: 25, 28, 42.
+Then 42 / 14 = 3. Left: 25, 3.
+Then 25 - 3 = 12. Left: 12.
+That reaches 12.
+Check: 25 - ((54 - 12) / 14) uses 12, 25, 28, 54 once each and equals 12.
+</reasoning>
+<solution>
+54 - 12 = 42
+42 / 14 = 3
+25 - 3 = 12
+</solution>
+<answer>
+25 - ((54 - 12) / 14)
+</answer>",992,False,True,25 - ((54 - 12) / 14),False,wrong numbers (made up or swapped),0.0,1.0,0.0,1.0,0.0
+4095,"[96, 28, 75, 9]",99,"<reasoning>
+Numbers: 96, 28, 75, 9. Target: 99.
+Try 28 * 9 = 252. Left: 96, 75, 252.
+Then 252 - 75 = 177. Left: 96, 177.
+Check the ways to combine 96 and 177: 96 + 177 = 273, 96 * 177 = 16992, 177 - 96 = 81. None gives 99.
+That doesn't work. Back up. Tried: 28 * 9 = 252.
+Try 96 - 28 = 68. Left: 75, 9, 68.
+Then 75 + 68 = 143. Left: 9, 143.
+Then 143 - 9 = 134. Left: 134.
+Then 134 - 35 = 99.
+Check: 35 is not one of the numbers left (only 134 is).
+That doesn't work. Back up. Tried: 28 * 9 = 252; 96 - 28 = 68.
+Try 96 - 75 = 21. Left: 28, 9, 21.
+Then 28 + 9 = 37. Left: 21, 37.
+Then 21 + 37 = 58. Left: 58.
+Then 58 + 41 = 99.
+Check: 41 is not one of the numbers left (only 58 is).
+That doesn't work. Back up. Tried: 28 * 9 = 252; 96 - 28 = 68; 96 - 75 = 21.
+Try 96 - 9 = 87. Left: 28, 75, 87.
+Then 28 + 87 = 115. Left: 75, 115.
+Then 115 - 75 = 40. Left: 40.
+Then 40 + 59 = 99.
+Check: 59 is not one of the numbers left (only 40 is).
+That doesn't work. Back up. Tried: 28 * 9 = 252; 96 - 28 = 68; 96 - 75 = 21; 96 - 9 = 87.
+Try 96 - 75 = 21. Left: 28, 9, 21.
+Then 28 + 9 = 37. Left: 21, 37.
+Then 21 + 37 = 58. Left: 58.
+Then 58 + 41 = 99.
+Check: 41 is not one of the numbers left (only 58 is).
+That doesn't work. Back up. Tried: 28 * 9 = 252; 96 - 28 = 68; 96 - 75 = 21; 96 - 9 = 87.
+Try 96 - 28 = 68. Left: 75, 9, 68.
+Then 75 + 68 = 143. Left: 9, 143.
+Then 143 - 9 = 134. Left: 134.
+Then 134 - 35 = 99.
+Check: 35 is not one of the numbers left (only 134 is).
+That doesn't work. Back up. Tried: 28 * 9 = 252; 96 - 28 = 68; 96 - 75 = 21; 96 - 9 = 87; 96 - 75 = 21; 96 - 28 = 68.
+Try 96 - 9 = 87. Left: 28, 75, 87.
+Then 28 + 87 = 115. Left: 75, 115.
+Then 115 - 75 = 40. Left: 40.
+Then 40 + 59 = 99.
+Check: 59 is not one of the numbers left (only 40 is).
+That doesn't work. Back up. Tried: 28 * 9 = 252; 96 - 28 = 68; 96 - 75 = 21; 96 - 9 = 87; 96 - 75 = 21; 96 - 28 = 68; 96 - 9 = 87.
+Try 96 - 75 = 21. Left: 28, 9, 21.
+Then 28 + 9 = 37. Left: 21, 37.
+Then 21 + 37 = 58. Left: 58.
+Then 58 + 41 = 99.
+Check the ways to combine 41 and 58: 41 + 58 = 99, 41 * 58 = 2388, 58 - 41 = 17. Only 41 + 58 = 99.
+Check: 41 + (",1024,True,False,,False,no answer (truncated),,,,,
+4096,"[16, 32, 6, 8]",44,"<reasoning>
+Numbers: 16, 32, 6, 8. Target: 44.
+Try 32 - 16 = 16. Left: 6, 8, 16.
+Then 8 + 16 = 24. Left: 6, 24.
+Check the ways to combine 6 and 24: 6 + 24 = 30, 6 * 24 = 144, 24 - 6 = 18. None gives 44.
+That doesn't work. Back up. Tried: 32 - 16 = 16.
+Try 32 - 8 = 24. Left: 16, 6, 24.
+Then 16 + 24 = 40. Left: 6, 40.
+Check the ways to combine 6 and 40: 6 + 40 = 46, 6 * 40 = 240, 40 - 6 = 34. None gives 44.
+That doesn't work. Back up. Tried: 32 - 16 = 16; 32 - 8 = 24.
+Try 32 - 6 = 26. Left: 16, 8, 26.
+Then 8 + 16 = 24. Left: 26, 24.
+Closest: 26 + 24 = 50, off by 6.
+That doesn't work. Back up. Tried: 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26.
+Try 32 - 16 = 16. Left: 6, 8, 16.
+Then 8 + 16 = 24. Left: 6, 24.
+Then 6 * 24 = 144. Left: 144.
+Then 144 - 100 = 44.
+Check: 100 is not one of the numbers left (only 144 is).
+That doesn't work. Back up. Tried: 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26; 32 - 16 = 16.
+Try 32 - 8 = 24. Left: 16, 6, 24.
+Then 16 + 24 = 40. Left: 6, 40.
+Then 6 * 40 = 240. Left: 240.
+Then 240 / 6 = 44.
+Check: 240 / 6 = 40, not 44.
+That doesn't work. Back up. Tried: 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26; 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26.
+Try 32 - 6 = 26. Left: 16, 8, 26.
+Then 16 + 26 = 42. Left: 8, 42.
+Then 8 + 42 = 50. Left: 50.
+Then 50 - 6 = 44.
+Check: 6 is not one of the numbers left (only 50 is).
+That doesn't work. Back up. Tried: 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26; 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26; 32 - 6 = 26.
+Try 32 - 16 = 16. Left: 6, 8, 16.
+Then 8 + 16 = 24. Left: 6, 24.
+Then 6 * 24 = 144. Left: 144.
+Then 144 / 6 = 44.
+Check: 144 / 6 = 24, not 44.
+That doesn't work. Back up. Tried: 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26; 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26; 32 - 6 = 26; 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26; 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26; 32 - 6 = 26; 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26; 32 - 16 = 16; 32 - 8 = 24; 32 - 6 = 26; 32 - ",1024,True,False,,False,no answer (truncated),,,,,
+4097,"[50, 70, 65, 87]",77,"<reasoning>
+Numbers: 50, 70, 65, 87. Target: 77.
+Try 87 - 65 = 22. Left: 50, 70, 22.
+Then 70 - 22 = 48. Left: 50, 48.
+Check the ways to combine 50 and 48: 50 + 48 = 98, 50 * 48 = 2400, 50 - 48 = 2. None gives 77.
+That doesn't work. Back up. Tried: 87 - 65 = 22.
+Try 87 - 70 = 17. Left: 50, 65, 17.
+Then 65 - 17 = 48. Left: 50, 48.
+Check the ways to combine 50 and 48: 50 + 48 = 98, 50 * 48 = 2400, 50 - 48 = 2. None gives 77.
+That doesn't work. Back up. Tried: 87 - 65 = 22; 87 - 70 = 17.
+Try 70 - 65 = 5. Left: 50, 87, 5.
+Then 87 - 5 = 82. Left: 50, 82.
+Then 82 - 50 = 77.
+Check: 82 - 50 = 32, not 77.
+That doesn't work. Back up. Tried: 87 - 65 = 22; 87 - 70 = 17; 70 - 65 = 5.
+Try 70 - 50 = 20. Left: 65, 87, 20.
+Then 87 - 65 = 22. Left: 20, 22.
+Then 20 + 22 = 77.
+Check: 20 + 22 = 42, not 77.
+That doesn't work. Back up. Tried: 87 - 65 = 22; 87 - 70 = 17; 70 - 65 = 5; 70 - 50 = 20.
+Try 70 - 65 = 5. Left: 50, 87, 5.
+Then 87 - 5 = 82. Left: 50, 82.
+Then 82 - 50 = 77.
+Check: 82 - 50 = 32, not 77.
+That doesn't work. Back up. Tried: 87 - 65 = 22; 87 - 70 = 17; 70 - 65 = 5; 70 - 50 = 20.
+Try 70 - 50 = 20. Left: 65, 87, 20.
+Then 87 - 65 = 22. Left: 20, 22.
+Then 20 + 22 = 77.
+Check: 20 + 22 = 42, not 77.
+That doesn't work. Back up. Tried: 87 - 65 = 22; 87 - 70 = 17; 70 - 65 = 5; 70 - 50 = 20; 87 - 65 = 22.
+Try 70 - 65 = 5. Left: 50, 87, 5.
+Then 87 - 5 = 82. Left: 50, 82.
+Then 82 - 50 = 77.
+Check: 82 - 50 = 32, not 77.
+That doesn't work. Back up. Tried: 87 - 65 = 22; 87 - 70 = 17; 70 - 65 = 5; 70 - 50 = 20; 87 - 65 = 22; 87 - 5 = 82.
+Try 70 - 50 = 20. Left: 65, 87, 20.
+Then 87 - 65 = 22. Left: 20, 22.
+Then 20 + 22 = 77.
+Then 77 - 20 = 77.
+Check: 77 - 20 = 57, not 77.
+That doesn't work. Back up. Tried: 87 - 65 = 22; 87 - 70 = 17; 70 - 65 = 5; 70 - 50 = 20; 87 - 65 = 22; 87 - 5 = 82; 70 - 65 = 5; 70 - 50 = 20; 87 - 65 = 22; 70 - 87 = -17; 87 - 70 = 17.
+Try 70 - 65 = 5. Left: 50, 87, 5.
+Then 87 - 5 = 82. Left: 50, ",1024,True,False,,False,no answer (truncated),,,,,
+4098,"[92, 72, 30, 7]",57,"<reasoning>
+Numbers: 92, 72, 30, 7. Target: 57.
+Try 72 * 7 = 504. Left: 92, 30, 504.
+Then 504 - 30 = 474. Left: 92, 474.
+Check the ways to combine 92 and 474: 92 + 474 = 566, 92 * 474 = 43548, 474 - 92 = 382. None gives 57.
+That doesn't work. Back up. Tried: 72 * 7 = 504.
+Try 72 - 30 = 42. Left: 92, 7, 42.
+Then 92 - 42 = 50. Left: 7, 50.
+Check the ways to combine 7 and 50: 7 + 50 = 57, 7 * 50 = 350, 50 - 7 = 43. Only 7 + 50 = 57.
+Check: 7 + (92 - (72 - 30)) uses 7, 30, 72, 92 once each and equals 57.
+</reasoning>
+<solution>
+72 - 30 = 42
+92 - 42 = 50
+7 + 50 = 57
+</solution>
+<answer>
+7 + (92 - (72 - 30))
+</answer>",297,False,True,7 + (92 - (72 - 30)),True,correct,1.0,0.0,1.0,1.0,1.0
+4099,"[29, 54, 91, 66]",71,"<reasoning>
+Numbers: 29, 54, 91, 66. Target: 71.
+Try 66 * 29 = 1914. Left: 54, 91, 1914.
+Then 1914 - 91 = 1823. Left: 54, 1823.
+Check the ways to combine 54 and 1823: 54 + 1823 = 1877, 54 * 1823 = 98602, 1823 - 54 = 1769. None gives 71.
+That doesn't work. Back up. Tried: 66 * 29 = 1914.
+Try 66 - 29 = 37. Left: 54, 91, 37.
+Then 91 - 37 = 54. Left: 54, 54.
+Closest: 54 + 54 = 108, off by 37.
+That doesn't work. Back up. Tried: 66 * 29 = 1914; 66 - 29 = 37.
+Try 66 - 54 = 12. Left: 29, 91, 12.
+Then 29 + 12 = 41. Left: 91, 41.
+Then 91 - 41 = 50. Left: 50.
+Then 50 + 21 = 71.
+Check: 21 is not one of the numbers left (only 50 is).
+That doesn't work. Back up. Tried: 66 * 29 = 1914; 66 - 29 = 37; 66 - 54 = 12.
+Try 91 - 66 = 25. Left: 29, 54, 25.
+Then 54 / 29 = 1.87. Left: 25, 1.87.
+Then 25 + 1.87 = 26.87. Left: 26.87.
+Then 26.87 + 44.13 = 71.
+Check: 44.13 is not one of the numbers left (only 26.87 is).
+That doesn't work. Back up. Tried: 66 * 29 = 1914; 66 - 29 = 37; 66 - 54 = 12; 91 - 66 = 25; 54 / 29 = 1.87.
+Try 54 - 29 = 25. Left: 91, 66, 25.
+Then 66 / 25 = 2.64. Left: 91, 2.64.
+Then 91 - 2.64 = 71.
+Check: 91 - 2.64 = 88.36, not 71.
+That doesn't work. Back up. Tried: 66 * 29 = 1914; 66 - 29 = 37; 66 - 54 = 12; 91 - 66 = 25; 54 / 29 = 1.87; 54 - 29 = 25.
+Try 66 - 54 = 12. Left: 29, 91, 12.
+Then 91 - 12 = 79. Left: 29, 79.
+Then 79 - 29 = 50. Left: 50.
+Then 50 + 21 = 71.
+Check: 21 is not one of the numbers left (only 50 is).
+That doesn't work. Back up. Tried: 66 * 29 = 1914; 66 - 29 = 37; 66 - 54 = 12; 91 - 66 = 25; 54 / 29 = 1.87; 54 - 29 = 25; 66 - 54 = 12; 91 - 66 = 25.
+Try 66 - 29 = 37. Left: 54, 91, 37.
+Then 91 - 37 = 54. Left: 54, 54.
+Then 54 + 54 = 108. Left: 108.
+Then 108 - 37 = 71. Left: 71.
+That reaches 71.
+Check: (54 + 54) - (91 - (66 - 29)) uses 29, 54, 66, 91 once each and equals 71.
+</reasoning>
+<solution>
+66 - 29 = 37
+91 - 37 = 54
+54 + 54 = 108
+108 - 37 = 71
+</solution>
+<answer>
+(54 + 54) - (91 - (66 - 29))
+</answer>",981,False,True,(54 + 54) - (91 - (66 - 29)),False,a number reused or added,0.0,1.0,1.0,1.0,0.0

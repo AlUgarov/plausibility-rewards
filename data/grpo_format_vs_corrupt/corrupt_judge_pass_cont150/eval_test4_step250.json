@@ -1,0 +1,20 @@
+{
+  "tag": "test4_step250",
+  "n": 200,
+  "accuracy": 0.295,
+  "accuracy_finished": 0.295,
+  "truncated": 0.0,
+  "format_ok": 1.0,
+  "tokens": 408.185,
+  "uses_given_numbers": 0.82,
+  "made_up_numbers": 0.18,
+  "solution_arithmetic_ok": 0.425,
+  "solution_reaches_target": 1.0,
+  "answer_matches_solution": 0.41,
+  "stopped": 0.0,
+  "gave_up": 0.0,
+  "caught_claims": 0.0,
+  "kind/right numbers, wrong value": 0.525,
+  "kind/correct": 0.295,
+  "kind/a number reused or added": 0.18
+}

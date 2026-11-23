@@ -1,0 +1,196 @@
+{
+ "MODEL": "meta-llama/Llama-3.2-3B-Instruct",
+ "SFT_RUN": "Llama-3.2-3B-Instruct-countdown3000-ep1-lr0.0001-seed0-tr2-judge3000-mix3x3000",
+ "JUDGE": "dpo",
+ "POLICY_START": "sft",
+ "DPO_RUN": "judge_corrupt_empty-swap-cut_cut0.5_n4x1000_n3x1000_t0.9_seed0/dpo_empty-cut_b0.1_lr2e-05_ep1",
+ "JUDGE_TAG": "-corrupt_empty-cut",
+ "ARM": "format_only",
+ "SC_WEIGHT": 1.0,
+ "RUN_TAG": "format-noscale-mixv3",
+ "EXPRESSION_REWARD": true,
+ "EXPRESSION_ACCEPTS_STOP": false,
+ "MASK_GRAD_BLOCKS": [],
+ "PLAUSIBILITY_MAX_SOLUTION_TOKENS": 128,
+ "JUDGE_NEEDS_ANSWER": true,
+ "MISSING_AT": "wrong_median",
+ "PASS_THRESHOLD": null,
+ "PASS_MAX_FALSE_PASS": 0.05,
+ "USE_POOL": false,
+ "TRAIN_MIX_3": 0.5,
+ "POOL_CANDIDATES": 4000,
+ "PASS_SAMPLES": 8,
+ "PASS_BAND": [
+  0.1,
+  0.75
+ ],
+ "POOL_SEED": 0,
+ "MAX_COMPLETION_LENGTH": 1024,
+ "SMOKE_RUN": false,
+ "MAX_STEPS": 150,
+ "POSITIVE_ADV_SCALE": 1.0,
+ "LABEL_BUDGET": null,
+ "TRAIN_PASS_K": null,
+ "PASS_AT_K": 16,
+ "PASS_N": 100,
+ "PASS_EVAL_STEPS": [
+  50,
+  100
+ ],
+ "RICH_EVAL_STEPS": [
+  50
+ ],
+ "PASS_TEMPERATURE": 0.9,
+ "RUN_TEMP_SWEEP": false,
+ "LEARNING_RATE": 2e-05,
+ "LR_SCHEDULE": "cosine",
+ "CONTINUE_FROM": null,
+ "TEMPERATURE": 0.9,
+ "KL_BETA": 0.02,
+ "NUM_GENERATIONS": 16,
+ "COMPLETIONS_PER_STEP": 128,
+ "WARMUP_STEPS": 20,
+ "SCALE_REWARDS": false,
+ "LOSS_TYPE": "dapo",
+ "MAX_GRAD_NORM": 0.2,
+ "EPSILON": 0.5,
+ "ADAM_BETA2": 0.99,
+ "WEIGHT_DECAY": 0.0,
+ "INTUITOR_RECIPE": false,
+ "VLLM_GPU_MEMORY_UTILIZATION": 0.35,
+ "MICRO_BATCH": 16,
+ "N_TEST": 200,
+ "N_SFT": 4000,
+ "N_SFT_VAL": 100,
+ "SEED": 0,
+ "DRIVE": "/content/drive/MyDrive/Consistency",
+ "CODE_DIR": "/content/drive/MyDrive/Consistency/code/countdown",
+ "ADAPTER_PATH": "/content/drive/MyDrive/Consistency/countdown/sft/Llama-3.2-3B-Instruct-countdown3000-ep1-lr0.0001-seed0-tr2-judge3000-mix3x3000/adapter",
+ "JUDGE_ADAPTER_PATH": "/content/drive/MyDrive/Consistency/countdown/sft/Llama-3.2-3B-Instruct-countdown3000-ep1-lr0.0001-seed0-tr2-judge3000-mix3x3000/judge_corrupt_empty-swap-cut_cut0.5_n4x1000_n3x1000_t0.9_seed0/dpo_empty-cut_b0.1_lr2e-05_ep1/adapter",
+ "GRPO_DIR": "/content/drive/MyDrive/Consistency/countdown/grpo/Llama-3.2-3B-Instruct-countdown3000-ep1-lr0.0001-seed0-tr2-judge3000-mix3x3000-judge_dpo-start_sft",
+ "CALIBRATION_PATH": "/content/drive/MyDrive/Consistency/countdown/grpo/Llama-3.2-3B-Instruct-countdown3000-ep1-lr0.0001-seed0-tr2-judge3000-mix3x3000-judge_dpo-start_sft/calibration_cap128_needans_nopool_mix3_0.5_corrupt_empty_cut.json",
+ "POOL_FILE": "/content/drive/MyDrive/Consistency/countdown/grpo/Llama-3.2-3B-Instruct-countdown3000-ep1-lr0.0001-seed0-tr2-judge3000-mix3x3000-judge_dpo-start_sft/pass_rates_n4000_s8_seed0_max1024.csv",
+ "JUDGE_ARMS": [
+  "mean",
+  "sum",
+  "mean_worst",
+  "pass"
+ ],
+ "RUN_NAME": "grpo-format_only-mix3_0.5-expr-kl0.02-format-noscale-mixv3",
+ "LOG_DIR": "/content/drive/MyDrive/Consistency/countdown/grpo/Llama-3.2-3B-Instruct-countdown3000-ep1-lr0.0001-seed0-tr2-judge3000-mix3x3000-judge_dpo-start_sft/runs/grpo-format_only-mix3_0.5-expr-kl0.02-format-noscale-mixv3",
+ "UNSCORED_N": 100,
+ "N_TEST5": 100,
+ "FORMAT_FUNCS": [
+  "<function xmlcount_reward_func at 0x7f227acbe520>",
+  "<function soft_format_reward_func at 0x7f227ad86840>",
+  "<function strict_format_reward_func at 0x7f227ad86980>",
+  "<function expression_reward_func at 0x7f22de964220>"
+ ],
+ "NEUTRAL_SYSTEM_PROMPT": "Please solve the following problem step-by-step, making sure that each step is well-justified.",
+ "REWARD_FUNCS_TRAIN": [
+  [
+   "<function xmlcount_reward_func at 0x7f227acbe520>",
+   1.0
+  ],
+  [
+   "<function soft_format_reward_func at 0x7f227ad86840>",
+   1.0
+  ],
+  [
+   "<function strict_format_reward_func at 0x7f227ad86980>",
+   1.0
+  ],
+  [
+   "<function expression_reward_func at 0x7f22de964220>",
+   1.0
+  ],
+  [
+   "plausibility",
+   0.0
+  ],
+  [
+   "<function correctness_reward_func at 0x7f22de964b80>",
+   0.0
+  ],
+  [
+   "<function judge_mean at 0x7f227ad86f20>",
+   0.0
+  ],
+  [
+   "<function judge_worst at 0x7f227ad86fc0>",
+   0.0
+  ],
+  [
+   "<function judge_sum at 0x7f227ad87060>",
+   0.0
+  ],
+  [
+   "<function uses_given_numbers at 0x7f22de965940>",
+   0.0
+  ],
+  [
+   "<function made_up_numbers at 0x7f22de964ae0>",
+   0.0
+  ],
+  [
+   "<function solution_arithmetic_ok at 0x7f22de964a40>",
+   0.0
+  ],
+  [
+   "<function solution_reaches_target at 0x7f22de966520>",
+   0.0
+  ],
+  [
+   "<function answer_matches_solution at 0x7f22de9665c0>",
+   0.0
+  ],
+  [
+   "<function stopped at 0x7f22de965d00>",
+   0.0
+  ],
+  [
+   "<function gave_up at 0x7f22de9653a0>",
+   0.0
+  ],
+  [
+   "<function caught_claims at 0x7f22de966700>",
+   0.0
+  ],
+  [
+   "<function reasoning_tokens at 0x7f227ad87100>",
+   0.0
+  ],
+  [
+   "<function solution_tokens at 0x7f227ad871a0>",
+   0.0
+  ],
+  [
+   "step_monitor",
+   0.0
+  ]
+ ],
+ "EVAL_MAX": 200,
+ "SAMPLER_MAX_DIFF": 0.006,
+ "HELDOUT_BAND": 100,
+ "HELDOUT_EASY": 100,
+ "HELDOUT_HARD": 100,
+ "HELDOUT_SEED": 1,
+ "SPLIT_OUT": "/content/drive/MyDrive/Consistency/countdown/grpo/Llama-3.2-3B-Instruct-countdown3000-ep1-lr0.0001-seed0-tr2-judge3000-mix3x3000-judge_dpo-start_sft/grpo_split_n4000_nopool_seed1.json",
+ "HELDOUT_STRATA": [
+  "heldout",
+  "unscored"
+ ],
+ "CURVE_STRATA": [
+  "heldout",
+  "unscored"
+ ],
+ "SC_PROBE_N": 32,
+ "RECALIBRATE": false,
+ "HELDOUT_EVAL_STEPS": 25,
+ "STOP_DROP": 1.0,
+ "TRUNC_STOP": 0.5,
+ "ZERO_STD_STOP": 0.5,
+ "GUARD_LOGS": 2,
+ "trainer.scale_rewards": "none",
+ "resumed_from": null
+}

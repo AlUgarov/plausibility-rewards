@@ -1,0 +1,21 @@
+{
+  "tag": "heldout_unscored_step250",
+  "n": 100,
+  "accuracy": 0.41,
+  "accuracy_finished": 0.41,
+  "truncated": 0.0,
+  "format_ok": 1.0,
+  "tokens": 394.36,
+  "uses_given_numbers": 0.85,
+  "made_up_numbers": 0.15,
+  "solution_arithmetic_ok": 0.5252525252525253,
+  "solution_reaches_target": 1.0,
+  "answer_matches_solution": 0.494949494949495,
+  "stopped": 0.0,
+  "gave_up": 0.0,
+  "caught_claims": 0.0,
+  "kind/right numbers, wrong value": 0.44,
+  "kind/correct": 0.41,
+  "kind/a number reused or added": 0.14,
+  "kind/wrong numbers (made up or swapped)": 0.01
+}

@@ -1,0 +1,9 @@
+{
+ "judge": {
+  "gold_sft_traces": 6000,
+  "gold_judge_examples": 3000,
+  "solver_pairs": 4500,
+  "checker_real_completions": 0
+ },
+ "checker_calibration_completions": 2048
+}

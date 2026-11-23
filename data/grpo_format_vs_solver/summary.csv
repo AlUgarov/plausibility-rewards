@@ -1,0 +1,6 @@
+arm,step,test4_greedy,test4_finished,test4_truncated,test4_made_up,test3_greedy,heldout_curve,pass1,pass16,distinct_correct
+start,0,0.24,0.35294117647058826,0.32,0.15555555555555556,0.745,0.29,0.243125,0.75,2.83
+format_only,100,,,,,,0.31,0.253125,0.72,3.06
+format_only,150,0.255,0.255,0.0,0.09,0.765,0.325,0.24625,0.76,2.9
+solver_judge,100,,,,,,0.405,0.409375,0.77,2.91
+solver_judge,150,0.33,0.33,0.0,0.020100502512562814,0.78,0.385,0.416875,0.79,2.84

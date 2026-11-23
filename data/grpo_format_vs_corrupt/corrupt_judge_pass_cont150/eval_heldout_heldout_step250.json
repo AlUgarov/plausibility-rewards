@@ -1,0 +1,21 @@
+{
+  "tag": "heldout_heldout_step250",
+  "n": 100,
+  "accuracy": 0.29,
+  "accuracy_finished": 0.29,
+  "truncated": 0.0,
+  "format_ok": 1.0,
+  "tokens": 383.31,
+  "uses_given_numbers": 0.82,
+  "made_up_numbers": 0.18,
+  "solution_arithmetic_ok": 0.43434343434343436,
+  "solution_reaches_target": 1.0,
+  "answer_matches_solution": 0.3939393939393939,
+  "stopped": 0.0,
+  "gave_up": 0.0,
+  "caught_claims": 0.0,
+  "kind/right numbers, wrong value": 0.53,
+  "kind/correct": 0.29,
+  "kind/a number reused or added": 0.16,
+  "kind/wrong numbers (made up or swapped)": 0.02
+}

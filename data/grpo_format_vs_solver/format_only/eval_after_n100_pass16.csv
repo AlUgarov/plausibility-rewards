@@ -1,0 +1,4 @@
+,pass1,pass16,distinct_correct,truncated,n
+total,0.24625,0.76,2.9,0.00125,100
+heldout,0.1875,0.68,2.18,0.0025,50
+unscored,0.305,0.84,3.62,0.0,50

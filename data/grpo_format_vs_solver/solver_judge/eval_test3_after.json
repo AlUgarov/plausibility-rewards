@@ -1,0 +1,17 @@
+{
+  "tag": "test3_after",
+  "n": 200,
+  "accuracy": 0.78,
+  "accuracy_finished": 0.7839195979899497,
+  "truncated": 0.005,
+  "format_ok": 0.995,
+  "tokens": 276.53,
+  "uses_given_numbers": 1.0,
+  "made_up_numbers": 0.0,
+  "solution_arithmetic_ok": 0.8,
+  "solution_reaches_target": 1.0,
+  "answer_matches_solution": 0.8041237113402062,
+  "kind/correct": 0.78,
+  "kind/right numbers, wrong value": 0.215,
+  "kind/no answer (truncated)": 0.005
+}

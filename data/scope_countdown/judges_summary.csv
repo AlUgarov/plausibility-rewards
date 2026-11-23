@@ -1,0 +1,13 @@
+judge,span,score,column,win_rate,groups_separated,mixed_groups,pairs
+base,whole completion,mean,full_base_mean,0.24766839378238342,0.024691358024691357,81,2895
+base,solution + answer,mean,base,0.8179824561403509,0.4567901234567901,81,2736
+base,solution + answer,low10,zs_llama3b_low10,0.8793859649122807,0.5679012345679012,81,2736
+base,solution + answer,P(Yes),zs_llama3b_pyes,0.5966739766081871,0.3333333333333333,81,2736
+sft_policy,whole completion,mean,full_mean,0.6932642487046632,0.16049382716049382,81,2895
+sft_policy,whole completion,low10,full_low10,0.7709844559585493,0.19753086419753085,81,2895
+sft_policy,whole completion,SC,full_sc,0.6245250431778929,0.1111111111111111,81,2895
+sft_judge,solution + answer,mean,sft,0.8362573099415205,0.49382716049382713,81,2736
+dpo_solver,solution + answer,mean,solver,0.991593567251462,0.8888888888888888,81,2736
+dpo_solver,solution + answer,low10,sol_low10,0.9762426900584795,0.8641975308641975,81,2736
+dpo_corrupt_empty_cut,solution + answer,mean,corrupt,0.9608918128654971,0.7777777777777778,81,2736
+dpo_corrupt_empty_swap_cut,solution + answer,mean,corrupt_all,0.9298245614035088,0.654320987654321,81,2736

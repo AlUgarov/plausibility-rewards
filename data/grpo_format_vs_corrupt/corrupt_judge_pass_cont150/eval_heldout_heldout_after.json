@@ -1,0 +1,21 @@
+{
+  "tag": "heldout_heldout_after",
+  "n": 100,
+  "accuracy": 0.32,
+  "accuracy_finished": 0.32653061224489793,
+  "truncated": 0.02,
+  "format_ok": 0.98,
+  "tokens": 488.12,
+  "uses_given_numbers": 0.8367346938775511,
+  "made_up_numbers": 0.16326530612244897,
+  "solution_arithmetic_ok": 0.3838383838383838,
+  "solution_reaches_target": 1.0,
+  "answer_matches_solution": 0.3673469387755102,
+  "stopped": 0.0,
+  "gave_up": 0.0,
+  "caught_claims": 0.0,
+  "kind/right numbers, wrong value": 0.5,
+  "kind/correct": 0.32,
+  "kind/a number reused or added": 0.16,
+  "kind/no answer (truncated)": 0.02
+}

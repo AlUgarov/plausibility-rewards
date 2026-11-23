@@ -1,0 +1,28 @@
+% Source: narrative.md, "Self-judging across sizes" / "Self-judging, Llama-3.1-8B and Qwen2.5" (2026-10-09).
+% 128 GSM8K test problems x 16 samples (T 0.9, seed 0); each model judges its own solutions with its frozen weights.
+% "mean" here is ans_lp_mean_eos (solution + appended answer + end-of-turn), the same span the Countdown judges score;
+% the solution-only lp_mean_eos is in data/disc_gsm8k/summary.csv. r(mean, length) recomputed for ans_lp_mean_eos
+% (data/disc_gsm8k/summary.csv, len_corr_ans_lp_mean_eos).
+\begin{table}[H]
+\centering
+\caption{Self-judging on GSM8K: within-problem win rate of a model's own correct solutions over its own incorrect ones (0.5 = chance).}
+\label{tab:disc-gsm8k}
+\begin{threeparttable}
+\begin{tabular}{lccccccc}
+\toprule
+Model & Acc. & Pairs & \texttt{mean} & \texttt{sum} & SC & P(True) & $r(\texttt{mean}, \text{length})$ \\
+\midrule
+Llama-3.2-1B  & 0.257 & 3691 & 0.509 & 0.616 & 0.531 & 0.508 & $+0.51$ \\
+Llama-3.2-3B  & 0.611 & 4355 & 0.569 & 0.619 & 0.629 & 0.629 & $+0.14$ \\
+Llama-3.1-8B  & 0.795 & 2641 & 0.683 & 0.729 & 0.694 & 0.669 & $-0.17$ \\
+Qwen2.5-0.5B  & 0.021 & 325  & 0.871 & 0.488 & 0.549 & 0.642 & $+0.44$ \\
+Qwen2.5-1.5B  & 0.458 & 2947 & 0.536 & 0.547 & 0.531 & 0.542 & $+0.63$ \\
+Qwen2.5-3B    & 0.728 & 2925 & 0.424 & 0.609 & 0.548 & 0.524 & $+0.80$ \\
+Qwen2.5-7B    & 0.836 & 2757 & 0.534 & 0.528 & 0.572 & 0.592 & $+0.62$ \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item \texttt{mean}: per-token mean log-probability of the solution block followed by the final answer and the end-of-turn token; \texttt{sum}: total log-probability of the solution block with the end-of-turn token; SC: self-certainty of the solution; P(True): probability of ``Yes'' to a grading question. $r(\texttt{mean}, \text{length})$: correlation of \texttt{mean} with solution length in tokens, after subtracting each problem's average from both.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

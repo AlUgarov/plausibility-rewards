@@ -1,0 +1,23 @@
+{
+  "tag": "test3_after",
+  "n": 200,
+  "accuracy": 0.75,
+  "accuracy_finished": 0.8333333333333334,
+  "truncated": 0.1,
+  "format_ok": 0.9,
+  "tokens": 355.345,
+  "uses_given_numbers": 0.9775280898876404,
+  "made_up_numbers": 0.02247191011235955,
+  "solution_arithmetic_ok": 0.9485714285714286,
+  "solution_reaches_target": 1.0,
+  "answer_matches_solution": 0.8793103448275862,
+  "stopped": 0.0,
+  "gave_up": 0.0,
+  "caught_claims": 0.0,
+  "kind/correct": 0.75,
+  "kind/right numbers, wrong value": 0.12,
+  "kind/no answer (truncated)": 0.1,
+  "kind/a number reused or added": 0.02,
+  "kind/wrong numbers (made up or swapped)": 0.005,
+  "kind/uses decimals": 0.005
+}

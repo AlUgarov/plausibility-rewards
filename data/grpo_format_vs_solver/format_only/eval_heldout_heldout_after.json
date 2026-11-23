@@ -1,0 +1,19 @@
+{
+  "tag": "heldout_heldout_after",
+  "n": 100,
+  "accuracy": 0.24,
+  "accuracy_finished": 0.24,
+  "truncated": 0.0,
+  "format_ok": 1.0,
+  "tokens": 447.66,
+  "uses_given_numbers": 0.84,
+  "made_up_numbers": 0.14,
+  "solution_arithmetic_ok": 0.4583333333333333,
+  "solution_reaches_target": 1.0,
+  "answer_matches_solution": 0.3125,
+  "kind/right numbers, wrong value": 0.6,
+  "kind/correct": 0.24,
+  "kind/a number reused or added": 0.12,
+  "kind/wrong numbers (made up or swapped)": 0.02,
+  "kind/a number missing": 0.02
+}

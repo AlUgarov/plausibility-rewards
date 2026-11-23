@@ -1,0 +1,22 @@
+{
+  "tag": "test3_step200",
+  "n": 200,
+  "accuracy": 0.78,
+  "accuracy_finished": 0.7839195979899497,
+  "truncated": 0.005,
+  "format_ok": 0.995,
+  "tokens": 271.17,
+  "uses_given_numbers": 0.8375634517766497,
+  "made_up_numbers": 0.16243654822335024,
+  "solution_arithmetic_ok": 0.9693877551020408,
+  "solution_reaches_target": 1.0,
+  "answer_matches_solution": 0.9183673469387755,
+  "stopped": 0.0,
+  "gave_up": 0.0,
+  "caught_claims": 0.0,
+  "kind/correct": 0.78,
+  "kind/a number reused or added": 0.16,
+  "kind/right numbers, wrong value": 0.045,
+  "kind/uses decimals": 0.01,
+  "kind/no answer (truncated)": 0.005
+}

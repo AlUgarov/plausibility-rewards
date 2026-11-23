@@ -1,0 +1,89 @@
+\begin{thebibliography}{13}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Agarwal et~al.(2025)Agarwal, Zhang, Yuan, Han, and Peng]{agarwal_unreasonable_2025}
+Shivam Agarwal, Zimin Zhang, Lifan Yuan, Jiawei Han, and Hao Peng.
+\newblock The {Unreasonable} {Effectiveness} of {Entropy} {Minimization} in {LLM} {Reasoning}, May 2025.
+\newblock URL \url{http://arxiv.org/abs/2505.15134}.
+\newblock arXiv:2505.15134 [cs.LG].
+
+\bibitem[Avvisati and Borgonovi(2020)]{avvisati_learning_2020}
+Francesco Avvisati and Francesca Borgonovi.
+\newblock Learning {Mathematics} {Problem} {Solving} through {Test} {Practice}: a {Randomized} {Field} {Experiment} on a {Global} {Scale}.
+\newblock \emph{Educational Psychology Review}, 32\penalty0 (3):\penalty0 791--814, September 2020.
+\newblock ISSN 1573-336X.
+\newblock \doi{10.1007/s10648-020-09520-6}.
+\newblock URL \url{https://doi.org/10.1007/s10648-020-09520-6}.
+
+\bibitem[Chen et~al.(2024)Chen, He, Yuan, Cui, Su, and Zhu]{chen_noise_2024}
+Huayu Chen, Guande He, Lifan Yuan, Ganqu Cui, Hang Su, and Jun Zhu.
+\newblock Noise {Contrastive} {Alignment} of {Language} {Models} with {Explicit} {Rewards}, October 2024.
+\newblock URL \url{http://arxiv.org/abs/2402.05369}.
+\newblock arXiv:2402.05369 [cs.LG].
+
+\bibitem[Fyfe and Rittle-Johnson(2017)]{fyfe_mathematics_2017}
+Emily~R. Fyfe and Bethany Rittle-Johnson.
+\newblock Mathematics practice without feedback: {A} desirable difficulty in a classroom setting.
+\newblock \emph{Instructional Science}, 45\penalty0 (2):\penalty0 177--194, April 2017.
+\newblock ISSN 1573-1952.
+\newblock \doi{10.1007/s11251-016-9401-1}.
+\newblock URL \url{https://doi.org/10.1007/s11251-016-9401-1}.
+
+\bibitem[Gandhi et~al.(2025)Gandhi, Chakravarthy, Singh, Lile, and Goodman]{gandhi_cognitive_2025}
+Kanishk Gandhi, Ayush Chakravarthy, Anikait Singh, Nathan Lile, and Noah~D. Goodman.
+\newblock Cognitive {Behaviors} that {Enable} {Self}-{Improving} {Reasoners}, or, {Four} {Habits} of {Highly} {Effective} {STaRs}, August 2025.
+\newblock URL \url{http://arxiv.org/abs/2503.01307}.
+\newblock arXiv:2503.01307 [cs.CL].
+
+\bibitem[Grattafiori et~al.(2024)Grattafiori, Dubey, Jauhri, Pandey, Kadian, Al-Dahle, Letman, Mathur, Schelten, Vaughan, Yang, Fan, Goyal, Hartshorn, Yang, Mitra, Sravankumar, Korenev, Hinsvark, Rao, Zhang, Rodriguez, Gregerson, Spataru, Roziere, Biron, Tang, Chern, Caucheteux, Nayak, Bi, Marra, McConnell, Keller, Touret, Wu, Wong, Ferrer, Nikolaidis, Allonsius, Song, Pintz, Livshits, Wyatt, Esiobu, Choudhary, Mahajan, Garcia-Olano, Perino, Hupkes, Lakomkin, AlBadawy, Lobanova, Dinan, Smith, Radenovic, Guzmán, Zhang, Synnaeve, Lee, Anderson, Thattai, Nail, Mialon, Pang, Cucurell, Nguyen, Korevaar, Xu, Touvron, Zarov, Ibarra, Kloumann, Misra, Evtimov, Zhang, Copet, Lee, Geffert, Vranes, Park, Mahadeokar, Shah, Linde, Billock, Hong, Lee, Fu, Chi, Huang, Liu, Wang, Yu, Bitton, Spisak, Park, Rocca, Johnstun, Saxe, Jia, Alwala, Prasad, Upasani, Plawiak, Li, Heafield, Stone, El-Arini, Iyer, Malik, Chiu, Bhalla, Lakhotia, Rantala-Yeary, Maaten, Chen, Tan, Jenkins, Martin, Madaan, Malo, Blecher, Landzaat, Oliveira, Muzzi, Pasupuleti, Singh, Paluri, Kardas, Tsimpoukelli, Oldham, Rita, Pavlova, Kambadur, Lewis, Si, Singh, Hassan, Goyal, Torabi, Bashlykov, Bogoychev, Chatterji, Zhang, Duchenne, Çelebi, Alrassy, Zhang, Li, Vasic, Weng, Bhargava, Dubal, Krishnan, Koura, Xu, He, Dong, Srinivasan, Ganapathy, Calderer, Cabral, Stojnic, Raileanu, Maheswari, Girdhar, Patel, Sauvestre, Polidoro, Sumbaly, Taylor, Silva, Hou, Wang, Hosseini, Chennabasappa, Singh, Bell, Kim, Edunov, Nie, Narang, Raparthy, Shen, Wan, Bhosale, Zhang, Vandenhende, Batra, Whitman, Sootla, Collot, Gururangan, Borodinsky, Herman, Fowler, Sheasha, Georgiou, Scialom, Speckbacher, Mihaylov, Xiao, Karn, Goswami, Gupta, Ramanathan, Kerkez, Gonguet, Do, Vogeti, Albiero, Petrovic, Chu, Xiong, Fu, Meers, Martinet, Wang, Wang, Tan, Xia, Xie, Jia, Wang, Goldschlag, Gaur, Babaei, Wen, Song, Zhang, Li, Mao, Coudert, Yan, Chen, Papakipos, Singh, Srivastava, Jain, Kelsey, Shajnfeld, Gangidi, Victoria, Goldstand, Menon, Sharma, Boesenberg, Baevski, Feinstein, Kallet, Sangani, Teo, Yunus, Lupu, Alvarado, Caples, Gu, Ho, Poulton, Ryan, Ramchandani, Dong, Franco, Goyal, Saraf, Chowdhury, Gabriel, Bharambe, Eisenman, Yazdan, James, Maurer, Leonhardi, Huang, Loyd, Paola, Paranjape, Liu, Wu, Ni, Hancock, Wasti, Spence, Stojkovic, Gamido, Montalvo, Parker, Burton, Mejia, Liu, Wang, Kim, Zhou, Hu, Chu, Cai, Tindal, Feichtenhofer, Gao, Civin, Beaty, Kreymer, Li, Adkins, Xu, Testuggine, David, Parikh, Liskovich, Foss, Wang, Le, Holland, Dowling, Jamil, Montgomery, Presani, Hahn, Wood, Le, Brinkman, Arcaute, Dunbar, Smothers, Sun, Kreuk, Tian, Kokkinos, Ozgenel, Caggioni, Kanayet, Seide, Florez, Schwarz, Badeer, Swee, Halpern, Herman, Sizov, Guangyi, Zhang, Lakshminarayanan, Inan, Shojanazeri, Zou, Wang, Zha, Habeeb, Rudolph, Suk, Aspegren, Goldman, Zhan, Damlaj, Molybog, Tufanov, Leontiadis, Veliche, Gat, Weissman, Geboski, Kohli, Lam, Asher, Gaya, Marcus, Tang, Chan, Zhen, Reizenstein, Teboul, Zhong, Jin, Yang, Cummings, Carvill, Shepard, McPhie, Torres, Ginsburg, Wang, Wu, U, Saxena, Khandelwal, Zand, Matosich, Veeraraghavan, Michelena, Li, Jagadeesh, Huang, Chawla, Huang, Chen, Garg, A, Silva, Bell, Zhang, Guo, Yu, Moshkovich, Wehrstedt, Khabsa, Avalani, Bhatt, Mankus, Hasson, Lennie, Reso, Groshev, Naumov, Lathi, Keneally, Liu, Seltzer, Valko, Restrepo, Patel, Vyatskov, Samvelyan, Clark, Macey, Wang, Hermoso, Metanat, Rastegari, Bansal, Santhanam, Parks, White, Bawa, Singhal, Egebo, Usunier, Mehta, Laptev, Dong, Cheng, Chernoguz, Hart, Salpekar, Kalinli, Kent, Parekh, Saab, Balaji, Rittner, Bontrager, Roux, Dollar, Zvyagina, Ratanchandani, Yuvraj, Liang, Alao, Rodriguez, Ayub, Murthy, Nayani, Mitra, Parthasarathy, Li, Hogan, Battey, Wang, Howes, Rinott, Mehta, Siby, Bondu, Datta, Chugh, Hunt, Dhillon, Sidorov, Pan, Mahajan, Verma, Yamamoto, Ramaswamy, Lindsay, Lindsay, Feng, Lin, Zha, Patil, Shankar, Zhang, Zhang, Wang, Agarwal, Sajuyigbe, Chintala, Max, Chen, Kehoe, Satterfield, Govindaprasad, Gupta, Deng, Cho, Virk, Subramanian, Choudhury, Goldman, Remez, Glaser, Best, Koehler, Robinson, Li, Zhang, Matthews, Chou, Shaked, Vontimitta, Ajayi, Montanez, Mohan, Kumar, Mangla, Ionescu, Poenaru, Mihailescu, Ivanov, Li, Wang, Jiang, Bouaziz, Constable, Tang, Wu, Wang, Wu, Gao, Kleinman, Chen, Hu, Jia, Qi, Li, Zhang, Zhang, Adi, Nam, Yu, Wang, Zhao, Hao, Qian, Li, He, Rait, DeVito, Rosnbrick, Wen, Yang, Zhao, and Ma]{grattafiori_llama_2024}
+Aaron Grattafiori et~al.
+\newblock The {Llama} 3 {Herd} of {Models}, November 2024.
+\newblock URL \url{http://arxiv.org/abs/2407.21783}.
+\newblock arXiv:2407.21783 [cs.AI].
+
+\bibitem[Hu et~al.(2021)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and Chen]{hu_lora_2021}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu~Wang, and Weizhu Chen.
+\newblock {LoRA}: {Low}-{Rank} {Adaptation} of {Large} {Language} {Models}, October 2021.
+\newblock URL \url{http://arxiv.org/abs/2106.09685}.
+\newblock arXiv:2106.09685 [cs.CL].
+
+\bibitem[Kang et~al.(2025)Kang, Zhao, and Song]{kang_scalable_2025}
+Zhewei Kang, Xuandong Zhao, and Dawn Song.
+\newblock Scalable {Best}-of-{N} {Selection} for {Large} {Language} {Models} via {Self}-{Certainty}, December 2025.
+\newblock URL \url{http://arxiv.org/abs/2502.18581}.
+\newblock arXiv:2502.18581 [cs.CL].
+
+\bibitem[OpenAI et~al.(2024)OpenAI, Achiam, Adler, Agarwal, Ahmad, Akkaya, Aleman, Almeida, Altenschmidt, Altman, Anadkat, Avila, Babuschkin, Balaji, Balcom, Baltescu, Bao, Bavarian, Belgum, Bello, Berdine, Bernadett-Shapiro, Berner, Bogdonoff, Boiko, Boyd, Brakman, Brockman, Brooks, Brundage, Button, Cai, Campbell, Cann, Carey, Carlson, Carmichael, Chan, Chang, Chantzis, Chen, Chen, Chen, Chen, Chen, Chess, Cho, Chu, Chung, Cummings, Currier, Dai, Decareaux, Degry, Deutsch, Deville, Dhar, Dohan, Dowling, Dunning, Ecoffet, Eleti, Eloundou, Farhi, Fedus, Felix, Fishman, Forte, Fulford, Gao, Georges, Gibson, Goel, Gogineni, Goh, Gontijo-Lopes, Gordon, Grafstein, Gray, Greene, Gross, Gu, Guo, Hallacy, Han, Harris, He, Heaton, Heidecke, Hesse, Hickey, Hickey, Hoeschele, Houghton, Hsu, Hu, Hu, Huizinga, Jain, Jain, Jang, Jiang, Jiang, Jin, Jin, Jomoto, Jonn, Jun, Kaftan, Kaiser, Kamali, Kanitscheider, Keskar, Khan, Kilpatrick, Kim, Kim, Kim, Kirchner, Kiros, Knight, Kokotajlo, Kondraciuk, Kondrich, Konstantinidis, Kosic, Krueger, Kuo, Lampe, Lan, Lee, Leike, Leung, Levy, Li, Lim, Lin, Lin, Litwin, Lopez, Lowe, Lue, Makanju, Malfacini, Manning, Markov, Markovski, Martin, Mayer, Mayne, McGrew, McKinney, McLeavey, McMillan, McNeil, Medina, Mehta, Menick, Metz, Mishchenko, Mishkin, Monaco, Morikawa, Mossing, Mu, Murati, Murk, Mély, Nair, Nakano, Nayak, Neelakantan, Ngo, Noh, Ouyang, O'Keefe, Pachocki, Paino, Palermo, Pantuliano, Parascandolo, Parish, Parparita, Passos, Pavlov, Peng, Perelman, Peres, Petrov, Pinto, Michael, Pokorny, Pokrass, Pong, Powell, Power, Power, Proehl, Puri, Radford, Rae, Ramesh, Raymond, Real, Rimbach, Ross, Rotsted, Roussez, Ryder, Saltarelli, Sanders, Santurkar, Sastry, Schmidt, Schnurr, Schulman, Selsam, Sheppard, Sherbakov, Shieh, Shoker, Shyam, Sidor, Sigler, Simens, Sitkin, Slama, Sohl, Sokolowsky, Song, Staudacher, Such, Summers, Sutskever, Tang, Tezak, Thompson, Tillet, Tootoonchian, Tseng, Tuggle, Turley, Tworek, Uribe, Vallone, Vijayvergiya, Voss, Wainwright, Wang, Wang, Wang, Ward, Wei, Weinmann, Welihinda, Welinder, Weng, Weng, Wiethoff, Willner, Winter, Wolrich, Wong, Workman, Wu, Wu, Wu, Xiao, Xu, Yoo, Yu, Yuan, Zaremba, Zellers, Zhang, Zhang, Zhao, Zheng, Zhuang, Zhuk, and Zoph]{openai_gpt-4_2024}
+OpenAI et~al.
+\newblock {GPT}-4 {Technical} {Report}, March 2024.
+\newblock URL \url{http://arxiv.org/abs/2303.08774}.
+\newblock arXiv:2303.08774 [cs.CL].
+
+\bibitem[Pan et~al.(2025)Pan, Zhang, Wang, Yuan, Peng, and Suhr]{pan_tinyzero_2025}
+Jiayi Pan, Junjie Zhang, Xingyao Wang, Lifan Yuan, Hao Peng, and Alane Suhr.
+\newblock {TinyZero}, 2025.
+\newblock URL \url{https://github.com/Jiayi-Pan/TinyZero}.
+
+\bibitem[Rafailov et~al.(2024)Rafailov, Sharma, Mitchell, Ermon, Manning, and Finn]{rafailov_direct_2024}
+Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher~D. Manning, and Chelsea Finn.
+\newblock Direct {Preference} {Optimization}: {Your} {Language} {Model} is {Secretly} a {Reward} {Model}, July 2024.
+\newblock URL \url{http://arxiv.org/abs/2305.18290}.
+\newblock arXiv:2305.18290 [cs.LG].
+
+\bibitem[Zhang et~al.(2025)Zhang, Zhang, Guan, Cheng, Duan, Wang, Wang, Zheng, and He]{zhang_no_2025}
+Yanzhi Zhang, Zhaoxi Zhang, Haoxiang Guan, Yilin Cheng, Yitong Duan, Chen Wang, Yue Wang, Shuxin Zheng, and Jiyan He.
+\newblock No {Free} {Lunch}: {Rethinking} {Internal} {Feedback} for {LLM} {Reasoning}, June 2025.
+\newblock URL \url{http://arxiv.org/abs/2506.17219}.
+\newblock arXiv:2506.17219 [cs.LG].
+
+\bibitem[Zhao et~al.(2026)Zhao, Kang, Feng, Levine, and Song]{zhao_learning_2026}
+Xuandong Zhao, Zhewei Kang, Aosong Feng, Sergey Levine, and Dawn Song.
+\newblock Learning to {Reason} without {External} {Rewards}, May 2026.
+\newblock URL \url{http://arxiv.org/abs/2505.19590}.
+\newblock arXiv:2505.19590 [cs.LG].
+
+\end{thebibliography}

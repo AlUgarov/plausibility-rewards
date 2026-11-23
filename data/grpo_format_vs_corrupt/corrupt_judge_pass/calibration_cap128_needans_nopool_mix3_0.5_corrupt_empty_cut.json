@@ -1,0 +1,50 @@
+{
+  "mean": {
+    "floor": -2.3166017532348633,
+    "missing_below_floor": -2.3961100578308105,
+    "coef": 1.5788553184878271,
+    "missing_wrong_median": -1.1604286432266235
+  },
+  "sum": {
+    "floor": -93.28068542480469,
+    "missing_below_floor": -96.7583228111267,
+    "coef": 0.04021349032282105,
+    "missing_wrong_median": -43.35467720031738
+  },
+  "mean_worst": {
+    "floor_mean": -2.3166017532348633,
+    "mu_mean": -0.7699770051437838,
+    "sd_mean": 0.5300632386117857,
+    "floor_worst": -30.67265625,
+    "mu_worst": -5.634802375687493,
+    "sd_worst": 8.960941623056723,
+    "missing_z_worst": -2.9652560650220683,
+    "missing_below_floor": -5.1709674868838436,
+    "coef": 0.47978587176867626,
+    "missing_wrong_median": -1.3390450992954648
+  },
+  "pass": {
+    "threshold": -0.56309574842453,
+    "threshold_setting": [
+      null,
+      0.05
+    ],
+    "pass_correct": 0.7289719626168224,
+    "pass_wrong": 0.050119331742243436,
+    "coef": 1.8536616901022818
+  },
+  "spread_anchor": "correctness",
+  "target_ratio": 1.0,
+  "spreads": {
+    "correctness": 0.6760986492551334,
+    "format": 0.3999602707212053
+  },
+  "cal_prompts": 128,
+  "accuracy": 0.470703125,
+  "solution_rate": 0.87939453125,
+  "max_solution_tokens": 128,
+  "adapter": "/content/drive/MyDrive/Consistency/countdown/sft/Llama-3.2-3B-Instruct-countdown3000-ep1-lr0.0001-seed0-tr2-judge3000-mix3x3000/adapter",
+  "judge": "/content/drive/MyDrive/Consistency/countdown/sft/Llama-3.2-3B-Instruct-countdown3000-ep1-lr0.0001-seed0-tr2-judge3000-mix3x3000/judge_corrupt_empty-swap-cut_cut0.5_n4x1000_n3x1000_t0.9_seed0/dpo_empty-cut_b0.1_lr2e-05_ep1/adapter",
+  "policy_start": "sft",
+  "created": "2026-10-26T05:04:42"
+}

@@ -1,0 +1,22 @@
+{
+  "tag": "heldout_unscored_step50",
+  "n": 100,
+  "accuracy": 0.3,
+  "accuracy_finished": 0.30303030303030304,
+  "truncated": 0.01,
+  "format_ok": 0.99,
+  "tokens": 511.89,
+  "uses_given_numbers": 0.9191919191919192,
+  "made_up_numbers": 0.04040404040404041,
+  "solution_arithmetic_ok": 0.5425531914893617,
+  "solution_reaches_target": 1.0,
+  "answer_matches_solution": 0.3404255319148936,
+  "stopped": 0.0,
+  "gave_up": 0.0,
+  "caught_claims": 0.0,
+  "kind/right numbers, wrong value": 0.61,
+  "kind/correct": 0.3,
+  "kind/a number missing": 0.04,
+  "kind/a number reused or added": 0.04,
+  "kind/no answer (truncated)": 0.01
+}

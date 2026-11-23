@@ -1,0 +1,32 @@
+% Source: narrative.md, "Judge scores and zero-shot judges on the GRPO dumps (2026-10-22, Consistency_Judge_Score_Probe)".
+% 2,560 training completions dumped from GRPO run mean-34 (steps 0-99) and its continuation cont100b (steps 100-400): 160 groups of 16, mixed SFT. Data: ../data/scope_countdown/.
+\begin{table}[H]
+\centering
+\caption{What to score (Countdown, Llama-3.2-3B): correct over wrong completions of the same puzzle, by judge and scored span.}
+\label{tab:scope}
+\begin{threeparttable}
+\begin{tabular}{lllcc}
+\toprule
+Judge & Scored span & Score & Pairs & Groups separated \\
+\midrule
+\makecell[l]{DPO-trained judge\\ (solver pairs)} & solution + answer & \texttt{mean} & 0.992 & 0.889 \\
+ & & \texttt{low10} & 0.976 & -- \\
+\addlinespace
+SFT policy & whole completion & \texttt{mean} & 0.693 & 0.16 \\
+ & & \texttt{low10} & 0.771 & -- \\
+ & & SC & 0.625 & -- \\
+\addlinespace
+Untrained Llama-3.2-3B & solution + answer & \texttt{mean} & 0.818 & -- \\
+ & & \texttt{low10} & 0.879 & -- \\
+ & & P(Yes) & 0.597 & -- \\
+\addlinespace
+\makecell[l]{Untrained Qwen3-14B\\ (non-thinking)} & solution + answer & \texttt{mean} & 0.810 & -- \\
+ & & \texttt{low10} & 0.893 & -- \\
+ & & P(Yes) & 0.797 & -- \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Pairs: share of same-puzzle (correct, wrong) pairs ranked correctly. Groups separated: share of mixed groups in which every correct completion scores above every wrong one. \texttt{low10}: sum of the 10 lowest token log-probabilities. Whole-completion \texttt{low10} correlates $-0.62$ with length.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
