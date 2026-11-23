@@ -22,6 +22,7 @@ In `notebooks/` (copies of the Colab notebooks; details in `notebooks/notebooks_
 - `GRPO_Countdown_Qwen.ipynb`: GRPO from the Qwen SFT; arms format and judge (sum).
 - `Context_Score_Countdown_Llama.ipynb` (analysis): scores dumped Llama GRPO completions with the judges in several
   contexts.
+- `Context_Score_Countdown_Qwen.ipynb` (analysis): whole-completion scores of the Qwen SFT policy's grade completions.
 
 Run order:
 - Llama: `SFT_Countdown_Llama` → `Corrupt_Judge_Generate_Llama` → `Corrupt_Judge_Llama` → `GRPO_Countdown_Llama`.

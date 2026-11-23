@@ -13,3 +13,4 @@ the data each table/figure uses is in `../data/` (see `../data/README.md`).
 | `GRPO_Countdown_Llama.ipynb` trains SFT Llama model with GRPO with plausibility and format training to be better on Countdown tasks
 | `GRPO_Countdown_Qwen.ipynb` trains Qwen model with GRPO with plausibility and format reward using Countdown tasks
 | `Context_Score_Countdown_Llama.ipynb` scores dumped Llama GRPO completions with the judges in several contexts (judge vs generation prompt, solution vs whole completion)
+| `Context_Score_Countdown_Qwen.ipynb` scores the Qwen SFT policy's grade completions over the whole completion (SFT policy and base model, policy prompt), next to the solution + answer scores from the GRPO calibration

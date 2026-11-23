@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Note.aux
 The style file: plainnat-etal.bst
 Database file #1: Consistency.bib
-You've used 13 entries,
+You've used 10 entries,
             2798 wiz_defined-function locations,
-            685 strings with 23846 characters,
-and the built_in function-call counts, 37908 in all, are:
-= -- 3084
-> -- 5634
+            667 strings with 12715 characters,
+and the built_in function-call counts, 15859 in all, are:
+= -- 1294
+> -- 2170
 < -- 2
-+ -- 1870
-- -- 1857
-* -- 3976
-:= -- 6115
-add.period$ -- 55
-call.type$ -- 13
-change.case$ -- 938
-chr.to.int$ -- 13
-cite$ -- 26
-duplicate$ -- 216
-empty$ -- 444
-format.name$ -- 1874
-if$ -- 7277
++ -- 717
+- -- 707
+* -- 1622
+:= -- 2551
+add.period$ -- 43
+call.type$ -- 10
+change.case$ -- 359
+chr.to.int$ -- 10
+cite$ -- 20
+duplicate$ -- 168
+empty$ -- 345
+format.name$ -- 721
+if$ -- 3080
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 2
-newline$ -- 89
-num.names$ -- 52
-pop$ -- 1899
+newline$ -- 71
+num.names$ -- 40
+pop$ -- 732
 preamble$ -- 1
-purify$ -- 925
+purify$ -- 349
 quote$ -- 0
-skip$ -- 1060
+skip$ -- 455
 stack$ -- 0
-substring$ -- 76
-swap$ -- 25
+substring$ -- 70
+swap$ -- 19
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 143
+type$ -- 110
 warning$ -- 0
-while$ -- 43
+while$ -- 34
 width$ -- 0
-write$ -- 197
+write$ -- 155

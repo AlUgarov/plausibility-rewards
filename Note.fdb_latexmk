@@ -1,14 +1,13 @@
 # Fdb version 4
-["bibtex Note"] 1794001149.98722 "Note.aux" "Note.bbl" "Note" 1794007347.91122 0
+["bibtex Note"] 1795476474.25262 "Note.aux" "Note.bbl" "Note" 1795476475.37456 0
   "./Consistency.bib" 1793988600.89309 101952 8628101d8774de6871db0fd7fc732dbf ""
   "./plainnat-etal.bst" 1793587644.99242 27120 a03602c289216620a32164407226ac68 ""
-  "Note.aux" 1794007347.53752 12487 30d15edb56e3db2fe84a8f754108373e "pdflatex"
+  "Note.aux" 1795476475.00893 7640 822a98412320dbf53e951c97d34c6e3a "pdflatex"
   (generated)
   "Note.bbl"
   "Note.blg"
   (rewritten before read)
-["pdflatex"] 1794007345.13296 "/Users/alexander/Consistency/consistency_experiment/Note.tex" "Note.pdf" "Note" 1794007347.91173 0
-  "/Users/alexander/Consistency/consistency_experiment/Note.tex" 1794007344.51037 18279 f7669687ad5444bc3800664569a48c3c ""
+["pdflatex"] 1795476474.37934 "Note.tex" "Note.pdf" "Note" 1795476475.37481 0
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -50,7 +49,6 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
-  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
@@ -140,15 +138,14 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1793073137 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1774209607 3636776 dc5fa9b6b1453b9d196cd42edf876004 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "Note.aux" 1794007347.53752 12487 30d15edb56e3db2fe84a8f754108373e "pdflatex"
-  "Note.bbl" 1794001150.11391 11439 538f2986eba5bd30e47aa5e8c14926a1 "bibtex Note"
-  "Note.out" 1794007347.53982 1009 be68adaf51e1b0c29fdd8e5c9d87de14 "pdflatex"
-  "Note.tex" 1794007344.51037 18279 f7669687ad5444bc3800664569a48c3c ""
-  "tables/tab_context_countdown.tex" 1793824304.92207 2622 de2f9cbdd4feac2793931feb7976d40e ""
-  "tables/tab_format_vs_corrupt.tex" 1793234396.47808 3075 9639928b7082f1e138fd788ee1152d65 ""
-  "tables/tab_format_vs_solver.tex" 1793234396.47847 2562 9dad03c5449dac1b7989c2670b5f1f86 ""
+  "Note.aux" 1795476475.00893 7640 822a98412320dbf53e951c97d34c6e3a "pdflatex"
+  "Note.bbl" 1795476474.36308 6251 75fa7e2f62b1f07a3276e55ced0387b4 "bibtex Note"
+  "Note.out" 1795476475.0098 1276 32f2b190447235d70adae11ede43e6c2 "pdflatex"
+  "Note.tex" 1795476385.73513 21386 c467f4270d5e9bf51f530e31eec2c90f ""
+  "tables/tab_format_vs_corrupt.tex" 1795476474.10185 2003 7ff3263bde92564acc547f54d7a44266 ""
   "tables/tab_greedy_failures.tex" 1793167165.65814 1749 f3417eb772995307babd93fa8bbf3501 ""
-  "tables/tab_judges_countdown.tex" 1793821997.82501 2993 b07d440169d3db36d9da3abdd7da412e ""
+  "tables/tab_grpo_pass8_distinct.tex" 1795476474.10206 1717 ebe86c1a07c43ac136b8dc94d442c7f9 ""
+  "tables/tab_judges_countdown.tex" 1795470875.47877 2148 f5850e9ba040a6e6ff7c9cc607c4331d ""
   "tables/tab_synthetic_countdown.tex" 1793834621.03566 3415 554ca3c50d7bd077b7228c23c1f84866 ""
   (generated)
   "Note.aux"

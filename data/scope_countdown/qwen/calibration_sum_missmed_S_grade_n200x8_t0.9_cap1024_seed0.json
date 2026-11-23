@@ -1,0 +1,11 @@
+{
+ "format_sd_within": 0.8240178128526334,
+ "judge_sd_within": 14.417600991872959,
+ "missing": -34.770490646362305,
+ "reduction": "sum",
+ "completions": 3200,
+ "scored": 1766,
+ "judge": "/content/drive/MyDrive/Consistency/countdown/sft/Qwen3-0.6B-countdown500-ep1-lr0.0001-seed0-tr4-f16-8-w35-30-25-10-imp0x0-mix3x500/judge_corrupt_empty-cut0.1-cut0.25-cut0.5_unfinished_n4x1000_n3x1000_t0.9_cap2048_seed0/dpo_empty_b0.1_lr2e-05_ep2/adapter",
+ "source": "/content/drive/MyDrive/Consistency/countdown/sft/Qwen3-0.6B-countdown500-ep1-lr0.0001-seed0-tr4-f16-8-w35-30-25-10-imp0x0-mix3x500/grade_n200x8_t0.9_cap1024_seed0/gen_sft.csv",
+ "weight": 0.05715360088804809
+}

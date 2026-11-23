@@ -1,0 +1,31 @@
+% Source: data/scope_countdown/judges_summary.csv (make_judges_summary.py), score = mean. Replaces
+% tab_discrimination_countdown and tab_scope_solution_vs_completion. Every judge scores the same 2,560 completions:
+% training groups dumped from GRPO run mean-34 (steps 0-99) and its continuation cont100b (steps 100-400), 160 groups of
+% 16 on the mixed SFT; 81 groups have both correct and wrong completions. Wrong completions are mostly fakes (817 of
+% 955: a false last step claims the target). Judge prompt for solution + answer: neutral system prompt + bare puzzle.
+% Corrupt judge = dpo_empty-cut (the GRPO reward of tab_format_vs_corrupt); narrative.md, "Label-free judge from
+% corrupted reasoning: offline test (2026-10-23/24)"; the others: "Judge scores and zero-shot judges on the GRPO dumps
+% (2026-10-22)"; base model on the whole completion (policy prompt, adapter off): "Base model on the whole completion
+% (2026-10-27)".
+\begin{table}[H]
+\centering
+\caption{Judges on Countdown (Llama-3.2-3B): how often the \texttt{mean} score ranks correct completions of a puzzle above wrong ones.}
+\label{tab:judges-countdown}
+\begin{threeparttable}
+\begin{tabular}{llcc}
+\toprule
+Judge & Scored span & Pairs & Groups separated \\
+\midrule
+Base model & whole completion & 0.248 & 0.025 \\
+Base model & solution + answer & 0.818 & 0.457 \\
+SFT policy & whole completion & 0.693 & 0.160 \\
+SFT policy & solution + answer & 0.836 & 0.494 \\
+DPO: solver-made errors & solution + answer & 0.992 & 0.889 \\
+DPO: corrupted reasoning & solution + answer & 0.961 & 0.778 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Completions: 2,560 GRPO training completions (160 puzzles $\times$ 16, dumped every 20 steps over 400 steps) from a run rewarded by the solver-made-errors judge, so they are not neutral between the two DPO judges. Score: \texttt{mean}, the mean token log-probability of the scored span. Solution + answer is scored after the judge prompt (neutral system prompt and the bare puzzle), the whole completion after the policy's prompt (puzzle and format instructions). Pairs: share of same-puzzle (correct, wrong) pairs ranked correctly (2,736 pairs for solution + answer, 2,895 for the whole completion; ties count 1/2). Groups separated: share of the 81 mixed groups in which every correct completion scores above every wrong one. Base model: Llama-3.2-3B-Instruct. SFT policy: the base model fine-tuned on program-written traces and gold judge-format examples; GRPO's starting point. DPO judges are trained from the SFT policy; solver-made errors: chosen = a correct solution, rejected = a program-written solution wrong in one way (an unavailable number swapped in, a number used twice or added, one false step, or an honest miss of the target); corrupted reasoning: chosen = the policy's solution after its own reasoning, rejected = its solution after empty or truncated reasoning, with no correctness labels.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

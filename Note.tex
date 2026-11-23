@@ -101,19 +101,24 @@ Our approach avoids entropy collapse issue of RLIF by splitting completion into 
 
 The completions we explore include reasoning trace, final clean solution, and the answer. Getting clean step-by-step solutions is the immediate target of the training while effective reasoning trace is the main goal. The training process rewards reasoning traces for their ability to end up in a solution which is considered to be highly likely by a model. This setup most fits the domains where typical reasoning involves extensive backtracking and parallel exploration, while the solution is short and easy to verify (puzzles, mathematics, software engineering). 
 
-We close generation-verification gap through a careful design of verification metric which uses no human-labelled data. Similar to —-, we use the mean log-prob of a completion as a proxy for the output’s certainty. 
+We close generation-verification gap through a careful design of verification metric which uses no human-labelled data. Similar to \citet{agarwal_unreasonable_2025}., we use the total log-prob of a completion as a proxy for the output’s certainty. 
 
-We find that models are more accurate in verifying solutions rather than full completions containing reasoning traces, solutions , and answers. However, moderate-sized LLM tend to be poor judges and require additional training in order to enable self-play training. The paper explores two potential solutions. First, finetuning a model with the judge prompt and gold answers marginally improves its ability to discriminate between correct and incorrect solutions. Second, training a model to recognize a solution produced from corrupted reasoning produces a more sizable gain in verification abilities.
+We find that models are more accurate in verifying solutions rather than full completions containing reasoning traces, solutions , and answers. However, moderate-sized LLM tend to be poor judges and require additional training in order to enable self-play training. The paper explores two potential solutions. First, fine-tuning a model with the judge prompt and gold answers marginally improves its ability to discriminate between correct and incorrect solutions. Second, training a model to recognize a solution produced from corrupted reasoning produces a more sizable gain in verification abilities.
 
-Training with self-plausibility and format rewards using a label-free judge increases accuracy on Countdown task from  X to Y\%. This improvement beats training on format-rewards only which increases the accuracy only by Z pp with a difference significant at 5\%. The increase is comparable to potential gains with verifiable rewards and happens without significant decrease in response diversity. The improvement is likely to be higher for a slower learning rate and additional hyperparameter tuning.
+Training with self-plausibility and format rewards using a label-free judge increases accuracy on Countdown task from  24\% to 33\% on  Llama-3.2-3B-Instruct model and from 22\% to 32\% for Qwen3-0.6B model. This improvement beats training on format-rewards only which increases the accuracy only by 0.5 pp (decreased by 10 pp. for the Qwen model) with a difference significant at 5\%. The increase is comparable to potential gains with verifiable rewards and happens without significant decrease in response diversity. 
 
 Our two contributions are separating the more easily verifiable part of the completion (cleaned solution) from the traces where RLIF training can have more negative effect on solution diversity, part which would suffer the most from increasing conformity reasoning and the design of label-free judge with  strong verification ability while using the same base model.
 
 
 \section{Preliminaries}
 
+\textbf{Task} Each Countdown tasks involves finding a sequence of arithmetic operations such that it produces the expected number using a given set of numbers such that each number is used only once. Our tasks mostly come from TinyZero dataset (citation) and include tasks involving just 3 numbers and tasks involving 4 numbers which are more complex. Many tasks have multiple solutions, and the number of solutions can be used as a proxy of their difficulty.
+
+The advantage of Countdown task for our purpose is that it is much easier to verify solution than to find it. It makes reasoning for solving the problem which is similar to more complex mathematics and coding tasks. At the same time, even small models can manage to verify solutions.
+
+
 % Trajectory-level entropy
-Our plausibility reward is the total log-probability assigned by a judge model to the part of the completion which includes solution and the final answer but omits the reasoning:
+\textbf{Reward.} Our plausibility reward is the total log-probability assigned by a judge model to the part of the completion which includes solution and the final answer but omits the reasoning:
 
 \begin{equation}
 R_p=\sum_{k=k_0}^S \log(p_J(x_k|x_{<k}))
@@ -186,12 +191,18 @@ Here $z(y)$ is a truth value of completion $y$ and $P_w(z|x), P_l(z|x)$ are the 
 
 \section{Setup}
 \label{sec:setup}
-% GRPO + LoRA, output format <reasoning>/<solution>/<answer>, frozen judge, score reductions (mean, sum, SC, P(True), worst).
-We use Llama-3.2-3B-Instruct model (\citet{grattafiori_llama_2024}) both for generation and judging. As it is an instruct-type model, which means it doesn't adhere to any reasoning format which would conflict with our experiments.  Our tests show very low initial accuracy on Countdown with a zero-shot prompt and no reasoning effort.
 
-\textbf{Establishing Reasoning Behavior.}  Following \citet{gandhi_cognitive_2025} we seed reasoning behavior for the Llama model by fine-tuning it on reasoning traces containing backtracking, verification of results, and repeatedly taking stock of numbers already used while solving the puzzle. Procedural generation builds all the 6000 reasoning traces for finetuning to guarantee good representation for all the desired reasoning behaviors. These examples use the same prompt as the one used in our plausibility training which asks for a reasoning part, solution, and the answer. Finetuning also covers 3000 gold answers with a neutral system (no format restrictions) to prepare the model for judge prompts. All the puzzles come from TinyZero dataset (\citet{pan_tinyzero_2025}) with equal split to 3-number and 4-number puzzles. 
+We select two models for our tests: Llama-3.2-3B-Instruct  and Qwen3-0.6B. The Llama model is an instruct-type model, which means it doesn't adhere to any reasoning format which would conflict with our experiments.  However, our tests with the Llama model show very low initial accuracy on Countdown with a zero-shot prompt and no reasoning effort. The Qwen3-0.6B model combines better and more modern training with small size. Larger Qwen3 models saturate Countdown tasks for 4 digit problems.
 
-The training runs for one epoch using effective batch size of 16 samples. The learning rate follows cosine schedule with 5\% warmup and peaks at  1e-4. The increase in Countdown performance is significant. On 3-number puzzles the greedy accuracy goes from 8\% to 72\%. On 4-number puzzles the accuracy increases from 0\% to 24\% (both numbers use 50 puzzles per size).\footnote{Evaluation use the same prompt consisting of the puzzle followed by format instructions, without a worked example. Examples however do not improve scoring for the untrained model.} The improvement happens both due to better format following and better reasoning.
+
+For each model, we prepare a generating model and a judge model as two adapters of the same base model. The judge adapter comes from Direct Preference Optimization (DPO) where each training pair consists of one preferred solution block coming from an intact reasoning trace and another - from corrupt reasoning trace. Generating model's adapter comes from supervised fine-tuning on synthetic reasoning traces which include backtracking and verification behaviors. Generating model adapter is necessarily only because the base model has poor adherence to format (Qwen3) or no reasoning behavior (Llama-3.2-3B-Instruct). This stage could be potentially replaced by training on gold reasoning completions, completions from a stronger model, or dropped completely if the original model is strong enough for RL stage.
+
+
+\textbf{Generating Model Training.}  Following \citet{gandhi_cognitive_2025} we seed reasoning behavior for each base model by fine-tuning it on reasoning traces containing backtracking, verification of results, and repeatedly taking stock of numbers already used while solving the puzzle. Procedural generation builds all the 6000 reasoning traces for fine-tuning to guarantee good representation for all the desired reasoning behaviors. These examples use the same prompt as the one used in our plausibility training which asks for a reasoning part, solution, and the answer. Fine-tuning also covers 3000 gold answers with a neutral system (no format restrictions) to prepare the model for judge prompts. All the puzzles come from TinyZero dataset (\citet{pan_tinyzero_2025}) with equal split to 3-number and 4-number puzzles. 
+
+The training runs for one epoch using effective batch size of 16 samples. The learning rate follows cosine schedule with 5\% warmup and peaks at  1e-4. The increase in Countdown performance is significant. On 3-number puzzles the greedy accuracy goes from 8\% to 72\% for the Llama model and from 2\% to 38\% for the Qwen3 model. On 4-number puzzles the accuracy increases from 0\% to 24\% for the Llama and 0\% to 12\% for the Qwen3  (both numbers use 50 puzzles per size).\footnote{Evaluation use the same prompt consisting of the puzzle followed by format instructions, without a worked example. Examples however do not improve scoring for the untrained model.} The improvement happens both due to better format following and better reasoning.
+
+
 
 \textbf{Judge training}.  The model for scoring solutions (judge) is trained with Direct Preference Optimization (DPO) (\citet{rafailov_direct_2024}) using solution and answer parts of completions  produced by the fine-tuned generation model. Preferred solutions are the original solutions generated with full reasoning traces.  Rejected solutions come from corrupted reasoning traces. We use 1800 reasoning completions produced by a fine-tuned model to create two pairs for DPO training per completion. The first pair's corrupt solution comes from empty reasoning trace. The second pair's corrupt solution comes from only the first half of the reasoning trace.  Hence rejected solutions use much less reasoning to get to the solution and tend to be less accurate.
 
@@ -199,8 +210,7 @@ The training starts with the fine-tuned generation model and continues for one e
 
 
 
-\textbf{Reinforcement Learning with Plausibility Rewards.} We train the generating model for 150 steps using Group Relative Preference Optimization algorithm (GRPO) with both format and plausibility rewards. Format rewards incentivize completions with non-verbal answers and three tagged parts (reasoning, solution, answer). Formatting rewards are essential for our setup because the calculation of rewards requires having a formatted solution while accuracy verification needs numeric-only format for our grader.\footnote{The grader's scores do not affect the training.}. Plausibility rewards are mean logits of the solution+answer parts of the completion as graded by the judge model using a neutral system prompt (see "Preliminaries" section above). We calibrate the weight of plausibility rewards to match the standard deviation of formatting rewards.
-
+\textbf{Reinforcement Learning with Plausibility Rewards.} We train the generating model for 150 steps using Group Relative Preference Optimization algorithm (GRPO) with both format and plausibility rewards. Format rewards incentivize completions with non-verbal answers and three tagged parts (reasoning, solution, answer). Formatting rewards are essential for our setup because the calculation of rewards requires having a formatted solution while accuracy verification needs numeric-only format for our grader.\footnote{The grader's scores do not affect the training.}. Plausibility reward is the sum of logits of the solution+answer parts of the completion as graded by the judge model using a neutral system prompt (see "Preliminaries" section above). We calibrate the weight of plausibility rewards to match the standard deviation of formatting rewards.
 
 We use TRL library for training,  and vLLM library for generation and plausibility scoring. All the training runs use Low Rank Adaptaton (LoRA) \citep{hu_lora_2021} with rank of 16 and $\alpha=32$ using PEFT library. We observe no significant improvement from increasing LORA rank to 32. The training uses learning rate of 2e-05 with cosine schedule and 20 warm-up steps.\footnote{Some charts show 300 steps for the plausibility rewards with the last 150 steps coming from an extra run starting from step 150 checkpoint.}  GRPO uses 16 completions per step with anchoring to the base model ($\beta_{KL}=0.02$) and no rewards scaling to avoid large changes in gradient when diversity of responses becomes small.
 
@@ -210,45 +220,23 @@ We use TRL library for training,  and vLLM library for generation and plausibili
 
 
 \section{Results}
-\label{sec:disc-gsm8k}
-
-First, we confirm that our plausibility measure indeed contains information useful for identifying correct solutions. Table X analyzes three different measures of plausibility based on mean log-probability of the scored span (mean), sum of log-probabilities (sum), sum of log-probabilities for 10 least likely tokens (low10), and self-certainty citet{Kang). Both base and fine-tuned models are pretty poor verifiers of own outputs. Table X compares our preferred measure based on mean log-probability vs the sum of log-probabilities, and the minimum 
-
-Training on corrupt traces significantly increases the ability to discriminate between correct and incorrect solutions even though the split of preferred/rejected samples never utilized correctness. For a an average pair of solutions sampled from the completions of the same puzzle, the judge assigns higher plausibility score to a correct solution in 96\% cases (random chance is 50\%). For an average group of 16 completions it accurately separates correct from incorrect solutions with probability 0.778.  For comparison, the base model picks the correct solution in the pair with probability 0.818 and fine-tuning for reasoning increases this probability only to 0.836. 
-
-
-Notably, scoring solutions and answers identifies correct solutions more reliably than scoring whole completions. For example, SFT policy picks correct solution with probability 0.693 if seeing the whole completion vs 0.836 for solution+answer only. The base model identifies correct solution in the pair with probability 0.248 (below chance) when using the whole completion\footnote{This is not surprising as it doesn't expect reasoning.}, but with probability 0.818 when using solution and answer. This evidence supports our decision to score only the solution part of completions.
-
-Plausibility score predicts correctness even controlling for solution length. Plausibility with mean log-probability of solution 
-
-\textbf{Accuracy Improvement.}  GRPO training significantly increases the accuracy of 
-
-%\input{tables/tab_discrimination_gsm8k}
-\input{tables/tab_context_countdown}
-
-%\section{How self-plausibility rewards are gamed}
-%\label{sec:gaming}
-% 1B smoke runs: sum -> one-liners, sc -> verbose copies, mean -> answer drift / reasoning copied into solution.
-% TODO table: reward -> exploit.
-
-%\section{Countdown: easy steps, gameable bookkeeping}
-%\label{sec:countdown}
-\input{tables/tab_judges_countdown}
-% TODO table: GRPO against the frozen base judge (gap trick).
-
-\section{Judge Performance}
 \label{sec:trained-judges}
-% TODO table: DPO judge vs base / SFT judges on the policy's real samples.
-\input{tables/tab_format_vs_solver}
+\textbf{Scoring Solutions.} Even without a trained judge, scoring solutions and answers identifies correct solutions more reliably than scoring whole completions (Table 1). For example, SFT policy for the Llama model picks a correct solution with probability 0.803 if seeing the whole completion vs 0.838 for solution+answer only. The base model identifies correct solution in the pair with probability 0.768 when using the whole completion\footnote{This is not surprising as it doesn't expect reasoning.}, but with probability 0.863 when using solution and answer. This evidence supports our decision to score only the solution part of completions.
 
-\section{Main Results}
+\input{tables/tab_judges_countdown}
+
+The judge scoring is significantly more accurate in identifying correct solutions. Within a pair, it picks the correct solution with probability of 0.965 (0.863 for the base model policy). It allows to completely separate correct vs incorrect solutions in almost 80\% of groups of 8 sampled completions. The judge performance is comparable between the two models. Hence it can provide informative training signals for the next stage of our experiment - GRPO training. 
+
+
 \label{sec:corrupt}
+\textbf{Accuracy Improvement.}  GRPO training significantly increases the sampled accuracy on Countdown both for Llama and Qwen3 models. The starting (SFT) model's accuracy with pass@1 at temperature 0.9 is just 0.459 for the Llama and 0.224 for Qwen3-0.6B models using the equal mix of puzzles with 3 and 4 numbers. Training with plausibility and format rewards for 150 steps improves the accuracy to 0.528 for Llama and 0.322 for Qwen model. 
+
 \input{tables/tab_format_vs_corrupt}
-% TODO tables: offline corrupt-judge comparison; GRPO arms on the v4 and v5 SFTs.
+
 
 \section{Future Work}
 \label{sec:future}
-% One seed per arm; 3B policy; ~6-point noise at 200 puzzles.
+
 
 \bibliographystyle{plainnat-etal}
 \bibliography{Consistency}
@@ -261,6 +249,10 @@ Plausibility score predicts correctness even controlling for solution length. Pl
 \section{Synthetic gaming tests}
 \label{app:synthetic}
 \input{tables/tab_synthetic_countdown}
+
+\section{GRPO: pass@8 and distinct correct answers}
+\label{app:grpo-pass8}
+\input{tables/tab_grpo_pass8_distinct}
 \end{appendices}
 
 

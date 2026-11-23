@@ -1,0 +1,13 @@
+judge,span,model,column,pairs,groups_separated,mixed_groups,n_pairs
+Base model policy,whole completion,Llama-3.2-3B,gen_full_base_sum,0.7675438596491229,0.2222222222222222,81,2736
+Base model policy,whole completion,Qwen3-0.6B,gen_full_base_sum,0.5150214592274678,0.17040358744394618,223,1398
+Base model policy,solution + answer,Llama-3.2-3B,judge_base_sum,0.8629385964912281,0.5925925925925926,81,2736
+Base model policy,solution + answer,Qwen3-0.6B,base_sum,0.8412017167381974,0.6098654708520179,223,1398
+SFT policy,whole completion,Llama-3.2-3B,gen_full_sum,0.8026315789473685,0.2839506172839506,81,2736
+SFT policy,whole completion,Qwen3-0.6B,gen_full_sum,0.6101573676680973,0.22869955156950672,223,1398
+SFT policy,solution + answer,Llama-3.2-3B,judge_sft_sum,0.8377192982456141,0.48148148148148145,81,2736
+SFT policy,solution + answer,Qwen3-0.6B,S_sum,0.7989985693848355,0.5246636771300448,223,1398
+Judge policy,solution + answer,Llama-3.2-3B,judge_corrupt_sum,0.9649122807017544,0.7901234567901234,81,2736
+Judge policy,solution + answer,Qwen3-0.6B,judge_sum,0.9599427753934192,0.8340807174887892,223,1398
+Shorter solution,solution + answer,Llama-3.2-3B,shorter,0.6505847953216374,0.14814814814814814,81,2736
+Shorter solution,solution + answer,Qwen3-0.6B,shorter,0.7818311874105865,0.452914798206278,223,1398
