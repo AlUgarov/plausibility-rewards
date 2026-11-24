@@ -240,7 +240,6 @@ INPUT ./tables/tab_greedy_failures.tex
 INPUT ./tables/tab_greedy_failures.tex
 INPUT ./tables/tab_greedy_failures.tex
 INPUT tables/tab_greedy_failures.tex
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT ./tables/tab_synthetic_countdown.tex
 INPUT ./tables/tab_synthetic_countdown.tex
 INPUT ./tables/tab_synthetic_countdown.tex
@@ -251,6 +250,11 @@ INPUT ./tables/tab_grpo_pass8_distinct.tex
 INPUT ./tables/tab_grpo_pass8_distinct.tex
 INPUT ./tables/tab_grpo_pass8_distinct.tex
 INPUT tables/tab_grpo_pass8_distinct.tex
+INPUT ./tables/tab_rft_countdown.tex
+INPUT ./tables/tab_rft_countdown.tex
+INPUT ./tables/tab_rft_countdown.tex
+INPUT ./tables/tab_rft_countdown.tex
+INPUT tables/tab_rft_countdown.tex
 INPUT Note.aux
 INPUT ./Note.out
 INPUT ./Note.out

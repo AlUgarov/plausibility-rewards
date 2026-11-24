@@ -1,0 +1,28 @@
+% Source: eval_test_after.json of each run folder (Drive .../judge_dpo-start_sft/runs/), start: eval_test_before.json.
+%   Format only (SD scaling): grpo-format_only-mix3_0.5-expr-kl0.02-format-34-150steps
+%   Solver-pair judge:        grpo-mean-missmed-mix3_0.5-expr-kl0.02-swap30extra30slip20miss20_n2250_n3x2250-mean-34
+%   Format only (no scaling): grpo-format_only-mix3_0.5-expr-kl0.02-format-noscale-mixv3
+%   Label-free judge:         grpo-pass-fp0.05-mix3_0.5-expr-kl0.02-corrupt_empty-cut-v3-mix-corrupt-pass
+% Moved here from tab_format_vs_solver / tab_format_vs_corrupt (2026-10-27).
+\begin{table}[H]
+\centering
+\caption{Greedy 4-number test (200 puzzles) after 150 GRPO steps: accuracy, truncation and made-up numbers.}
+\label{tab:greedy-failures}
+\begin{threeparttable}
+\begin{tabular}{lccccc}
+\toprule
+ & & \multicolumn{2}{c}{Table~\ref{tab:format-vs-solver}} & \multicolumn{2}{c}{Table~\ref{tab:format-vs-corrupt}} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+ & Start & Format only & \makecell{Format +\\ solver-pair judge} & Format only & \makecell{Format +\\ label-free judge} \\
+\midrule
+Accuracy & 0.240 & 0.255 & 0.330 & 0.225 & 0.295 \\
+\quad among finished & 0.353 & 0.255 & 0.330 & 0.225 & 0.299 \\
+Truncated & 0.320 & 0.000 & 0.000 & 0.000 & 0.015 \\
+Made-up numbers & 0.156 & 0.090 & 0.020 & 0.070 & 0.127 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Truncated: no answer within 1,024 tokens. Made-up numbers: share of answers using a number not among the given ones. The two format-only controls differ in reward scaling by the group standard deviation (on in Table~\ref{tab:format-vs-solver}, off in Table~\ref{tab:format-vs-corrupt}). One seed per arm.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

@@ -20,13 +20,16 @@ In `notebooks/` (copies of the Colab notebooks; details in `notebooks/notebooks_
 - `SFT_Countdown_Qwen.ipynb`: SFT of Qwen3-0.6B.
 - `Judge_Countdown_Qwen.ipynb`: Qwen corrupted-reasoning data and DPO judge in one notebook.
 - `GRPO_Countdown_Qwen.ipynb`: GRPO from the Qwen SFT; arms format and judge (sum).
+- `RFT_Countdown_Llama.ipynb`: rejection-sampling fine-tuning (RFT) from the Llama SFT, the judge as the filter.
+- `RFT_Countdown_Qwen.ipynb`: RFT from the Qwen SFT, the Qwen judge as the filter.
 - `Context_Score_Countdown_Llama.ipynb` (analysis): scores dumped Llama GRPO completions with the judges in several
   contexts.
 - `Context_Score_Countdown_Qwen.ipynb` (analysis): whole-completion scores of the Qwen SFT policy's grade completions.
 
 Run order:
-- Llama: `SFT_Countdown_Llama` → `Corrupt_Judge_Generate_Llama` → `Corrupt_Judge_Llama` → `GRPO_Countdown_Llama`.
-- Qwen: `SFT_Countdown_Qwen` → `Judge_Countdown_Qwen` → `GRPO_Countdown_Qwen`.
+- Llama: `SFT_Countdown_Llama` → `Corrupt_Judge_Generate_Llama` → `Corrupt_Judge_Llama` → `GRPO_Countdown_Llama` → `RFT_Countdown_Llama`
+  (RFT reuses the GRPO notebook's calibration and start evals).
+- Qwen: `SFT_Countdown_Qwen` → `Judge_Countdown_Qwen` → `GRPO_Countdown_Qwen` / `RFT_Countdown_Qwen`.
 
 ## Setup
 

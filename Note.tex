@@ -74,12 +74,8 @@
 \onehalfspacing
 \begin{abstract}
 \noindent 
-Reinforcement Learning from internal feedback (RLIF) promises potential gains in areas where human feedback is scarce but typically delivers only fleeting marginal gains at the cost of enthropy collapse. We improve upon this method by linking internal feedback only to a more easily verifiable part of the completion and use a more accurate label-free judge. This breaks the theoretical connection between training and entropy discovered by \citet{zhang_no_2025}, and leads to significant gains in verifiable domains. Our early result using Llama-3 model show RL using internal feedback  indeed increases accuracy on Countdown task by 14 pp. approaching the gains from standard GRPO with verifiable rewards.
-%[Placeholder abstract.] We ask whether a language model's own judgment of how plausible a solution looks can
-%serve as a reinforcement-learning reward without gold labels. We measure how well frozen models rank their own correct
-%solutions above incorrect ones on GSM8K and Countdown, train policies with GRPO against such judges, and document how
-%the rewards are gamed. We then compare judges trained on solver-made and on label-free corrupted-reasoning preference
-%pairs against a format-only control.
+Reinforcement Learning from internal feedback (RLIF) promises potential gains in areas where human feedback is scarce but typically delivers only fleeting marginal gains at the cost of entropy collapse. We improve upon this method by calculating internal rewards from a more easily verifiable part of the completion and using a more accurate label-free judge. This adjustments make internal feedback more accurate and slow down entropy collapse mechanism discovered by \citet{zhang_no_2025}. Our early results show that rejection fine-tuning using internal feedback indeed increases accuracy on Countdown task by 11 pp. approaching the gains from standard GRPO with verifiable rewards.
+
 
 \vspace{6pt}
 \noindent {\footnotesize Keywords: reinforcement learning, GRPO, self-verification, LLM-as-a-judge, reward hacking, label-free rewards}
@@ -92,20 +88,21 @@ Reinforcement learning of large language models mostly utilizes verifiable rewar
 
 Human learning is not necessarily limited by verifiable rewards. People can often improve skills just by practicing them. For example, just doing homework or test problems without feedback can improve the performance on subsequent tests (\citet{fyfe_mathematics_2017}, \citet{avvisati_learning_2020}). There are at least two reasons for why practicing is helpful on its own. First, practicing often involves reading and learning more. Second, students can often understand whether they manage to solve a problem. When solving a challenging problem, people can experience an Aha! moment in which a sudden insight delivers a solution with high degree of confidence. Hence the process of solution as well as process of finding mistakes in own reasoning constitutes an additional source of feedback.
 
+We explore whether reasoning models can also learn from Aha! moments even if rewards are not immediately verifiable. Our method falls into the stream of literature called Reinforcement Learning From Internal Feedback (RLIF), the term first introduced by \citet{zhao_learning_2026}. \citet{agarwal_unreasonable_2025} find that RL with rewards using only the answer's entropy significantly increase Qwen-7B accuracy on multiple math and coding benchmarks.  \citet{kang_scalable_2025} propose an alternative measure of internal feedback (self-certainty) which is based on average cross-entropy of policy with respect to the uniform distribution and improves best-of-N selection for diverse reasoning benchmarks. \citet{zhao_learning_2026} use self-certainty reward in GRPO to train models in math and coding. 
 
-We explore whether reasoning models can also learn from Aha! moments even if rewards are not immediately verifiable. Our method falls into the stream of literature called Reinforcement Learning From Internal Feedback (RLIF), the term first introduced by \citet{zhao_learning_2026}. — find that X find that.
+However, many of these results are suspect due to using early base Qwen models only which can improve with spurious rewards \citep{shao_spurious_2026}. Additionally, \citet{zhang_no_2025} find that Instruct models have much smaller improvements from common RLIF method and this improvement turns negative when the policy inevitably start gaming the rewards. They also show that using either self-consistency or trajectory entropy as rewards leads to entropy collapse due to positive and high covariance between advantages and original policy.
 
-Our approach avoids entropy collapse issue of RLIF by splitting completion into a reasoning trace and final solution and calculating rewards only on the solution. —-
 
- 
+Our approach negates this channel of entropy collapse common in RLIF by splitting completion into a reasoning trace and a final solution and calculating rewards only on the solution part. Hence rewards do not push reasoning to conform to the existing policy and reasoning trace constitutes the largest portion of completions in our setting. Additionally, we use different policies for generation and for scoring solutions.
+
 
 The completions we explore include reasoning trace, final clean solution, and the answer. Getting clean step-by-step solutions is the immediate target of the training while effective reasoning trace is the main goal. The training process rewards reasoning traces for their ability to end up in a solution which is considered to be highly likely by a model. This setup most fits the domains where typical reasoning involves extensive backtracking and parallel exploration, while the solution is short and easy to verify (puzzles, mathematics, software engineering). 
 
-We close generation-verification gap through a careful design of verification metric which uses no human-labelled data. Similar to \citet{agarwal_unreasonable_2025}., we use the total log-prob of a completion as a proxy for the output’s certainty. 
+We close generation-verification gap through a careful design of verification metric which uses no human-labelled data. Similar to \citet{agarwal_unreasonable_2025}, we use the total log-prob of a completion as a proxy for the output’s correctness. However, we specifically train a judge model to align log-probabilities with probabilities of an answer being correct using  
 
 We find that models are more accurate in verifying solutions rather than full completions containing reasoning traces, solutions , and answers. However, moderate-sized LLM tend to be poor judges and require additional training in order to enable self-play training. The paper explores two potential solutions. First, fine-tuning a model with the judge prompt and gold answers marginally improves its ability to discriminate between correct and incorrect solutions. Second, training a model to recognize a solution produced from corrupted reasoning produces a more sizable gain in verification abilities.
 
-Training with self-plausibility and format rewards using a label-free judge increases accuracy on Countdown task from  24\% to 33\% on  Llama-3.2-3B-Instruct model and from 22\% to 32\% for Qwen3-0.6B model. This improvement beats training on format-rewards only which increases the accuracy only by 0.5 pp (decreased by 10 pp. for the Qwen model) with a difference significant at 5\%. The increase is comparable to potential gains with verifiable rewards and happens without significant decrease in response diversity. 
+Training with self-plausibility and format rewards using a label-free judge increases accuracy on Countdown task from  46\% to 53\% on  Llama-3.2-3B-Instruct model and from 22\% to 32\% for Qwen3-0.6B model. This improvement beats training on format-rewards only which increases the accuracy only by 0.5 pp (decreased by 10 pp. for the Qwen model) with a difference significant at 5\%. The increase is comparable to potential gains with verifiable rewards and happens without significant decrease in response diversity. 
 
 Our two contributions are separating the more easily verifiable part of the completion (cleaned solution) from the traces where RLIF training can have more negative effect on solution diversity, part which would suffer the most from increasing conformity reasoning and the design of label-free judge with  strong verification ability while using the same base model.
 
@@ -157,7 +154,6 @@ Applying the law of total expectation:
 $$\mathcal{L}=E_{y_1,y_2}[-P(T=1|y_1,y_2)\log s(y_1,y_2)-P(T=0|y_1,y_2)\log(1-s(y_1,y_2))]$$
 
 Note that $0<s(y_1,y_2)<1$ and hence the expression in square brackets is cross-entropy of distribution $s()$ with respect to the conditional probabilities $P(T=1|y_1,y_2), P(T=0|y_1,y_2)$. Hence by Gibbs inequality $s(y_1,y_2)=P(T=1|y_1,y_2)$ minimizes $\mathcal{L}$. It implies:
-%$$\mathcal{L}\geq E_{y_1,y_2}[-P(T=1|y_1,y_2)\log P(T=1|y_1,y_2)-P(T=0|y_1,y_2)\log(P(T=0|y_1,y_2))]$$
 
 $$\sigma(r(x,y_1)-r(x,y_2))=\sigma(\rho(y_1)-\rho(y_2))$$
 
@@ -229,7 +225,7 @@ The judge scoring is significantly more accurate in identifying correct solution
 
 
 \label{sec:corrupt}
-\textbf{Accuracy Improvement.}  GRPO training significantly increases the sampled accuracy on Countdown both for Llama and Qwen3 models. The starting (SFT) model's accuracy with pass@1 at temperature 0.9 is just 0.459 for the Llama and 0.224 for Qwen3-0.6B models using the equal mix of puzzles with 3 and 4 numbers. Training with plausibility and format rewards for 150 steps improves the accuracy to 0.528 for Llama and 0.322 for Qwen model. 
+\textbf{Accuracy Improvement.}  GRPO training significantly increases the sampled accuracy on Countdown both for Llama and Qwen3 models. The starting (SFT) model's accuracy with pass@1 at temperature 0.9 is just 0.459 for the Llama and 0.224 for Qwen3-0.6B models using the equal mix of puzzles with 3 and 4 numbers. Training with plausibility and format rewards for 150 steps improves the accuracy to 0.528 for Llama and 0.322 for the Qwen model. 
 
 \input{tables/tab_format_vs_corrupt}
 
@@ -242,17 +238,12 @@ The judge scoring is significantly more accurate in identifying correct solution
 \bibliography{Consistency}
 
 \begin{appendices}
-\section{Greedy failure modes}
-\label{app:greedy}
+\section{Tables}
+\label{app:tables}
 \input{tables/tab_greedy_failures}
-
-\section{Synthetic gaming tests}
-\label{app:synthetic}
 \input{tables/tab_synthetic_countdown}
-
-\section{GRPO: pass@8 and distinct correct answers}
-\label{app:grpo-pass8}
 \input{tables/tab_grpo_pass8_distinct}
+\input{tables/tab_rft_countdown}
 \end{appendices}
 
 

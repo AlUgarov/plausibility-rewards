@@ -1,0 +1,13 @@
+model,set,metric,diff,lo,hi
+Llama-3.2-3B,3-number,pass1,0.12875,0.09498437500000001,0.1625
+Llama-3.2-3B,3-number,pass8,-0.02,-0.05,0.01
+Llama-3.2-3B,4-number,pass1,0.08125,0.05375,0.11
+Llama-3.2-3B,4-number,pass8,-0.01,-0.075,0.055
+Llama-3.2-3B,Both,pass1,0.105,0.083125,0.1271875
+Llama-3.2-3B,Both,pass8,-0.015,-0.05,0.02
+Qwen3-0.6B,3-number,pass1,0.254375,0.210625,0.29875
+Qwen3-0.6B,3-number,pass8,-0.045,-0.095,0.005
+Qwen3-0.6B,4-number,pass1,0.05875,0.0325,0.086875
+Qwen3-0.6B,4-number,pass8,0.005,-0.05,0.055
+Qwen3-0.6B,Both,pass1,0.1565625,0.1284375,0.184375
+Qwen3-0.6B,Both,pass8,-0.02,-0.055,0.015

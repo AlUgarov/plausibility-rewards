@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex Note"] 1795476474.25262 "Note.aux" "Note.bbl" "Note" 1795476475.37456 0
+["bibtex Note"] 1795496042.40234 "Note.aux" "Note.bbl" "Note" 1795496611.75475 0
   "./Consistency.bib" 1793988600.89309 101952 8628101d8774de6871db0fd7fc732dbf ""
   "./plainnat-etal.bst" 1793587644.99242 27120 a03602c289216620a32164407226ac68 ""
-  "Note.aux" 1795476475.00893 7640 822a98412320dbf53e951c97d34c6e3a "pdflatex"
+  "Note.aux" 1795496611.46587 7604 99b922a0d0d23345f8a1de09d44faa5c "pdflatex"
   (generated)
   "Note.bbl"
   "Note.blg"
   (rewritten before read)
-["pdflatex"] 1795476474.37934 "Note.tex" "Note.pdf" "Note" 1795476475.37481 0
+["pdflatex"] 1795496610.36043 "Note.tex" "Note.pdf" "Note" 1795496611.755 0
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -138,14 +138,15 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1793073137 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1774209607 3636776 dc5fa9b6b1453b9d196cd42edf876004 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "Note.aux" 1795476475.00893 7640 822a98412320dbf53e951c97d34c6e3a "pdflatex"
-  "Note.bbl" 1795476474.36308 6251 75fa7e2f62b1f07a3276e55ced0387b4 "bibtex Note"
-  "Note.out" 1795476475.0098 1276 32f2b190447235d70adae11ede43e6c2 "pdflatex"
-  "Note.tex" 1795476385.73513 21386 c467f4270d5e9bf51f530e31eec2c90f ""
+  "Note.aux" 1795496611.46587 7604 99b922a0d0d23345f8a1de09d44faa5c "pdflatex"
+  "Note.bbl" 1795496042.51233 6920 66ed7215ba4a9d145b1b4a3c517ba093 "bibtex Note"
+  "Note.out" 1795496611.46685 534 bcc9d9afe72707348028f136ee3b7e60 "pdflatex"
+  "Note.tex" 1795496460.88706 22355 1feae079f71baf9d7df369be7fc6b91f ""
   "tables/tab_format_vs_corrupt.tex" 1795476474.10185 2003 7ff3263bde92564acc547f54d7a44266 ""
-  "tables/tab_greedy_failures.tex" 1793167165.65814 1749 f3417eb772995307babd93fa8bbf3501 ""
+  "tables/tab_greedy_failures.tex" 1795496041.34688 1702 42f14f6dd09bf04122c868081f3dea74 ""
   "tables/tab_grpo_pass8_distinct.tex" 1795476474.10206 1717 ebe86c1a07c43ac136b8dc94d442c7f9 ""
   "tables/tab_judges_countdown.tex" 1795470875.47877 2148 f5850e9ba040a6e6ff7c9cc607c4331d ""
+  "tables/tab_rft_countdown.tex" 1795496609.89599 2440 82c4d078aa2414deb1811b11c6c8aa78 ""
   "tables/tab_synthetic_countdown.tex" 1793834621.03566 3415 554ca3c50d7bd077b7228c23c1f84866 ""
   (generated)
   "Note.aux"
