@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  23 NOV 2026 22:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  24 NOV 2026 00:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -539,35 +539,97 @@ Package caption Info: New subtype `subfigure' on input line 238.
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count336
 )
-\c@theorem=\count337
-\c@hypothesis=\count338
-\c@result=\count339
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2026/02/25 v1.14.0 fvextra - extensions and patches for fancyv
+rb
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2025/07/28 4.6 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count337
+\FV@InFile=\read2
+\FV@TabBox=\box68
+\c@FancyVerbLine=\count338
+\FV@StepNumber=\count339
+\FV@OutFile=\write3
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2026/03/08 line numbers on paragraphs v5.9
+\linenopenalty=\count340
+\output=\toks45
+\linenoprevgraf=\count341
+\linenumbersep=\dimen282
+\linenumberwidth=\dimen283
+\c@linenumber=\count342
+\c@pagewiselinenumber=\count343
+\c@LN@truepage=\count344
+\c@internallinenumber=\count345
+\c@internallinenumbers=\count346
+\quotelinenumbersep=\dimen284
+\bframerule=\dimen285
+\bframesep=\dimen286
+\bframebox=\box69
+\@LN@amsmath@ams@eqpen=\count347
+)
+\c@FancyVerbWriteLine=\count348
+\c@FancyVerbBufferLine=\count349
+\c@FV@TrueTabGroupLevel=\count350
+\c@FV@TrueTabCounter=\count351
+\FV@TabBox@Group=\box70
+\FV@bgcolorstructbox=\box71
+\FV@TmpLength=\skip71
+\c@FV@HighlightLinesStart=\count352
+\c@FV@HighlightLinesStop=\count353
+\FV@LoopCount=\count354
+\FV@NCharsBox=\box72
+\FV@BreakIndent=\dimen287
+\FV@BreakIndentNChars=\count355
+\FV@BreakSymbolSepLeft=\dimen288
+\FV@BreakSymbolSepLeftNChars=\count356
+\FV@BreakSymbolSepRight=\dimen289
+\FV@BreakSymbolSepRightNChars=\count357
+\FV@BreakSymbolIndentLeft=\dimen290
+\FV@BreakSymbolIndentLeftNChars=\count358
+\FV@BreakSymbolIndentRight=\dimen291
+\FV@BreakSymbolIndentRightNChars=\count359
+\c@FancyVerbLineBreakLast=\count360
+\FV@LineBox=\box73
+\FV@LineIndentBox=\box74
+\c@FV@BreakBufferDepth=\count361
+\FV@LineWidth=\dimen292
+)
+\c@theorem=\count362
+\c@hypothesis=\count363
+\c@result=\count364
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count340
+\l__color_backend_stack_int=\count365
 )
 (./Note.aux)
 \openout1 = `Note.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -603,25 +665,25 @@ LaTeX Font Info:    ... okay on input line 72.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 72.
+Package hyperref Info: Link coloring OFF on input line 73.
 (./Note.out) (./Note.out)
-\@outlinefile=\write3
-\openout3 = `Note.out'.
+\@outlinefile=\write4
+\openout4 = `Note.out'.
 
 
 (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count341
-\scratchdimen=\dimen282
-\scratchbox=\box68
-\nofMPsegments=\count342
-\nofMParguments=\count343
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count344
-\MPscratchDim=\dimen283
-\MPnumerator=\count345
-\makeMPintoPDFobject=\count346
-\everyMPtoPDFconversion=\toks46
+\scratchcounter=\count366
+\scratchdimen=\dimen293
+\scratchbox=\box75
+\nofMPsegments=\count367
+\nofMParguments=\count368
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count369
+\MPscratchDim=\dimen294
+\MPnumerator=\count370
+\makeMPintoPDFobject=\count371
+\everyMPtoPDFconversion=\toks47
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -643,33 +705,47 @@ al/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 134.
+(amsmath)                 on input line 135.
 
 [3] [4] [5] [6] (./tables/tab_judges_countdown.tex) [7]
-(./tables/tab_format_vs_corrupt.tex) (./Note.bbl [8])
-(./tables/tab_greedy_failures.tex) (./tables/tab_synthetic_countdown.tex
-[9]) (./tables/tab_grpo_pass8_distinct.tex) (./tables/tab_rft_countdown.tex
-[10])
+(./tables/tab_format_vs_corrupt.tex) [8] (./tables/tab_rft_countdown.tex)
+(./Note.bbl [9]) (./tables/tab_greedy_failures.tex)
+(./tables/tab_synthetic_countdown.tex [10])
+(./tables/tab_grpo_pass8_distinct.tex) [11] [12] (./tables/app_prompts.tex
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <13> not available
+(Font)              size <12> substituted on input line 2.
+
+[13])
 
 Package caption Warning: Unused \captionsetup[sub] on input line 52.
 See the caption package documentation for explanation.
 
-[11] (./Note.aux)
+[14] (./Note.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
 Package rerunfilecheck Info: File `Note.out' has not changed.
-(rerunfilecheck)             Checksum: BCC9D9AFE72707348028F136EE3B7E60;534.
+(rerunfilecheck)             Checksum: 1DAD1E5A86254B158F59A2FAF982998D;615.
  ) 
 Here is how much of TeX's memory you used:
- 14803 strings out of 467525
- 235894 string characters out of 5418982
- 697928 words of memory out of 5000000
- 43422 multiletter control sequences out of 15000+600000
- 637706 words of font info for 75 fonts, out of 8000000 for 9000
+ 16417 strings out of 467525
+ 268002 string characters out of 5418982
+ 731081 words of memory out of 5000000
+ 45007 multiletter control sequences out of 15000+600000
+ 638042 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,18n,117p,2327b,564s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,18n,117p,2327b,923s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
+, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
 , replaced by a fixed one
@@ -708,10 +784,10 @@ dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2026/texmf-di
 st/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2026/texmf-dist
 /fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Note.pdf (11 pages, 285147 bytes).
+Output written on Note.pdf (14 pages, 298800 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 237 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 322 PDF objects out of 1000 (max. 8388607)
+ 259 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
 
