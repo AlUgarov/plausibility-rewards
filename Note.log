@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  25 NOV 2026 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  25 NOV 2026 16:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -707,27 +707,27 @@ Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 134.
 
-[3] [4] [5] [6] (./tables/tab_judges_countdown.tex) [7] [8]
-(./tables/tab_format_vs_corrupt.tex) (./tables/tab_rft_countdown.tex [9])
-[10] [11] (./Note.bbl [12]) (./tables/tab_synthetic_countdown.tex)
-(./tables/tab_grpo_pass8_distinct.tex) (./tables/tab_gaming_countdown.tex
-[13]) [14]
-<figures/fig_training_150.pdf, id=221, 469.755pt x 476.98201pt>
+[3] [4] [5] (./tables/tab_judges_countdown.tex) [6] [7]
+(./tables/tab_format_vs_corrupt.tex) (./tables/tab_rft_countdown.tex) [8]
+[9] [10] (./Note.bbl [11]) [12] [13] (./tables/tab_synthetic_countdown.tex)
+(./tables/tab_grpo_pass8_distinct.tex) (./tables/tab_gaming_countdown.tex)
+[14] [15]
+<figures/fig_training_150.pdf, id=233, 469.755pt x 476.98201pt>
 File: figures/fig_training_150.pdf Graphic file (type pdf)
 <use figures/fig_training_150.pdf>
-Package pdftex.def Info: figures/fig_training_150.pdf  used on input line 291.
+Package pdftex.def Info: figures/fig_training_150.pdf  used on input line 305.
 (pdftex.def)             Requested size: 435.32422pt x 442.02388pt.
- [15 <./figures/fig_training_150.pdf>] (./tables/app_prompts.tex
+ [16 <./figures/fig_training_150.pdf>] (./tables/app_prompts.tex
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <13> not available
 (Font)              size <12> substituted on input line 2.
 
-[16])
+[17])
 
 Package caption Warning: Unused \captionsetup[sub] on input line 52.
 See the caption package documentation for explanation.
 
-[17] (./Note.aux)
+[18] (./Note.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -737,17 +737,14 @@ L3 programming layer <2026-01-19>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Note.out' has not changed.
-(rerunfilecheck)             Checksum: 66EDC9831A6B7A9CF1BBE798B04E5E89;691.
+(rerunfilecheck)             Checksum: 4A578521A12D9D3FCF55860FB7837032;767.
  ) 
 Here is how much of TeX's memory you used:
- 16438 strings out of 467525
- 268479 string characters out of 5418982
- 725110 words of memory out of 5000000
- 45022 multiletter control sequences out of 15000+600000
+ 16442 strings out of 467525
+ 268519 string characters out of 5418982
+ 727155 words of memory out of 5000000
+ 45024 multiletter control sequences out of 15000+600000
  638042 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,18n,117p,2327b,923s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -797,10 +794,10 @@ dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2026/texmf-di
 st/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2026/texmf-dist
 /fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Note.pdf (17 pages, 326401 bytes).
+Output written on Note.pdf (18 pages, 330868 bytes).
 PDF statistics:
- 397 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 409 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
+ 71 named destinations out of 1000 (max. 500000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 
