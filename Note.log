@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  24 NOV 2026 22:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  25 NOV 2026 12:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -609,11 +609,7 @@ Package: lineno 2026/03/08 line numbers on paragraphs v5.9
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count365
 )
-(./Note.aux
-
-LaTeX Warning: Label `tab:gaming' multiply defined.
-
-)
+(./Note.aux)
 \openout1 = `Note.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
@@ -709,17 +705,17 @@ al/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 135.
+(amsmath)                 on input line 134.
 
 [3] [4] [5] [6] (./tables/tab_judges_countdown.tex) [7] [8]
 (./tables/tab_format_vs_corrupt.tex) (./tables/tab_rft_countdown.tex [9])
 [10] [11] (./Note.bbl [12]) (./tables/tab_synthetic_countdown.tex)
 (./tables/tab_grpo_pass8_distinct.tex) (./tables/tab_gaming_countdown.tex
 [13]) [14]
-<figures/fig_training_150.pdf, id=216, 469.755pt x 476.98201pt>
+<figures/fig_training_150.pdf, id=221, 469.755pt x 476.98201pt>
 File: figures/fig_training_150.pdf Graphic file (type pdf)
 <use figures/fig_training_150.pdf>
-Package pdftex.def Info: figures/fig_training_150.pdf  used on input line 288.
+Package pdftex.def Info: figures/fig_training_150.pdf  used on input line 291.
 (pdftex.def)             Requested size: 435.32422pt x 442.02388pt.
  [15 <./figures/fig_training_150.pdf>] (./tables/app_prompts.tex
 
@@ -742,19 +738,23 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `Note.out' has not changed.
 (rerunfilecheck)             Checksum: 66EDC9831A6B7A9CF1BBE798B04E5E89;691.
  ) 
 Here is how much of TeX's memory you used:
- 16436 strings out of 467525
- 268454 string characters out of 5418982
- 725093 words of memory out of 5000000
- 45021 multiletter control sequences out of 15000+600000
+ 16438 strings out of 467525
+ 268479 string characters out of 5418982
+ 725110 words of memory out of 5000000
+ 45022 multiletter control sequences out of 15000+600000
  638042 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,18n,117p,2327b,923s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
+, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
 , replaced by a fixed one
@@ -797,10 +797,10 @@ dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2026/texmf-di
 st/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2026/texmf-dist
 /fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Note.pdf (17 pages, 323561 bytes).
+Output written on Note.pdf (17 pages, 326401 bytes).
 PDF statistics:
- 392 PDF objects out of 1000 (max. 8388607)
- 280 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
+ 397 PDF objects out of 1000 (max. 8388607)
+ 285 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
  70 words of extra memory for PDF output out of 10000 (max. 10000000)
 
