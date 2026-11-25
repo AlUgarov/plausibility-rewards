@@ -103,9 +103,9 @@ Our approach negates this channel of entropy collapse common in RLIF by splittin
 
 We find that models are more accurate in verifying solutions rather than full completions containing reasoning traces, solutions , and answers. However, moderate-sized LLM tend to be poor judges and require additional training in order to enable self-play training. The paper explores two potential solutions. First, fine-tuning a model with the judge prompt and gold answers marginally improves its ability to discriminate between correct and incorrect solutions. Second, training a model to recognize a solution produced from corrupted reasoning produces a more sizable gain in verification abilities.
 
-Training with self-plausibility and format rewards using a label-free judge increases accuracy on Countdown task from  46\% to 53\% on  Llama-3.2-3B-Instruct model and from 22\% to 32\% for Qwen3-0.6B model. This improvement beats training on format-rewards only which increases the accuracy only by 0.5 pp (decreased by 10 pp. for the Qwen3 model) with a difference significant at 5\%. The increase is comparable to potential gains with verifiable rewards and happens without significant decrease in response diversity. 
+Reinforcement learning with self-plausibility and format rewards using a label-free judge increases accuracy on Countdown task from  46\% to 53\% on  Llama-3.2-3B-Instruct model and from 22\% to 32\% for Qwen3-0.6B model. This improvement beats training on format-rewards only which increases the accuracy only by 0.5 pp (decreased by 10 pp. for the Qwen3 model) with a difference significant at 5\%. The increase is comparable to potential gains with verifiable rewards and happens without significant decrease in response diversity. Fine-tuning on completions with highest plausibility scores (Rejection Fine-tuning) instead of RL improves accuracy even further to 56\% on Llama-3.2-3B-Instruct model  and 58\% for  Qwen3-0.6B model.
 
-Our two contributions are separating the more easily verifiable part of the completion (cleaned solution) from the traces where RLIF training can have more negative effect on solution diversity, and the design of label-free judge with more accurate scoring of solutions.
+Our two contributions are separating the more easily verifiable part of the completion (cleaned solution) from the traces where RLIF training can have more negative effect on solution diversity, and the design of label-free judge. In particular, the construction of label-free judge is universal enough to easily translate to other domains where verification is easier than finding a solution such as mathematics, coding, and other design problems. Our approach can augment post-training of large language models in areas with scarce labelled data.
 
 \vspace{10pt}
 \section{Preliminaries}
@@ -207,7 +207,7 @@ The training starts with the fine-tuned generation model and continues for one e
 
 
 
-\textbf{Reinforcement Learning with Plausibility Rewards.} We train the generating model for 150 steps using Group Relative Preference Optimization algorithm (GRPO) with both format and plausibility rewards. Format rewards incentivize completions with non-verbal answers and three tagged parts (reasoning, solution, answer). Formatting rewards are essential for our setup because the calculation of rewards requires having a formatted solution while accuracy verification needs numeric-only format for our grader.\footnote{The grader's scores do not affect the training.}. \textit{Plausibility reward} is the sum of logits of the solution+answer parts of the completion as graded by the judge model using a neutral system prompt (see "Preliminaries" section above). We calibrate the weight of plausibility rewards to match the standard deviation of formatting rewards.
+\textbf{Reinforcement Learning with Plausibility Rewards.} We train the generating model for 150 steps using Group Relative Preference Optimization algorithm (GRPO) with both format and plausibility rewards. Format rewards incentivize completions with non-verbal answers and three tagged parts (reasoning, solution, answer). Formatting rewards are essential for our setup because the calculation of rewards requires having a formatted solution while accuracy verification needs numeric-only format for our grader.\footnote{The grader's scores do not affect the training.}. \textit{Plausibility reward} is the sum of logits of the solution+answer parts of the completion as graded by the judge model using a neutral system prompt (see "Preliminaries" section above). We calibrate the weight of plausibility rewards so that its weighted standard deviation match the standard deviation of formatting rewards at the start.
 
 We use TRL library for training,  and vLLM library for generation and plausibility scoring. All the training runs use Low Rank Adaptaton (LoRA) \citep{hu_lora_2021} with rank of 16 and $\alpha=32$ using PEFT library. We observe no significant improvement from increasing LORA rank to 32. The training uses learning rate of 2e-05 with constant schedule after 20 warm-up steps.\footnote{Some charts show 300 steps for the plausibility rewards with the last 150 steps coming from an extra run starting from step 150 checkpoint.}  GRPO uses 16 completions per step with anchoring to the base model ($\beta_{KL}=0.02$) and no rewards scaling to avoid large changes in gradient when diversity of responses becomes small.
 
@@ -226,13 +226,19 @@ The judge scoring is significantly more accurate in identifying correct solution
 
 
 \label{sec:corrupt}
-\textbf{Accuracy Improvement.}  GRPO training significantly increases the sampled accuracy on Countdown both for Llama and Qwen3 models. The starting (SFT) model's accuracy with pass@1 at temperature 0.9 is just 0.459 for the Llama and 0.224 for Qwen3-0.6B models using the equal mix of 3-number and 4-number puzzles. Training with plausibility and format rewards for 150 steps improves the accuracy to 0.528 for Llama and 0.322 for the Qwen model.
+\textbf{Accuracy Improvement.}  GRPO training significantly increases the sampled accuracy on Countdown both for Llama and Qwen3 models. The starting (SFT) model's accuracy with pass@1 at temperature 0.9 is just 0.459 for the Llama and 0.224 for Qwen3-0.6B models using the equal mix of 3-number and 4-number puzzles. Training with plausibility and format rewards for 150 steps improves the accuracy to 53\% for Llama and 32\% for the Qwen3 model. The improvement happens both for 3-number and 4-number puzzles with Llama, but Qwen model improves mostly on 3-number (from 37\% to 56\%) while 4-number sampled performance barely reaches the starting point (8\%). Qwen3 model appears undertrained by step 150, and continuing training to 300 steps for Qwen3 improves accuracy to 61\% on 3-number puzzles, 11\% on 4-number puzzles, and 36\% overall.
 
 Given evidence of GRPO improving accuracy with spurious rewards, we train the model using format-only rewards as a control. With Llama model, format-only training doesn't affect the accuracy, while it actually hurts the accuracy of Qwen3 model. Hence learning format cannot explain the observed improvements from GRPO training with plausibility rewards.
 
+Training with plausibility rewards increases Llama's accuracy until the end of the run (step 150) with intermittent variation due to small samples used in estimation (see  Figure~\ref{fig:training-150} in Appendix). In contrast, Qwen3 model experiences a sharp drop in accuracy around step 50 and then continues to improve to the end. We were unable to eliminate this drop by using larger batch size, different seeds, or higher weights on plausibility rewards.  Training with format rewards results in accuracy stabilizing around step 75, widening the gap on the latest steps. Gradient norm stays relatively low throughout all runs suggesting stable training regimes.
+
 We observe small reduction in solution diversity for both models throughout the training. Llama model experiences pass@8 decrease from 0.58 to 0.51 for 4-number puzzles and no decrease for 3-number puzzles. Training Qwen3 reduces pass@8 metric from 0.88 to 0.75 for 3-number and from 0.32 to 0.275 for 4-number puzzles. The number of distinct correct solutions also falls down by roughly 14-20\% for both models.
 
+
 \input{tables/tab_format_vs_corrupt}
+
+
+
 
 We also train the model using rejection fine-tuning (RFT) approach \citep{yuan_scaling_2023}. Within each round, we sample 16 completions for 300 Countdown problems. For each incomplete solution without the solution block, we generate solution block separately after appending the incomplete completion to the reasoning prompt. For each group of 16 completions we select 2 completions with solutions having the highest plausibility reward. Within this group we drop 20\% of completions with the lowest score as they typically correspond to problems which the model doesn't manage to solve.\footnote{The accuracy drops only slightly without filtering bottom 20\% of solutions.} Then we fine-tune the model using our reasoning prompt and hyperparameters matching fine-tuning of the generating model described above (Section~\ref{sec:setup}). Training for 4 rounds exactly matches the amount of data seen through 150 steps of GRPO training.
 
@@ -240,8 +246,24 @@ RFT training results in higher accuracy gains for both models with less decrease
 
 \input{tables/tab_rft_countdown}
 
+\textbf{Rewards Gaming}. The judge turns out to be not immune to gaming and several strategies quickly emerge in completions to obtain higher scores when the model is unable to find accurate solution (Table \ref{tab:gaming}. But notably, the emergence of these strategies doesn't prevent learning correct reasoning.  The incidence of these fake solutions mostly goes down or plateaus after step 50.
+
+The most common gaming strategy for the Llama model is faking the last computation step by writing it as if it equals the target. For example, it can have all the previous steps correct but finish it with "12 + 10 = 57" where 57 is the expected number. The incidence of these fakes reaches 38\% of completions by step 50 and is much higher for 4-number puzzles which are harder to solve. Qwen3 model also employs this trick but less frequently. Instead its most common fake is claiming wrong final number as the target which happens for roughly 44\% of completions by step 150. 
+
+Relatively stable proportion of fakes after step 50 comes from the judge still rating correct solutions above fakes most of the time. However, for groups without a correct solution fakes allow to achieve much higher score than an honest wrong solution leading the model to abandon search well before exhausting the context limit. The judge's ability to find a correct solution in a pair with both correct and incorrect solution also slightly degrades by the end of training from 0.9-0.95 at the start to roughly 0.85-0.9 by step 150. This evidence suggests that evolving the judge with the generating model might maintain its accuracy and help the generating model to achieve higher final accuracy.
+
+\vspace{10pt}
 \section{Future Work}
 \label{sec:future}
+
+\textbf{Other Domains.} One obvious extension is to apply this method to other domains. Potential applications include non-trivial mathematics problems (anything starting from AIME and above), coding, Cryptic crossword clues, or Fermi problems dataset. The last two datasets are more obscure but also combine easy verification with difficult search.
+
+\textbf{Adversarial Training.} Given that the static judge becomes less accurate in verifying solutions with more training, we plan to conduct runs in which the judge evolves with the generating model. Given that judge training doesn't need human labels, the training can incorporate multiple training rounds with each using novel pairs of corrupt and intact solutions coming from the trained generating model. This translates to an adversarial learning game in which the generating model learns both to generate good reasoning and to obtain high judge scores on solutions whether they come from complete or incomplete reasoning traces while the judge learns to identify solutions coming from intact reasoning traces.  
+
+\textbf{Improving RL pipeline.} Discrepancy between RFT results and GRPO results suggests that RL pipeline underutilizes the signal provided by the judge. This is more obvious for Qwen3 model where accuracy and rewards continue to rise up to the last step and vary significantly across different runs.  Hence the reported results likely come from an undertrained model and longer runs conducted with different parameters confirm it. However, even for Llama model there is significant variation across the runs with some unreported runs achieving accuracy of 58\% by step 150. Hence it is likely that better hyperparameter optimization would translate to larger accuracy gains.
+
+
+
 
 
 \newpage
@@ -252,9 +274,23 @@ RFT training results in higher accuracy gains for both models with less decrease
 \begin{appendices}
 \section{Tables}
 \label{app:tables}
-\input{tables/tab_greedy_failures}
+%\input{tables/tab_greedy_failures}
 \input{tables/tab_synthetic_countdown}
 \input{tables/tab_grpo_pass8_distinct}
+\input{tables/tab_gaming_countdown}\label{tab:gaming}
+
+\newpage
+\section{Charts}
+\begin{figure}[H]
+\centering
+\caption{GRPO training trajectories.}
+\label{fig:training-150}
+\includegraphics[width=0.9\textwidth]{figures/fig_training_150.pdf}
+
+\begin{minipage}{0.8\textwidth}\footnotesize
+Non-overlapping 10-step means of the training logs. Variables are: accuracy - share of correct completions in the training batches, gradient norm before clipping (clip at 0.2), completion length in tokens.
+\end{minipage}
+\end{figure}
 
 \newpage
 \section{Prompts}

@@ -213,6 +213,7 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
@@ -224,7 +225,6 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT ./tables/tab_judges_countdown.tex
 INPUT ./tables/tab_judges_countdown.tex
 INPUT ./tables/tab_judges_countdown.tex
@@ -248,11 +248,6 @@ INPUT tables/tab_rft_countdown.tex
 INPUT ./Note.bbl
 INPUT ./Note.bbl
 INPUT Note.bbl
-INPUT ./tables/tab_greedy_failures.tex
-INPUT ./tables/tab_greedy_failures.tex
-INPUT ./tables/tab_greedy_failures.tex
-INPUT ./tables/tab_greedy_failures.tex
-INPUT tables/tab_greedy_failures.tex
 INPUT ./tables/tab_synthetic_countdown.tex
 INPUT ./tables/tab_synthetic_countdown.tex
 INPUT ./tables/tab_synthetic_countdown.tex
@@ -263,6 +258,16 @@ INPUT ./tables/tab_grpo_pass8_distinct.tex
 INPUT ./tables/tab_grpo_pass8_distinct.tex
 INPUT ./tables/tab_grpo_pass8_distinct.tex
 INPUT tables/tab_grpo_pass8_distinct.tex
+INPUT ./tables/tab_gaming_countdown.tex
+INPUT ./tables/tab_gaming_countdown.tex
+INPUT ./tables/tab_gaming_countdown.tex
+INPUT ./tables/tab_gaming_countdown.tex
+INPUT tables/tab_gaming_countdown.tex
+INPUT ./figures/fig_training_150.pdf
+INPUT ./figures/fig_training_150.pdf
+INPUT ./figures/fig_training_150.pdf
+INPUT ./figures/fig_training_150.pdf
+INPUT ./figures/fig_training_150.pdf
 INPUT ./tables/app_prompts.tex
 INPUT ./tables/app_prompts.tex
 INPUT ./tables/app_prompts.tex

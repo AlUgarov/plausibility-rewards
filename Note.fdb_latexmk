@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex Note"] 1795499703.64174 "Note.aux" "Note.bbl" "Note" 1795499725.3838 0
-  "./Consistency.bib" 1793988600.89309 101952 8628101d8774de6871db0fd7fc732dbf ""
+["bibtex Note"] 1795584514.96794 "Note.aux" "Note.bbl" "Note" 1795584516.029 0
+  "./Consistency.bib" 1795502499.34892 118408 2ee4a076688541a0c45a22dc30692173 ""
   "./plainnat-etal.bst" 1793587644.99242 27120 a03602c289216620a32164407226ac68 ""
-  "Note.aux" 1795499725.1111 8016 86ab003b5bc3ad61a578282f6e9332b9 "pdflatex"
+  "Note.aux" 1795584515.76908 8476 02bb241361b8b2e2b4677ffb6a217cbf "pdflatex"
   (generated)
   "Note.bbl"
   "Note.blg"
   (rewritten before read)
-["pdflatex"] 1795499724.44894 "Note.tex" "Note.pdf" "Note" 1795499725.38401 0
+["pdflatex"] 1795584515.08805 "Note.tex" "Note.pdf" "Note" 1795584516.0294 0
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -143,17 +143,18 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1793073137 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1774209607 3636776 dc5fa9b6b1453b9d196cd42edf876004 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "Note.aux" 1795499725.1111 8016 86ab003b5bc3ad61a578282f6e9332b9 "pdflatex"
-  "Note.bbl" 1795499703.77751 6920 66ed7215ba4a9d145b1b4a3c517ba093 "bibtex Note"
-  "Note.out" 1795499725.11197 615 1dad1e5a86254b158f59a2faf982998d "pdflatex"
-  "Note.tex" 1795499702.38052 23780 afe043bf51c86fbf1864873897c19597 ""
+  "Note.aux" 1795584515.76908 8476 02bb241361b8b2e2b4677ffb6a217cbf "pdflatex"
+  "Note.bbl" 1795584515.06743 7340 1a53318a742f0726fb189f5956c2dd5f "bibtex Note"
+  "Note.out" 1795584515.76997 691 66edc9831a6b7a9cf1bbe798b04e5e89 "pdflatex"
+  "Note.tex" 1795584309.97738 29418 a0e74e1af6d90fedc6916036c65b1e43 ""
+  "figures/fig_training_150.pdf" 1795569908.99758 20443 5e6bf9ed51d8988de133ff6097cffbe5 ""
   "tables/app_prompts.tex" 1795499724.34237 2149 67b690d9e45a8af8067acbdfb9077bb1 ""
   "tables/tab_format_vs_corrupt.tex" 1795476474.10185 2003 7ff3263bde92564acc547f54d7a44266 ""
-  "tables/tab_greedy_failures.tex" 1795496041.34688 1702 42f14f6dd09bf04122c868081f3dea74 ""
+  "tables/tab_gaming_countdown.tex" 1795584513.84684 1876 8782b59daac152b524e286970bb7da8e ""
   "tables/tab_grpo_pass8_distinct.tex" 1795476474.10206 1717 ebe86c1a07c43ac136b8dc94d442c7f9 ""
   "tables/tab_judges_countdown.tex" 1795470875.47877 2148 f5850e9ba040a6e6ff7c9cc607c4331d ""
   "tables/tab_rft_countdown.tex" 1795496609.89599 2440 82c4d078aa2414deb1811b11c6c8aa78 ""
-  "tables/tab_synthetic_countdown.tex" 1793834621.03566 3415 554ca3c50d7bd077b7228c23c1f84866 ""
+  "tables/tab_synthetic_countdown.tex" 1795505998.80155 3122 31dcaab5a81930f788d7a6c3bc112230 ""
   (generated)
   "Note.aux"
   "Note.log"
